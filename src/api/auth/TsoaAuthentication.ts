@@ -63,22 +63,7 @@ export class TsoaAuthentication implements IAuthentication {
     requiredScopes?: string[]
   ): void {
     if (requiredScopes && requiredScopes.length > 0) {
-      const foundMatchingScopes: string[] = [];
-      for (const requiredScope of requiredScopes) {
-        if (authenticatedUser.tokenScopes.includes(requiredScope)) {
-          foundMatchingScopes.push(requiredScope);
-        }
-      }
-
-      if (foundMatchingScopes.length !== requiredScopes.length) {
-        console.warn(
-          `Request could not be authorized for scopes [${requiredScopes}]. User has scopes : [${authenticatedUser.tokenScopes}]. Matched [${foundMatchingScopes}]`
-        );
-        throw new Errors.ForbiddenError();
-      }
-      console.debug(
-        `Request authorized for roles [${requiredScopes}]. User has scopes : [${authenticatedUser.tokenScopes}]. Matched [${foundMatchingScopes}]`
-      );
+      throw new Error('Scopes not supported');
     }
   }
 }

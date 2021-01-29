@@ -1,12 +1,7 @@
-import { User } from './IUserRepository';
-
-export interface Repo {
+export interface App {
   readonly id: string;
   readonly name: RepoName;
   readonly webUrl: string;
-  /**
-   * null when we don't have permissions to retrieve workflows !
-   */
   readonly workflows: ReadonlyArray<Workflow>;
 }
 
@@ -33,10 +28,6 @@ export class RepoName {
     return this.fullName.localeCompare(other.fullName);
   }
 
-  public belongsTo(owner: User): boolean {
-    return this.owner === owner.login;
-  }
-
   public equals(other: RepoName): boolean {
     return this.fullName === other.fullName;
   }
@@ -48,6 +39,6 @@ export interface Workflow {
   readonly webUrl: string;
 }
 
-export interface IRepoRepository {
-  listForToken(token: string): Promise<ReadonlyArray<Repo>>;
+export interface IAppRepository {
+  listForToken(token: string): Promise<ReadonlyArray<App>>;
 }

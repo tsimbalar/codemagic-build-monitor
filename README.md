@@ -1,32 +1,28 @@
-![Main](https://github.com/tsimbalar/gha-build-monitor/workflows/Main/badge.svg?event=push)
+![Main](https://github.com/tsimbalar/codemagic-build-monitor/workflows/Main/badge.svg?event=push)
 
-# gha-build-monitor
+# codemagic-build-monitor
 
-Adapter to give access to GitHub Actions status via the [CatLight Protocol](https://github.com/catlightio/catlight-protocol)
+Adapter to give access to CodeMagic build status via the [CatLight Protocol](https://github.com/catlightio/catlight-protocol)
 
 <img src="./assets/03-monitor-builds.png" title="builds" width="60%">
 
 ## How To
 
-To use `gha-build-monitor` to monitor your GitHub Actions workflows, follow these steps :
+To use `codemagic-build-monitor` to monitor your CodeMagic workflows, follow these steps :
 
 ### 1. Start the "proxy" locally
 
 ```
-docker run --name gha-build-monitor -d -p 9901:9901 ghcr.io/tsimbalar/gha-build-monitor
+docker run --name codemagic-build-monitor -d -p 9902:9902 ghcr.io/tsimbalar/codemagic-build-monitor
 ```
 
-Open `http://localhost:9901/` in a browser to check that the server is up and running.
+Open `http://localhost:9902/` in a browser to check that the server is up and running.
 
-### 2. Create a GitHub Access Token
+### 2. Get your Access Tokem - TODO
 
-You need a Personal Access Token (PAT) with the `repo` scope so that we can retrieve status information of your GitHub Actions.
+`TODO`
 
-1. Go to https://github.com/settings/tokens/new?scopes=repo&description=gha-build-monitor
-2. Create a token with the scope `repo`
-3. Copy the token
-
-### 3. Connecting Catlight to `gha-build-monitor`
+### 3. Connecting Catlight to `codemagic-build-monitor`
 
 In CatLight, you need to :
 
@@ -34,7 +30,7 @@ In CatLight, you need to :
 2. choose "CatLight-compatible"
 3. Log in with :
 
-- Url : `http://localhost:9901/builds`
+- Url : `http://localhost:9902/builds`
 - "Use token"
 - paste your token
 
@@ -44,7 +40,7 @@ In CatLight, you need to :
 
 ### 4. Choose the workflows you want to track
 
-1. Select the GitHub Actions workflows you want to monitor
+1. Select the workflows you want to monitor
 2. Connect
 
 <img src="./assets/02-select-workflows.png" title="select workflows" width="60%">
@@ -56,10 +52,7 @@ Get notified about new builds, failing builds etc
 <img src="./assets/03-monitor-builds.png" title="builds" width="60%">
 
 ---
+
 ## Roadmap
 
-This is still an early version (`v0.*`).
-
-Here are some things that will probably be added before v1 :
-
-- retrieving authors/contributors of each workflow run
+`TODO`

@@ -1,30 +1,24 @@
 import { ConstructorFunction, IControllerFactory } from './api/ioc/IControllerFactory';
 import { MetaInfo, meta as metaFromPackageJson } from './meta';
+import { AppRepository } from './infra/codemagic/AppRepository';
 import { BearerAuthenticationProvider } from './api/auth/BearerAuthenticationProvider';
 import { BuildInfoController } from './api/controllers/BuildInfoController';
-import { CachedCommitAuthorRepository } from './infra/caching/CachedCommitAuthorRepository';
-import { CachedRepoRepository } from './infra/caching/CachedRepoRepository';
-import { CommitAuthorRepository } from './infra/github/CommitAuthorRepository';
+import { CachedAppRepository } from './infra/caching/CachedAppRepository';
 import { Controller } from '@tsoa/runtime';
 import { DiagnosticsController } from './api/controllers/DiagnosticsController';
-import { DynamicBuildInfoController } from './api/controllers/DynamicBuildInfoController';
 import { ExampleController } from './api/controllers/ExampleController';
+import { IAppRepository } from './domain/IAppRepository';
 import { IAuthentication } from './api/auth/IAuthentication';
-import { IRepoRepository } from './domain/IRepoRepository';
-import { IUserRepository } from './domain/IUserRepository';
 import { IWorkflowRunRepository } from './domain/IWorkflowRunRepository';
+import { InMemoryWorkflowRunRepository } from './infra/memory/InMemoryWorkflowRunRepository';
 import { IndexController } from './api/controllers/IndexController';
 import LRUCache from 'lru-cache';
-import { RepoRepository } from './infra/github/RepoRepository';
 import { Settings } from './settings-types';
 import { TsoaAuthentication } from './api/auth/TsoaAuthentication';
-import { UserRepository } from './infra/github/UserRepository';
-import { WorkflowRunRepository } from './infra/github/WorkflowRunRepository';
-import { getOctokitFactory } from './infra/github/OctokitFactory';
+import { getCodeMagicClientFactory } from './infra/codemagic/CodeMagicClientFactory';
 
 export interface ApiDependencies {
-  readonly userRepo: IUserRepository;
-  readonly repoRepo: IRepoRepository;
+  readonly appRepo: IAppRepository;
   readonly workflowRunRepo: IWorkflowRunRepository;
 }
 
@@ -40,24 +34,16 @@ export class CompositionRoot implements IControllerFactory {
   ) {
     this.cache = new LRUCache<string, any>({});
     this.dependencies = {
-      repoRepo: new CachedRepoRepository(this.cache, dependencies.repoRepo),
-      userRepo: dependencies.userRepo,
+      appRepo: new CachedAppRepository(this.cache, dependencies.appRepo),
       workflowRunRepo: dependencies.workflowRunRepo,
     };
   }
 
   public static forProd(settings: Settings): CompositionRoot {
-    const octokitFactory = getOctokitFactory(metaFromPackageJson);
+    const clientFactory = getCodeMagicClientFactory(metaFromPackageJson);
     return new CompositionRoot(settings, metaFromPackageJson, {
-      userRepo: new UserRepository(octokitFactory),
-      repoRepo: new RepoRepository(octokitFactory),
-      workflowRunRepo: new WorkflowRunRepository(
-        octokitFactory,
-        new CachedCommitAuthorRepository(
-          new LRUCache<string, any>({}),
-          new CommitAuthorRepository(octokitFactory)
-        )
-      ),
+      appRepo: new AppRepository(clientFactory),
+      workflowRunRepo: new InMemoryWorkflowRunRepository(),
     });
   }
 
@@ -71,16 +57,10 @@ export class CompositionRoot implements IControllerFactory {
         return new IndexController(this.meta);
       case ExampleController.name:
         return new ExampleController();
-      case DynamicBuildInfoController.name:
-        return new DynamicBuildInfoController(
-          this.meta,
-          this.dependencies.repoRepo,
-          this.dependencies.workflowRunRepo
-        );
       case BuildInfoController.name:
         return new BuildInfoController(
           this.meta,
-          this.dependencies.repoRepo,
+          this.dependencies.appRepo,
           this.dependencies.workflowRunRepo
         );
       case DiagnosticsController.name:
@@ -93,6 +73,6 @@ export class CompositionRoot implements IControllerFactory {
   }
 
   public getAuthentication(): IAuthentication {
-    return new TsoaAuthentication([new BearerAuthenticationProvider(this.dependencies.userRepo)]);
+    return new TsoaAuthentication([new BearerAuthenticationProvider()]);
   }
 }

@@ -1,4 +1,4 @@
-import { RepoName } from './IRepoRepository';
+import { RepoName } from './IAppRepository';
 
 export type WorkflowRunStatus =
   | 'Queued'

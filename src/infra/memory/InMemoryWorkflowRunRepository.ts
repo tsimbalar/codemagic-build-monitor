@@ -4,7 +4,7 @@ import {
   WorkflowRun,
   WorkflowRunsPerBranch,
 } from '../../domain/IWorkflowRunRepository';
-import { RepoName } from '../../domain/IRepoRepository';
+import { RepoName } from '../../domain/IAppRepository';
 
 export class InMemoryWorkflowRunRepository implements IWorkflowRunRepository {
   private readonly runsPerRepoAndWorkflow: Map<string, WorkflowRunsPerBranch> = new Map();

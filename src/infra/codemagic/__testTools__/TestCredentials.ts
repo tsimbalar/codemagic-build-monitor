@@ -11,8 +11,7 @@ try {
 }
 
 const DEFAULT_SECRETS: Secrets = {
-  PAT_NO_SCOPE: '<PAT_NO_SCOPE NOT SET>',
-  PAT_SCOPE_REPO: '<PAT_SCOPE_REPO NOT SET>',
+  PRIVATE_API_KEY: '<PRIVATE_API_KEY NOT SET>',
 };
 
 export const testCredentials: Secrets = { ...DEFAULT_SECRETS, ...realSecrets };

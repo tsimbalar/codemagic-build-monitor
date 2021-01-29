@@ -7,17 +7,16 @@ import {
   DynamicFilteredBuildInfoRequest,
   DynamicFilteredBuildInfoResponse,
 } from '../api-types';
-import { IRepoRepository, RepoName, Workflow } from '../../domain/IRepoRepository';
+import { IAppRepository, RepoName, Workflow } from '../../domain/IAppRepository';
 import {
   IWorkflowRunRepository,
   WorkflowRun,
   WorkflowRunsPerBranch,
 } from '../../domain/IWorkflowRunRepository';
-import { IAuthenticatedUser } from '../auth/IAuthentication';
 import { MetaInfo } from '../../meta';
 import { ValidationErrorJson } from '../middleware/schema-validation';
 
-const SERVER_ID = 'github.com';
+const SERVER_ID = 'codemagic.io';
 
 interface BuildDefinitionAndRuns {
   readonly buildDefinition: catlightDynamic.BuildDefinitionStateRequest;
@@ -28,30 +27,30 @@ interface BuildDefinitionAndRuns {
 export class BuildInfoController extends Controller {
   public constructor(
     private readonly metaInfo: MetaInfo,
-    private readonly repos: IRepoRepository,
+    private readonly repos: IAppRepository,
     private readonly workflowRuns: IWorkflowRunRepository
   ) {
     super();
   }
 
   @Get('')
-  @Security('bearerAuth', ['repo'])
+  @Security('bearerAuth')
   public async getMetadata(
     @Request() request: express.Request
   ): Promise<DynamicBuildInfoMetadataResponse> {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const currentUser = request.user!;
-    const userResponse = this.mapToUser(currentUser);
 
     const repos = await this.repos.listForToken(currentUser.token);
 
     return {
       protocol: 'https://catlight.io/protocol/v1.0/dynamic',
       id: SERVER_ID,
-      name: 'GitHub Actions (via gha-build-monitor)',
+      name: 'CodeMagic (via codemagic-build-monitor)',
       serverVersion: this.metaInfo.version,
-      webUrl: 'https://github.com/tsimbalar/gha-build-monitor',
-      currentUser: userResponse,
+      webUrl: 'https://github.com/tsimbalar/codemagic-build-monitor',
+      // TODO : how to get current user info ?
+      currentUser: undefined,
       spaces: repos.map((repo) => ({
         id: repo.name.fullName,
         name: repo.name.fullName,
@@ -64,7 +63,7 @@ export class BuildInfoController extends Controller {
   }
 
   @Post('')
-  @Security('bearerAuth', ['repo'])
+  @Security('bearerAuth')
   @Response<ValidationErrorJson>(422, 'Validation error')
   public async getServerState(
     @Request() request: express.Request,
@@ -180,13 +179,6 @@ export class BuildInfoController extends Controller {
       name: `${repo.name} · ${workflow.name}`,
       folder: repo.fullName,
       webUrl: workflow.webUrl,
-    };
-  }
-
-  private mapToUser(authUser: IAuthenticatedUser): catlightCore.User {
-    return {
-      id: authUser.login,
-      name: authUser.name ?? authUser.login,
     };
   }
 }
