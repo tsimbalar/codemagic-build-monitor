@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import { IAuthenticatedUser } from './IAuthentication';
 import { IAuthenticationProvider } from './IAuthenticationProvider';
-import { IUserRepository } from '../../domain/IUserRepository';
 import { Request } from 'express';
 
 // Note: express http converts all headers
@@ -13,15 +12,15 @@ const AUTH_SCHEME_REGEX = /(?<scheme>\S+) +(?<value>\S+)/u;
 export class BearerAuthenticationProvider implements IAuthenticationProvider {
   public readonly securityScheme = 'bearerAuth';
 
-  public constructor(private readonly users: IUserRepository) {}
-
   public async getAuthenticatedUser(request: Request): Promise<IAuthenticatedUser | null> {
     const token = this.getBearerTokenFromRequest(request);
     if (!token) {
       return null;
     }
 
-    return this.getUserInfoFromGitHub(token);
+    return {
+      token,
+    };
   }
 
   private getBearerTokenFromRequest(request: Request): string | null {
@@ -44,16 +43,5 @@ export class BearerAuthenticationProvider implements IAuthenticationProvider {
       return null;
     }
     return rawToken;
-  }
-
-  private async getUserInfoFromGitHub(token: string): Promise<IAuthenticatedUser> {
-    const user = await this.users.getUserFromToken(token);
-
-    return {
-      name: user.name,
-      login: user.login,
-      token,
-      tokenScopes: user.scopes,
-    };
   }
 }

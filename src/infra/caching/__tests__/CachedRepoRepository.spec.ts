@@ -1,6 +1,6 @@
-import { Repo, RepoName } from '../../../domain/IRepoRepository';
-import { CachedRepoRepository } from '../CachedRepoRepository';
-import { InMemoryRepoRepository } from '../../memory/InMemoryRepoRepository';
+import { App, RepoName } from '../../../domain/IAppRepository';
+import { CachedAppRepository } from '../CachedAppRepository';
+import { InMemoryAppRepository } from '../../memory/InMemoryAppRepository';
 import LRUCache from 'lru-cache';
 import MockDate from 'mockdate';
 
@@ -11,17 +11,17 @@ describe('CachedRepoRepository', () => {
     });
 
     test('should returned repos of wrapped repo', async () => {
-      const existingRepo: Repo = {
+      const existingRepo: App = {
         id: 'repo',
         name: new RepoName('owner', 'repo-name'),
         webUrl: 'http://www.perdu.com',
         workflows: [],
       };
       const token1 = 'token';
-      const wrapped = new InMemoryRepoRepository();
-      wrapped.addRepo(token1, existingRepo);
+      const wrapped = new InMemoryAppRepository();
+      wrapped.addApp(token1, existingRepo);
 
-      const sut = new CachedRepoRepository(new LRUCache<string, any>(), wrapped);
+      const sut = new CachedAppRepository(new LRUCache<string, any>(), wrapped);
 
       const actual = await sut.listForToken(token1);
 
@@ -30,22 +30,22 @@ describe('CachedRepoRepository', () => {
 
     test('should cache during 1 minute', async () => {
       const token = 'tokenZ';
-      const wrapped = new InMemoryRepoRepository();
+      const wrapped = new InMemoryAppRepository();
 
       const spy = jest.spyOn(wrapped, 'listForToken');
-      const sut = new CachedRepoRepository(new LRUCache<string, any>(), wrapped);
+      const sut = new CachedAppRepository(new LRUCache<string, any>(), wrapped);
 
       const actual1 = await sut.listForToken(token);
       expect(spy).toHaveBeenCalledTimes(1);
 
       // a new repo has been added ... but we are still hitting the cache
-      const existingRepo: Repo = {
+      const existingRepo: App = {
         id: 'repo',
         name: new RepoName('owner', 'repo-name'),
         webUrl: 'http://www.perdu.com',
         workflows: [],
       };
-      wrapped.addRepo(token, existingRepo);
+      wrapped.addApp(token, existingRepo);
 
       const actual2 = await sut.listForToken(token);
       expect(actual2).toEqual(actual1);
@@ -63,17 +63,17 @@ describe('CachedRepoRepository', () => {
     test('should cache per token', async () => {
       const token1 = 'token';
       const token2 = 'token2';
-      const wrapped = new InMemoryRepoRepository();
+      const wrapped = new InMemoryAppRepository();
       // a new repo has been added ... but we are still hitting the cache
-      const existingRepo1: Repo = {
+      const existingRepo1: App = {
         id: 'repo1',
         name: new RepoName('owner', 'repo-name'),
         webUrl: 'http://www.perdu.com',
         workflows: [],
       };
-      wrapped.addRepo(token1, existingRepo1);
+      wrapped.addApp(token1, existingRepo1);
 
-      const sut = new CachedRepoRepository(new LRUCache<string, any>(), wrapped);
+      const sut = new CachedAppRepository(new LRUCache<string, any>(), wrapped);
 
       const actualForToken1 = await sut.listForToken(token1);
 

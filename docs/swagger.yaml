@@ -285,23 +285,6 @@ components:
                 - buildInfo
             type: object
             additionalProperties: false
-        WhoAmIResponse:
-            properties:
-                login:
-                    type: string
-                name:
-                    type: string
-                    nullable: true
-                scopes:
-                    items:
-                        type: string
-                    type: array
-            required:
-                - login
-                - name
-                - scopes
-            type: object
-            additionalProperties: false
     securitySchemes:
         bearerAuth:
             type: http
@@ -309,9 +292,9 @@ components:
             scheme: bearer
             bearerFormat: JWT
 info:
-    title: gha-build-monitor
-    version: 0.9.0
-    description: 'Adapter to give access to GitHub Actions status via the CatLight Protocol'
+    title: codemagic-build-monitor
+    version: 0.1.0
+    description: 'Adapter to give access to CodeMagic build status via the CatLight Protocol'
     license:
         name: MIT
     contact:
@@ -330,8 +313,7 @@ paths:
                                 $ref: '#/components/schemas/DynamicBuildInfoMetadataResponse'
             security:
                 -
-                    bearerAuth:
-                        - repo
+                    bearerAuth: []
             parameters: []
         post:
             operationId: GetServerState
@@ -350,8 +332,7 @@ paths:
                                 $ref: '#/components/schemas/ValidationErrorJson'
             security:
                 -
-                    bearerAuth:
-                        - repo
+                    bearerAuth: []
             parameters: []
             requestBody:
                 required: true
@@ -372,64 +353,6 @@ paths:
             description: 'Gets an indication of the current health of the system'
             security: []
             parameters: []
-    /_/whoami:
-        get:
-            operationId: GetMe
-            responses:
-                '200':
-                    description: Ok
-                    content:
-                        application/json:
-                            schema:
-                                $ref: '#/components/schemas/WhoAmIResponse'
-            description: 'Gets an indication of the current health of the system'
-            security:
-                -
-                    bearerAuth: []
-            parameters: []
-    /dynamic:
-        get:
-            operationId: GetMetadata
-            responses:
-                '200':
-                    description: Ok
-                    content:
-                        application/json:
-                            schema:
-                                $ref: '#/components/schemas/DynamicBuildInfoMetadataResponse'
-            deprecated: true
-            security:
-                -
-                    bearerAuth:
-                        - repo
-            parameters: []
-        post:
-            operationId: GetServerState
-            responses:
-                '200':
-                    description: Ok
-                    content:
-                        application/json:
-                            schema:
-                                $ref: '#/components/schemas/DynamicFilteredBuildInfoResponse'
-                '422':
-                    description: 'Validation error'
-                    content:
-                        application/json:
-                            schema:
-                                $ref: '#/components/schemas/ValidationErrorJson'
-            deprecated: true
-            security:
-                -
-                    bearerAuth:
-                        - repo
-            parameters: []
-            requestBody:
-                required: true
-                content:
-                    application/json:
-                        schema:
-                            $ref: '#/components/schemas/DynamicFilteredBuildInfoRequest'
     /examples/dynamic:
         get:
             operationId: GetServerMetadata

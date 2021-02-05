@@ -65,7 +65,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: ghcr.io/tsimbalar/gha-build-monitor
+          images: ghcr.io/tsimbalar/codemagic-build-monitor
           tag-sha: true
           tag-semver: |
             {{version}}

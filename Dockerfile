@@ -25,9 +25,9 @@ RUN npm ci --production
 # Use multistage to create a small size image
 FROM node:14.15.1-alpine
 ENV HOME_DIR /app
-ENV WHATAMI gha-build-monitor
+ENV WHATAMI codemagic-build-monitor
 ENV NODE_ENV production
-ENV HTTP_PORT 9901
+ENV HTTP_PORT 9902
 
 # hadolint ignore=DL3018
 RUN apk --no-cache add ca-certificates
@@ -41,6 +41,6 @@ COPY --from=build /app/dist/ ${HOME_DIR}/dist
 COPY --from=build /app/package.json ${HOME_DIR}/package.json
 COPY --from=build /app/docs/ ${HOME_DIR}/docs
 
-EXPOSE 9901
+EXPOSE 9902
 
 CMD ["node",  "dist/index.js"]

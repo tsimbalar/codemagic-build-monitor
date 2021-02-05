@@ -1,37 +1,37 @@
 {
-  "name": "gha-build-monitor",
-  "version": "0.9.0",
+  "name": "codemagic-build-monitor",
+  "version": "0.1.0",
   "buildInfo": {
     "commitSha": "_CI_GIT_COMMIT_SHA",
     "buildDate": "_CI_BUILD_DATE",
     "gitRef": "_CI_GIT_REF"
   },
-  "description": "Adapter to give access to GitHub Actions status via the CatLight Protocol",
+  "description": "Adapter to give access to CodeMagic build status via the CatLight Protocol",
   "scripts": {
     "build": "rimraf ./dist && npm run tsoa:gen && tsc",
     "check": "npm run tsoa:gen && npm run ts:check && npm run lint",
     "lint": "eslint . --ext .ts",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "start": "HTTP_PORT=9900 node dist/index.js",
-    "start:dev": "HTTP_PORT=9900 concurrently \"nodemon\" \"nodemon -x tsoa spec-and-routes\"",
+    "start": "HTTP_PORT=9903 node dist/index.js",
+    "start:dev": "HTTP_PORT=9903 concurrently \"nodemon\" \"nodemon -x tsoa spec-and-routes\"",
     "test": "jest --testTimeout=15000",
     "ts:check": "tsc --noEmit --noErrorTruncation ",
     "tsoa:gen": "tsoa spec-and-routes"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tsimbalar/gha-build-monitor.git"
+    "url": "git+https://github.com/tsimbalar/codemagic-build-monitor.git"
   },
   "keywords": [
     "catlight",
-    "github-actions"
+    "codemagic"
   ],
   "author": "tsimbalar",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tsimbalar/gha-build-monitor/issues"
+    "url": "https://github.com/tsimbalar/codemagic-build-monitor/issues"
   },
-  "homepage": "https://github.com/tsimbalar/gha-build-monitor#readme",
+  "homepage": "https://github.com/tsimbalar/codemagic-build-monitor#readme",
   "devDependencies": {
     "@tsoa/cli": "3.5.1",
     "@types/express": "4.17.11",
@@ -39,6 +39,7 @@
     "@types/lru-cache": "5.1.0",
     "@types/mockdate": "2.0.0",
     "@types/node": "14.14.22",
+    "@types/node-fetch": "2.5.8",
     "@types/supertest": "2.0.10",
     "@types/swagger-ui-express": "4.1.2",
     "@typescript-eslint/eslint-plugin": "4.14.0",
@@ -58,12 +59,13 @@
     "typescript": "4.1.3"
   },
   "dependencies": {
-    "@octokit/plugin-throttling": "3.4.0",
     "@octokit/rest": "18.0.14",
-    "@tsoa/runtime": "3.5.0",
+    "axios": "0.21.1",
     "date-fns": "2.16.1",
     "express": "4.17.1",
     "lru-cache": "6.0.0",
+    "nock": "13.0.7",
+    "node-fetch": "2.6.1",
     "swagger-ui-express": "4.1.6"
   }
 }

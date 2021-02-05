@@ -6,10 +6,8 @@ import {
   DynamicFilteredBuildInfoRequest,
   DynamicFilteredBuildInfoResponse,
 } from '../api-types';
-import { RepoName, Workflow } from '../../domain/IRepoRepository';
-import { Fixtures } from '../__testTools__/Fixtures';
-import { InMemoryRepoRepository } from '../../infra/memory/InMemoryRepoRepository';
-import { InMemoryUserRepository } from '../../infra/memory/InMemoryUserRepository';
+import { RepoName, Workflow } from '../../domain/IAppRepository';
+import { InMemoryAppRepository } from '../../infra/memory/InMemoryAppRepository';
 import { InMemoryWorkflowRunRepository } from '../../infra/memory/InMemoryWorkflowRunRepository';
 import { ValidationErrorJson } from '../middleware/schema-validation';
 import { WorkflowRun } from '../../domain/IWorkflowRunRepository';
@@ -23,38 +21,17 @@ describe('/builds', () => {
       expect(response.type).toBe('application/json');
     });
 
-    test('should return a 403 status code when token misses "repo" scope', async () => {
-      const token = 'THIS_IS_THE_TOKEN';
-      const user = Fixtures.userWithScopes([]);
-      const userRepo = new InMemoryUserRepository();
-      userRepo.addUser(token, user);
-
-      const agent = ApiTestTools.createTestAgent({ userRepo });
-
-      const response = await agent.get('/builds').set('Authorization', `Bearer ${token}`).send();
-      expect(response.status).toBe(403);
-      expect(response.type).toBe('application/json');
-    });
-
     describe('with token of existing user', () => {
       const token = 'THIS_IS_THE_TOKEN';
-      const user = Fixtures.userWithScopes(['repo']);
       let agent: TestAgent;
-      let repoRepo: InMemoryRepoRepository;
-      let userRepo: InMemoryUserRepository;
+      let appRepo: InMemoryAppRepository;
       let workflowRunRepo: InMemoryWorkflowRunRepository;
 
       beforeEach(() => {
-        userRepo = new InMemoryUserRepository();
-        userRepo.addUser(token, user);
-
-        repoRepo = new InMemoryRepoRepository();
+        appRepo = new InMemoryAppRepository();
         workflowRunRepo = new InMemoryWorkflowRunRepository();
 
-        agent = ApiTestTools.createTestAgent(
-          { userRepo, repoRepo, workflowRunRepo },
-          { ...TEST_SETTINGS }
-        );
+        agent = ApiTestTools.createTestAgent({ workflowRunRepo, appRepo }, { ...TEST_SETTINGS });
       });
 
       test('should return a 200 status code', async () => {
@@ -66,47 +43,33 @@ describe('/builds', () => {
         expect(body.protocol).toBe('https://catlight.io/protocol/v1.0/dynamic');
       });
 
-      test('should identify server as gha-build-monitor', async () => {
+      test('should identify server as codemagic-build-monitor', async () => {
         const response = await agent.get('/builds').set('Authorization', `Bearer ${token}`).send();
 
         const body = response.body as DynamicBuildInfoMetadataResponse;
-        expect(body.id).toEqual('github.com');
-        expect(body.name).toMatch('gha-build-monitor');
+        expect(body.name).toMatch('codemagic-build-monitor');
         expect(body.serverVersion).toMatch(/[0-9]+.[0-9]+.[0-9]+/u);
       });
 
-      test('should have github.com as  server id', async () => {
+      test('should have codemagic.io as server id', async () => {
         const response = await agent.get('/builds').set('Authorization', `Bearer ${token}`).send();
 
         const body = response.body as DynamicBuildInfoMetadataResponse;
-        expect(body.id).toEqual('github.com');
+        expect(body.id).toEqual('codemagic.io');
       });
 
-      test('should return current user information', async () => {
+      test('should not return current user information', async () => {
         const response = await agent.get('/builds').set('Authorization', `Bearer ${token}`).send();
 
         const body = response.body as DynamicBuildInfoMetadataResponse;
-        expect(body.currentUser).toEqual({ id: user.login, name: user.name });
-      });
-
-      test('should return login when user has no name', async () => {
-        const userWithNoName = Fixtures.userWithScopes(['repo'], { name: null });
-        const theToken = 'theToken';
-        userRepo.addUser(theToken, userWithNoName);
-        const response = await agent
-          .get('/builds')
-          .set('Authorization', `Bearer ${theToken}`)
-          .send();
-
-        const body = response.body as DynamicBuildInfoMetadataResponse;
-        expect(body.currentUser).toEqual({ id: userWithNoName.login, name: userWithNoName.login });
+        expect(body.currentUser).not.toBeDefined();
       });
 
       test('should return spaces of user', async () => {
         const repo1 = { id: '789', name: new RepoName('orgx', 'repoa'), webUrl: '', workflows: [] };
         const repo2 = { id: '123', name: new RepoName('orgx', 'repoz'), webUrl: '', workflows: [] };
-        repoRepo.addRepo(token, repo1);
-        repoRepo.addRepo(token, repo2);
+        appRepo.addApp(token, repo1);
+        appRepo.addApp(token, repo2);
         const response = await agent.get('/builds').set('Authorization', `Bearer ${token}`).send();
 
         const body = response.body as DynamicBuildInfoMetadataResponse;
@@ -139,7 +102,7 @@ describe('/builds', () => {
           webUrl: 'http://www.perdu2.com',
         };
         const repoName = new RepoName(repoOwner, 'repoz');
-        repoRepo.addRepo(token, {
+        appRepo.addApp(token, {
           id: '123',
           name: repoName,
           webUrl: '',
@@ -181,40 +144,17 @@ describe('/builds', () => {
       expect(response.type).toBe('application/json');
     });
 
-    test('should return a 403 status code when token misses "repo" scope', async () => {
-      const token = 'THIS_IS_THE_TOKEN';
-      const user = Fixtures.userWithScopes([]);
-      const userRepo = new InMemoryUserRepository();
-      userRepo.addUser(token, user);
-
-      const agent = ApiTestTools.createTestAgent({ userRepo });
-
-      const response = await agent
-        .post('/builds')
-        .set('Authorization', `Bearer ${token}`)
-        .send(VALID_MINIMAL_POST_PAYLOAD);
-      expect(response.status).toBe(403);
-      expect(response.type).toBe('application/json');
-    });
-
     describe('with token of existing user', () => {
       const token = 'THIS_IS_THE_TOKEN';
-      const user = Fixtures.userWithScopes(['repo']);
       let agent: TestAgent;
-      let repoRepo: InMemoryRepoRepository;
+      let appRepo: InMemoryAppRepository;
       let workflowRunRepo: InMemoryWorkflowRunRepository;
 
       beforeEach(() => {
-        const userRepo = new InMemoryUserRepository();
-        userRepo.addUser(token, user);
-
-        repoRepo = new InMemoryRepoRepository();
+        appRepo = new InMemoryAppRepository();
         workflowRunRepo = new InMemoryWorkflowRunRepository();
 
-        agent = ApiTestTools.createTestAgent(
-          { userRepo, repoRepo, workflowRunRepo },
-          { ...TEST_SETTINGS }
-        );
+        agent = ApiTestTools.createTestAgent({ appRepo, workflowRunRepo }, { ...TEST_SETTINGS });
       });
 
       test('should return a 422 status code when provided invalid payload', async () => {
@@ -272,14 +212,14 @@ describe('/builds', () => {
         expect(body.protocol).toBe('https://catlight.io/protocol/v1.0/dynamic');
       });
 
-      test('should identify server as github.com', async () => {
+      test('should identify server as codemagic.io', async () => {
         const response = await agent
           .post('/builds')
           .set('Authorization', `Bearer ${token}`)
           .send(VALID_MINIMAL_POST_PAYLOAD);
 
         const body = response.body as DynamicFilteredBuildInfoResponse;
-        expect(body.id).toEqual('github.com');
+        expect(body.id).toEqual('codemagic.io');
       });
 
       test('should return details when a single build info is requested', async () => {
@@ -297,7 +237,7 @@ describe('/builds', () => {
           workflows: [workflow1],
         };
 
-        repoRepo.addRepo(token, repo1);
+        appRepo.addApp(token, repo1);
 
         const branch1 = 'master';
         const branch1Runs: WorkflowRun[] = [

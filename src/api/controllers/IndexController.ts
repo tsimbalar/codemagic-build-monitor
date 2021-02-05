@@ -18,16 +18,16 @@ export class IndexController extends Controller {
         `
     <html>
     <head>
-      <title>gha-build-monitor v${this.metaInfo.version}</title>
+      <title>codemagic-build-monitor v${this.metaInfo.version}</title>
     </head>
     <body>
-      <h1>Welcome to gha-build-monitor !</h1>
-      <code>gha-build-monitor</code> gives access to the current state of your workflows running in GitHub Actions in a format understood by the Catlight app.
+      <h1>Welcome to codemagic-build-monitor !</h1>
+      <code>codemagic-build-monitor</code> gives access to the current state of your workflows running in CodeMagic in a format understood by the Catlight app.
 
-      <h2>Monitoring your GitHub Actions</h2>
-      <p>If you want to start monitoring your GitHub Actions in Catlight, follow the instructions here : <a href="https://github.com/tsimbalar/gha-build-monitor#readme">https://github.com/tsimbalar/gha-build-monitor#readme</a></p>
+      <h2>Monitoring your CodeMagic builds</h2>
+      <p>If you want to start monitoring your CodeMagic builds in Catlight, follow the instructions here : <a href="https://github.com/tsimbalar/codemagic-build-monitor#readme">https://github.com/tsimbalar/codemagic-build-monitor#readme</a></p>
 
-      <h2>Playing around with <code>gha-build-monitor</code></h2>
+      <h2>Playing around with <code>codemagic-build-monitor</code></h2>
       <ul>
         <li>check the status of the server here: <a href="_/healthcheck">/_/healthcheck</a></li>
         <li>interact with the API here: <a href="docs">/docs</a></li>

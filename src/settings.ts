@@ -5,7 +5,7 @@ export function loadSettingsFromEnvVars(): Settings {
   return {
     catlight: {},
     http: {
-      port: EnvVars.getOptionalInteger('HTTP_PORT', 9901),
+      port: EnvVars.getOptionalInteger('HTTP_PORT', 9902),
     },
   };
 }
