@@ -54,6 +54,4 @@ export function buildWebApp(compositionRoot: CompositionRoot): Express {
   app.use(finalErrorHandler());
 
   return app;
-
-  return app;
 }

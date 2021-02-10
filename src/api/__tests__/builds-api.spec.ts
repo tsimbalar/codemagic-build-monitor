@@ -94,12 +94,10 @@ describe('/builds', () => {
         const workflow1: Workflow = {
           id: 'worflow-id',
           name: 'workflow-name',
-          webUrl: 'http://www.perdu.com',
         };
         const workflow2: Workflow = {
           id: 'worflow-id2',
           name: 'workflow-name2',
-          webUrl: 'http://www.perdu2.com',
         };
         const repoName = new RepoName(repoOwner, 'repoz');
         appRepo.addApp(token, {
@@ -118,13 +116,11 @@ describe('/builds', () => {
             id: workflow1.id,
             name: 'repoz · workflow-name',
             folder: repoName.fullName,
-            webUrl: workflow1.webUrl,
           },
           {
             id: workflow2.id,
             name: 'repoz · workflow-name2',
             folder: repoName.fullName,
-            webUrl: workflow2.webUrl,
           },
         ]);
       });
@@ -228,7 +224,6 @@ describe('/builds', () => {
         const workflow1: Workflow = {
           id: 'worflow-id',
           name: 'workflow-name',
-          webUrl: 'http://www.perdu.com',
         };
         const repo1 = {
           id: '789',

@@ -7,7 +7,6 @@
             "branches": [
                 "chore/create-fake-programmes-testing",
                 "chore/vscode-visualization",
-                "codemagic-migration",
                 "design-branch-merge",
                 "design-branch",
                 "develop",
@@ -16,8 +15,10 @@
                 "feat/SUB-1955-recsys-analytics",
                 "feat/SUB-2020-recsys-activity-verification",
                 "feat/SUB-2048-add-production-url-in-recsys",
+                "feat/SUB-2199-make-app-state-parsing-null-free",
                 "feat/add-ios-obfuscate",
-                "feat/content-update",
+                "feat/2122-tag-focus-areas",
+                "feat/2181-send-analytics-to-old-and-new-data-lakes",
                 "fix/SUB-1028-analytics",
                 "fix/SUB-1390-incorrect-recommended-programmes-on-logout",
                 "library-improvements",
@@ -32,7 +33,7 @@
             "createdAt": "2020-12-01T14:30:50.963+0000",
             "iconUrl": "https://static.codemagic.io/files/4ed644bb-fc30-475f-958e-4a2b99c471b7/8f7ec124-a2b6-4b26-99ca-ed0a90703f30.png",
             "isConfigured": true,
-            "lastBuildId": "601a567929657a0d39234afd",
+            "lastBuildId": "6022c47329657a7733a06d58",
             "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
             "projectFiles": [
                 "."
@@ -653,7 +654,7 @@
             "createdAt": "2020-12-01T14:30:50.981+0000",
             "iconUrl": "https://static.codemagic.io/files/eb6810fa-3b94-4530-a5ef-ded9b5098889/e7f5aa05-276f-4039-b51c-79b08de9fc35.png",
             "isConfigured": true,
-            "lastBuildId": "601ad0089798cf00172fd2c3",
+            "lastBuildId": "601bd12329657a1c83d2b8b0",
             "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
             "projectFiles": [
                 "."
@@ -1548,7 +1549,7 @@
             "createdAt": "2021-01-26T13:54:56.246+0000",
             "iconUrl": "https://static.codemagic.io/files/9b925120-dafb-4509-81e7-0eec40ccf07f/d97ae908-f5de-4878-afa3-004cd6c60f32.png",
             "isConfigured": true,
-            "lastBuildId": "601abe0e29657a0010d2b8e4",
+            "lastBuildId": "6022b1b629657a0c71a06cb1",
             "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
             "projectFiles": [
                 "."
@@ -1683,97 +1684,1086 @@
     ],
     "builds": [
         {
-            "_id": "601a567929657a0d39234afd",
+            "_id": "6022c47329657a7733a06d58",
             "appId": "5fc6539af7698e06abe1becd",
-            "artefacts": null,
-            "branch": "codemagic-migration",
+            "artefacts": [
+                {
+                    "md5": "0b55257ff99dda02c148cfef459ec065",
+                    "name": "foundations-app_34_artifacts.zip",
+                    "size": 8924,
+                    "type": "bundle",
+                    "url": "https://static.codemagic.io/files/f10aa215-01e2-4424-ae28-9b39eabb3140/7807fc6a-d7ef-424b-8d7a-742e9f5f34fd/foundations-app_34_artifacts.zip"
+                }
+            ],
+            "branch": "fix/build-number",
             "buildActions": [
                 {
-                    "_id": "601a567b29657a61a76918d3",
-                    "finishedAt": "2021-02-03T07:54:30.002+0000",
-                    "logUrl": "https://static.codemagic.io/logs/79aa9f9f-b7a0-4b55-af98-5bf00a5aa1d4/0f1c4957-67dd-4925-9b0f-ae0717e2797c",
+                    "_id": "6022c47329657a583188b918",
+                    "finishedAt": "2021-02-09T17:21:58.890+0000",
+                    "logUrl": "https://static.codemagic.io/logs/af5bbb7f-0564-4eb5-9d7f-da0ba94f6521/8f8d79b3-e404-4315-bb2f-3f0f843548d0",
                     "name": "Preparing build machine",
-                    "startedAt": "2021-02-03T07:53:37.055+0000",
+                    "startedAt": "2021-02-09T17:20:53.297+0000",
                     "status": "success",
                     "type": "preparing"
                 },
                 {
-                    "_id": "601a567b29657a61a76918d4",
-                    "finishedAt": "2021-02-03T07:55:16.140+0000",
-                    "logUrl": "https://static.codemagic.io/logs/7771aa30-2417-4297-b339-9c3f69aaaeaa/b5b08c0a-88ca-4e0c-be5b-2785067ff15c",
+                    "_id": "6022c47329657a583188b919",
+                    "finishedAt": "2021-02-09T17:22:11.849+0000",
+                    "logUrl": "https://static.codemagic.io/logs/648e6c85-c804-4264-9668-822443c58eec/021eb0f9-e714-4749-8d0c-299c63a65778",
                     "name": "Fetching app sources",
-                    "startedAt": "2021-02-03T07:54:30.002+0000",
+                    "startedAt": "2021-02-09T17:21:58.890+0000",
                     "status": "success",
                     "type": "fetching"
                 },
                 {
-                    "_id": "601a567b29657a61a76918d5",
-                    "finishedAt": "2021-02-03T07:55:16.370+0000",
-                    "logUrl": "https://static.codemagic.io/logs/ed5d5d49-fe5a-4076-9a12-de75320ad1a5/8abde4dc-1d31-435f-ace7-1f5091ddb67b",
+                    "_id": "6022c47329657a583188b91a",
+                    "finishedAt": "2021-02-09T17:22:29.412+0000",
+                    "logUrl": "https://static.codemagic.io/logs/eaebf8d2-3788-424b-a5eb-cdb22b4e768f/39df665a-2448-4174-a53b-f79ceb7446ec",
                     "name": "Setup",
-                    "startedAt": "2021-02-03T07:55:16.140+0000",
+                    "startedAt": "2021-02-09T17:22:11.849+0000",
                     "status": "success",
                     "subactions": [
                         {
                             "command": "#!/usr/bin/env bash\n\n./.ci/setup_env.sh",
-                            "finishedAt": "2021-02-03T07:55:16.369+0000",
-                            "logUrl": "https://static.codemagic.io/logs/dbf4f99f-9d84-49e2-991d-d211ea17da22/9b490204-2bb4-4553-8fb3-efd7c6c7d082",
-                            "startedAt": "2021-02-03T07:55:16.140+0000",
+                            "finishedAt": "2021-02-09T17:22:29.411+0000",
+                            "logUrl": "https://static.codemagic.io/logs/05685223-526d-4601-9e6e-45ff7fa1b99d/887c11c5-d578-4a1f-9716-22c5d012fb03",
+                            "startedAt": "2021-02-09T17:22:11.849+0000",
                             "status": "success"
                         }
                     ]
                 },
                 {
-                    "_id": "601a567b29657a61a76918d6",
-                    "finishedAt": "2021-02-03T07:58:51.670+0000",
-                    "logUrl": "https://static.codemagic.io/logs/68326236-27f1-4230-a08e-5c190d2de687/0f521b14-f4b9-4690-8da5-469dea55d859",
-                    "name": "Build iOS",
-                    "startedAt": "2021-02-03T07:55:16.370+0000",
+                    "_id": "6022c47329657a583188b91b",
+                    "finishedAt": "2021-02-09T17:24:08.781+0000",
+                    "logUrl": "https://static.codemagic.io/logs/0177c481-3d55-4353-92f2-458ebb845640/fd952f09-ee29-483d-9e9b-e149b7f1c23c",
+                    "name": "Unit tests",
+                    "results": [
+                        {
+                            "errored": 0,
+                            "failed": 0,
+                            "name": "test-results.json",
+                            "passed": 159,
+                            "skipped": 0,
+                            "suites": [
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 98,
+                                    "name": "activity_properties_test.dart",
+                                    "passed": 4,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 106,
+                                            "name": "Activity properties test Activities have the correct values as per the CSV: for the \"oneOff\" property.",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 105,
+                                            "name": "Activity properties test Activities have the correct values as per the CSV: for the \"standalone\" property.",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 107,
+                                            "name": "Activity properties test Activities have the correct values as per the CSV: for the \"tags\" property.",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 103,
+                                            "name": "Activity properties test All activities defined in activity_properties.csv exist in the codebase",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 236,
+                                    "name": "app_bloc_test.dart",
+                                    "passed": 13,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 250,
+                                            "name": "AppBloc, when no user is logged in, does not redirect to login page when is new user and fails to retrieve the data from the server",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 241,
+                                            "name": "AppBloc, when no user is logged in, initializes correctly",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 249,
+                                            "name": "AppBloc, when no user is logged in, redirects to login page when is existing user and fails because the server returns unauthorized",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 248,
+                                            "name": "AppBloc, when no user is logged in, redirects to login page when is existing user and fails to retrieve the data from the server",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 244,
+                                            "name": "AppBloc, when no user is logged in, signs in correctly when is existing user",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 245,
+                                            "name": "AppBloc, when no user is logged in, signs in correctly when is existing user and notifications provider is initialized",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 246,
+                                            "name": "AppBloc, when no user is logged in, signs in correctly when is existing user and notifications provider is initialized and the user already accepted the notifications",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 247,
+                                            "name": "AppBloc, when no user is logged in, signs in correctly when is existing user and notifications provider is not initialized and the user already accepted the notifications",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 243,
+                                            "name": "AppBloc, when no user is logged in, signs in correctly when is new user",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 255,
+                                            "name": "AppBloc, when user is logged in, signs in correctly with a new user after having signed out",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 256,
+                                            "name": "AppBloc, when user is logged in, signs in correctly with an existing user after having signed out",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 254,
+                                            "name": "AppBloc, when user is logged in, signs out correctly",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 252,
+                                            "name": "AppBloc, when user is logged in, the state is debounced for at least 300 ms",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 42,
+                                    "name": "app_state_provider_test.dart",
+                                    "passed": 22,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 56,
+                                            "name": "AppStateProvider fetchAppState returns authorized response if the collection exists in the server",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 57,
+                                            "name": "AppStateProvider fetchAppState returns noUser when the server returns a 404 (no user found)",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 59,
+                                            "name": "AppStateProvider fetchAppState returns withNetworkError when the collection fails to be parsed",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 58,
+                                            "name": "AppStateProvider fetchAppState returns withNetworkError when the server returns a random error",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 60,
+                                            "name": "AppStateProvider fetchAppState returns withNetworkError when the server returns code 401 (unauthorized)",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 65,
+                                            "name": "AppStateProvider fetchAppState saveAppState,  when errors in aws tokens, returns network error when the state from the server returns a network error",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 63,
+                                            "name": "AppStateProvider fetchAppState saveAppState,  when errors in aws tokens, returns unauthorized when identity provider has an unauthorized error",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 64,
+                                            "name": "AppStateProvider fetchAppState saveAppState,  when errors in aws tokens, returns withNetworkError when identity provider has an error different from unauthorized",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 68,
+                                            "name": "AppStateProvider fetchAppState saveAppState,  when errors in aws tokens, when the collection exists, returns finalState when appState.didJustLogIn is false and no errors",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 67,
+                                            "name": "AppStateProvider fetchAppState saveAppState,  when errors in aws tokens, when the collection exists, returns finalState with didJustLogIn modified when appState.didJustLogIn is true",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 70,
+                                            "name": "AppStateProvider fetchAppState saveAppState,  when errors in aws tokens, when the collection exists, returns network error when appState.didJustLogIn is false the server returns code 2 with unauthorized message",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 71,
+                                            "name": "AppStateProvider fetchAppState saveAppState,  when errors in aws tokens, when the collection exists, returns network error when appState.didJustLogIn is false the server returns code 7 (permission denied)",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 72,
+                                            "name": "AppStateProvider fetchAppState saveAppState,  when errors in aws tokens, when the collection exists, returns network error when appState.didJustLogIn is false the server returns random error",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 77,
+                                            "name": "AppStateProvider fetchAppState saveAppState,  when errors in aws tokens, when the collection exists, returns network error when the server returns 2 random error",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 76,
+                                            "name": "AppStateProvider fetchAppState saveAppState,  when errors in aws tokens, when the collection exists, returns network error when the server returns code 2 with unauthorized message",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 69,
+                                            "name": "AppStateProvider fetchAppState saveAppState,  when errors in aws tokens, when the collection exists, returns no user error when appState.didJustLogIn is false and there are no rows in the database",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 75,
+                                            "name": "AppStateProvider fetchAppState saveAppState,  when errors in aws tokens, when the collection exists, returns no user error when there are no rows in the database",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 74,
+                                            "name": "AppStateProvider fetchAppState saveAppState,  when errors in aws tokens, when the collection exists, when the collection does not exist, returns finalState when no errors",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 49,
+                                            "name": "CmaProviderResponse constructor does not transforms null values into booleans",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 51,
+                                            "name": "HttpCmaService getById returns the correct id",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 52,
+                                            "name": "HttpCmaService getByIds returns the correct ids",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 53,
+                                            "name": "HttpCmaService getFromType returns the correct items",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 40,
+                                    "name": "article_activity_test.dart",
+                                    "passed": 10,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 259,
+                                            "name": "Article Content Format tests The article has a description in Markdown format",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 161,
+                                            "name": "Article Content Format tests The progress bar displays how far through the article the user is",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 46,
+                                            "name": "Article Content Format tests There is a cancel icon top left, if user taps this the article is dismissed",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 260,
+                                            "name": "Article Content Format tests There is a done button at the bottom of the page which, if user taps, they navigate to the outro",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 242,
+                                            "name": "Article Content Format tests There is a title under the image, which matches the title of the activity",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 187,
+                                            "name": "Article Content Format tests There is an image below the progress bar",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 111,
+                                            "name": "Article Content Format tests There is an info icon in top right which, is user taps, they navigate to intro screen",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 257,
+                                            "name": "Article Content Format tests Under the reading time there is a line",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 258,
+                                            "name": "Article Content Format tests Under the reading time there is a line",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 253,
+                                            "name": "Article Content Format tests Under the title there is an approximate reading time",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 146,
+                                    "name": "cma_programme_test.dart",
+                                    "passed": 8,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 151,
+                                            "name": "Check differences between programmes: different sequence programmes",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 152,
+                                            "name": "Check differences between programmes: different sequence programmes - steps order change",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 150,
+                                            "name": "Check differences between programmes: same sequence programmes (same hash)",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 156,
+                                            "name": "Find differences between programmes: added step",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 155,
+                                            "name": "Find differences between programmes: deleted step",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 154,
+                                            "name": "Find differences between programmes: empty difference",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 157,
+                                            "name": "Find differences between programmes: switch steps",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 158,
+                                            "name": "Find differences between programmes: switch steps with last step in latest version being a completed step",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 178,
+                                    "name": "composed_iterable_extensions_test.dart",
+                                    "passed": 3,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 183,
+                                            "name": "Flatten Does NOT remove duplicates",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 184,
+                                            "name": "Flatten Empty input => empty output",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 182,
+                                            "name": "Flatten Expands the iterable",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 185,
+                                    "name": "date_time_extensions_test.dart",
+                                    "passed": 24,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 192,
+                                            "name": "Check if DateTime is in daytime or nighttime => Beginning of daytime",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 196,
+                                            "name": "Check if DateTime is in daytime or nighttime => Beginning of nighttime",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 190,
+                                            "name": "Check if DateTime is in daytime or nighttime => Common daytime",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 194,
+                                            "name": "Check if DateTime is in daytime or nighttime => Common nighttime",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 193,
+                                            "name": "Check if DateTime is in daytime or nighttime => End of daytime",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 197,
+                                            "name": "Check if DateTime is in daytime or nighttime => End of nighttime",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 191,
+                                            "name": "Check if DateTime is in daytime or nighttime => Random daytime",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 195,
+                                            "name": "Check if DateTime is in daytime or nighttime => Random nighttime",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 207,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => Different daytime timespan separated by 1 second",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 208,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => Different daytime timespan separated by 1 second. Reverse order",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 209,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => Same daytime (beginning) but different day",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 210,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => Same daytime (beginning) but different day. Reverse order",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 211,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => Same daytime (ending) but different day",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 212,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => Same daytime (ending) but different day. Reverse order",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 214,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => Same random daytime but different day. One less day",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 213,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => Same random daytime but different day. One more day",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 199,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => The exact same DateTimes in daytime",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 200,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => The exact same DateTimes in nighttime",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 201,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => The same daytime timespan in daytime. Edge cases",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 203,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => The same daytime timespan in daytime. Randomized",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 202,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => The same daytime timespan in daytime. Reverse order",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 204,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => The same daytime timespan in nighttime. Edge cases",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 206,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => The same daytime timespan in nighttime. Randomized",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 205,
+                                            "name": "Compare if two DateTimes are in the same Daytime timespan => The same daytime timespan in nighttime. Reverse order",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 109,
+                                    "name": "emotional_states_test.dart",
+                                    "passed": 2,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 115,
+                                            "name": "Emotional states test All activities defined in emotional_states_activities.csv exist in the codebase",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 117,
+                                            "name": "Emotional states test Emotional states are defined correctly as per the CSV: they have the correct list of activities",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 137,
+                                    "name": "favourites_test.dart",
+                                    "passed": 5,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 141,
+                                            "name": "Merge Empty both favourites",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 142,
+                                            "name": "Merge Empty newest favourites",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 143,
+                                            "name": "Merge Empty previous favourites",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 144,
+                                            "name": "Merge Repeated activities",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 145,
+                                            "name": "Merge Timeline swapped - wrong merge",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 78,
+                                    "name": "feature_flag_provider_test.dart",
+                                    "passed": 13,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 86,
+                                            "name": "showFeatureToUsersSignedUpBeforeVersion => Newer versions do not show a feature => hotfix version",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 88,
+                                            "name": "showFeatureToUsersSignedUpBeforeVersion => Newer versions do not show a feature => major version",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 87,
+                                            "name": "showFeatureToUsersSignedUpBeforeVersion => Newer versions do not show a feature => minor version",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 83,
+                                            "name": "showFeatureToUsersSignedUpBeforeVersion => No feature version does not show a feature",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 82,
+                                            "name": "showFeatureToUsersSignedUpBeforeVersion => No recorded version (user older than 2.9.0) shows the feature",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 90,
+                                            "name": "showFeatureToUsersSignedUpBeforeVersion => Older versions show a feature do not show a feature => hotfix version",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 92,
+                                            "name": "showFeatureToUsersSignedUpBeforeVersion => Older versions show a feature do not show a feature => major version",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 91,
+                                            "name": "showFeatureToUsersSignedUpBeforeVersion => Older versions show a feature do not show a feature => minor version",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 84,
+                                            "name": "showFeatureToUsersSignedUpBeforeVersion => Same version do not show a feature",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 97,
+                                            "name": "showFeatureToUsersSignedUpBeforeVersion => Versions with alphanumeric characters => newer major version",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 95,
+                                            "name": "showFeatureToUsersSignedUpBeforeVersion => Versions with alphanumeric characters => newer minor version",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 96,
+                                            "name": "showFeatureToUsersSignedUpBeforeVersion => Versions with alphanumeric characters => older major version",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 94,
+                                            "name": "showFeatureToUsersSignedUpBeforeVersion => Versions with alphanumeric characters => older minor version",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 215,
+                                    "name": "iterable_extensions_test.dart",
+                                    "passed": 12,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 226,
+                                            "name": "firstOr returns the default value if the list is empty",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 225,
+                                            "name": "firstOr returns the first element of the list",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 232,
+                                            "name": "firstOrNull returns null if the list is empty",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 231,
+                                            "name": "firstOrNull returns the first element of the list",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 220,
+                                            "name": "firstWhereOrNull returns null if no element satisfies the condition",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 219,
+                                            "name": "firstWhereOrNull returns the first element that satisfies the condition",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 229,
+                                            "name": "lastOr returns the default value if the list is empty",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 228,
+                                            "name": "lastOr returns the last element of the list",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 235,
+                                            "name": "lastOrNull returns null if the list is empty",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 234,
+                                            "name": "lastOrNull returns the last element of the list",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 223,
+                                            "name": "lastWhereOrNull returns null if no element satisfies the condition",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 222,
+                                            "name": "lastWhereOrNull returns the last element that satisfies the condition",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 119,
+                                    "name": "journal_test.dart",
+                                    "passed": 3,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 123,
+                                            "name": "Merge Succesful merge",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 124,
+                                            "name": "Merge Timeline swapped - wrong merge on Activities",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 125,
+                                            "name": "Merge Timeline swapped - wrong merge on Badges",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 159,
+                                    "name": "persona_test.dart",
+                                    "passed": 12,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 169,
+                                            "name": "email must be valid / empty email is invalid",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 170,
+                                            "name": "email must be valid / incorrect email is invalid",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 168,
+                                            "name": "email must be valid / proper email is valid",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 166,
+                                            "name": "name must be valid / empty name is invalid",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 165,
+                                            "name": "name must be valid / null name is invalid",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 164,
+                                            "name": "name must be valid / proper name is valid",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 173,
+                                            "name": "password must be valid / empty password is invalid",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 174,
+                                            "name": "password must be valid / less than 8 characters password is invalid",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 176,
+                                            "name": "password must be valid / no lowercase in password is invalid",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 177,
+                                            "name": "password must be valid / no number in password is invalid",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 175,
+                                            "name": "password must be valid / no uppercase in password is invalid",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 172,
+                                            "name": "password must be valid / proper password is valid",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 17,
+                                    "name": "programme_detail_page_test.dart",
+                                    "passed": 3,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 39,
+                                            "name": "Programme detail screen tests Add a new activity previous to user current step",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 32,
+                                            "name": "Programme detail screen tests Programme completed",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 29,
+                                            "name": "Programme detail screen tests Recently started programme",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 10,
+                                    "name": "release_notes_test.dart",
+                                    "passed": 1,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 13,
+                                            "name": "Release notes contain no emojis (not supported by Apple)",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 25,
+                                    "name": "slides_activity_test.dart",
+                                    "passed": 7,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 31,
+                                            "name": "Fling on SlidesActivity",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 33,
+                                            "name": "Validate SlidesActivity only with one activity",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 34,
+                                            "name": "Validate button in the last slide",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 36,
+                                            "name": "Validate if SlidesActivity show activity without attributes",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 35,
+                                            "name": "Validate if SlidesActivity show all activity attributes",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 38,
+                                            "name": "Validate the component can move backwards and forwards",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 37,
+                                            "name": "Validate the progress bar after sliding",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 0,
+                                    "name": "translations_test.dart",
+                                    "passed": 5,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 5,
+                                            "name": "basic translation",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 6,
+                                            "name": "basic translation with missing key",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 7,
+                                            "name": "translation with arguments",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 9,
+                                            "name": "translation with arguments with incorrect number of arguments",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 8,
+                                            "name": "translation with arguments with missing key",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 126,
+                                    "name": "user_programme_test.dart",
+                                    "passed": 6,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 134,
+                                            "name": "Merge of current and previous list of user programmes Merge empty user programmes",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 135,
+                                            "name": "Merge of current and previous list of user programmes Previous programme with active result in paused - test 1",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 136,
+                                            "name": "Merge of current and previous list of user programmes Previous programme with active result in paused - test 2",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 131,
+                                            "name": "UserProgramme.newProgrammeVersion(..) tests deleted step 2 programme",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 130,
+                                            "name": "UserProgramme.newProgrammeVersion(..) tests same programme",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 132,
+                                            "name": "UserProgramme.newProgrammeVersion(..) tests switch step 2 to 3 programme",
+                                            "status": "success"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "errored": 0,
+                                    "failed": 0,
+                                    "id": 2,
+                                    "name": "utils_test.dart",
+                                    "passed": 6,
+                                    "skipped": 0,
+                                    "tests": [
+                                        {
+                                            "id": 23,
+                                            "name": "flutterToSemver detects null",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 24,
+                                            "name": "flutterToSemver returns the expected result",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 21,
+                                            "name": "semverToInt can be correctly compared",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 19,
+                                            "name": "semverToInt detects bad format",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 16,
+                                            "name": "semverToInt detects null",
+                                            "status": "success"
+                                        },
+                                        {
+                                            "id": 20,
+                                            "name": "semverToInt returns the expected result",
+                                            "status": "success"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "tests": 159
+                        }
+                    ],
+                    "startedAt": "2021-02-09T17:22:29.412+0000",
                     "status": "success",
                     "subactions": [
                         {
-                            "command": "#!/usr/bin/env bash\n\n./.ci/build.sh testflight",
-                            "finishedAt": "2021-02-03T07:58:51.669+0000",
-                            "logUrl": "https://static.codemagic.io/logs/1e4226de-d3af-49f8-aa67-785f3755e752/8435bae2-6c48-45a5-a242-6f4ce3d70028",
-                            "startedAt": "2021-02-03T07:55:16.370+0000",
+                            "command": "#!/usr/bin/env bash\n\n./.ci/test.sh",
+                            "finishedAt": "2021-02-09T17:24:08.744+0000",
+                            "logUrl": "https://static.codemagic.io/logs/7ad3a2b0-ae35-42c6-9291-7eeb8b5c4660/db379268-0c65-41d3-b085-b0f61138ab48",
+                            "startedAt": "2021-02-09T17:22:29.412+0000",
                             "status": "success"
                         }
-                    ]
+                    ],
+                    "test_report": "test-results.json"
                 },
                 {
-                    "_id": "601a567b29657a61a76918d7",
-                    "finishedAt": "2021-02-03T08:01:29.525+0000",
-                    "logUrl": "https://static.codemagic.io/logs/499a248b-1596-401a-9004-ecbdd14e01af/5ac21bc1-3e25-4271-b0c4-b28764a32120",
-                    "name": "Publish iOS build - Testflight",
-                    "startedAt": "2021-02-03T07:58:51.670+0000",
-                    "status": "failed",
-                    "subactions": [
-                        {
-                            "command": "#!/usr/bin/env bash\n\n./.ci/publish.sh testflight",
-                            "finishedAt": "2021-02-03T08:01:29.523+0000",
-                            "logUrl": "https://static.codemagic.io/logs/efd02c8b-bdf1-466a-9d9a-553c8e5332ce/09910dc3-8cbc-4a5c-9725-e0b7fe8b8dcb",
-                            "startedAt": "2021-02-03T07:58:51.670+0000",
-                            "status": "failed"
-                        }
-                    ]
-                },
-                {
-                    "_id": "601a567b29657a61a76918d8",
+                    "_id": "6022c47329657a583188b91c",
                     "alwaysRun": true,
-                    "finishedAt": "2021-02-03T08:01:29.595+0000",
-                    "logUrl": "https://static.codemagic.io/logs/1a3f5b80-274c-4ad7-818f-ba5eb0c2fe34/a5950db0-aa04-45f9-aded-b763130c280f",
+                    "finishedAt": "2021-02-09T17:24:09.327+0000",
+                    "logUrl": "https://static.codemagic.io/logs/3320b325-52fd-421a-9baa-7273d00e9a71/b71344ef-8151-4ded-8c87-f5927f1076af",
                     "name": "Publishing",
-                    "startedAt": "2021-02-03T08:01:29.525+0000",
+                    "startedAt": "2021-02-09T17:24:08.781+0000",
                     "status": "success",
                     "type": "publishing"
                 },
                 {
-                    "_id": "601a567b29657a61a76918d9",
+                    "_id": "6022c47329657a583188b91d",
                     "alwaysRun": true,
-                    "finishedAt": "2021-02-03T08:01:29.620+0000",
-                    "logUrl": "https://static.codemagic.io/logs/264a9269-67bf-4ff6-81c9-8655e81b831d/84b38cf2-bee0-45a9-b5d3-a00e57a24685",
+                    "finishedAt": "2021-02-09T17:24:09.357+0000",
+                    "logUrl": "https://static.codemagic.io/logs/92dd5e5c-7764-4123-97d8-f6e2d7944e9f/7ade59af-e497-4705-adf7-f615ed7ed444",
                     "name": "Cleaning up",
-                    "startedAt": "2021-02-03T08:01:29.595+0000",
+                    "startedAt": "2021-02-09T17:24:09.327+0000",
                     "status": "success",
                     "type": "finishing"
                 }
@@ -1781,203 +2771,296 @@
             "commit": {
                 "authorAvatarUrl": "https://avatars.githubusercontent.com/u/37109929?v=4",
                 "authorEmail": "john.smith@company.org",
-                "authorName": "John Smitt",
-                "branch": "codemagic-migration",
-                "commitMessage": "ci(build): Migration from Travis to Codemagic",
+                "authorName": "John Smith",
+                "branch": "fix/build-number",
+                "commitMessage": "ci(build): Use the same build number for both platform",
                 "committerEmail": "john.smith@company.org",
-                "committerName": "John Smitt",
-                "hash": "ce2bf1c055acb00cebe8d588245c3bc5919d1daf",
-                "isPullRequest": false,
-                "pullRequestNumber": null,
-                "url": "https://github.com/the-company/foundations-app/commit/ce2bf1c055acb00cebe8d588245c3bc5919d1daf"
+                "committerName": "John Smith",
+                "hash": "d71a0cd32c9884db0288de1737c3279a65b08921",
+                "isPullRequest": true,
+                "pullRequestNumber": 1474,
+                "url": "https://github.com/the-company/foundations-app/commit/d71a0cd32c9884db0288de1737c3279a65b08921"
             },
             "config": {
                 "buildSettings": {
                     "flutterVersion": "1.22.4",
                     "platforms": [],
-                    "url": "https://github.com/the-company/foundations-app/blob/ce2bf1c055acb00cebe8d588245c3bc5919d1daf/codemagic.yaml",
-                    "xcodeVersion": "12.1"
+                    "url": "https://github.com/the-company/foundations-app/blob/d71a0cd32c9884db0288de1737c3279a65b08921/codemagic.yaml",
+                    "xcodeVersion": "12.4"
                 },
-                "name": "Build Foundations App"
+                "name": "Pull request validation"
             },
-            "createdAt": "2021-02-03T07:53:29.431+0000",
+            "createdAt": "2021-02-09T17:20:51.092+0000",
             "dynamicConfig": {},
             "feedback": null,
-            "fileWorkflowId": "foundations-build",
-            "finishedAt": "2021-02-03T08:01:29.620+0000",
-            "index": 26,
+            "fileWorkflowId": "pull-request",
+            "finishedAt": "2021-02-09T17:24:09.357+0000",
+            "index": 34,
             "instanceType": "mac_pro",
-            "message": "Step 5 script `Publish iOS build - Testflight` exited with status code 1",
-            "pullRequest": null,
+            "message": null,
+            "pullRequest": {
+                "destinationBranch": "develop",
+                "number": 1474,
+                "sourceBranch": "fix/build-number",
+                "url": "https://github.com/the-company/foundations-app/pull/1474"
+            },
             "scheduledBuildId": null,
             "screenshots": null,
             "sshAccess": {
-                "scriptUrl": "eyJidWlsZF9pZCI6IjYwMWE1Njc5Mjk2NTdhMGQzOTIzNGFmZCJ9.r6GwdRprqkM6Bo3L6If4kKmbv60/ssh_access_script.sh"
+                "scriptUrl": "eyJidWlsZF9pZCI6IjYwMjJjNDczMjk2NTdhNzczM2EwNmQ1OCJ9.fJZ87AJYfDEZ3AUKkXFuI0yDoSU/ssh_access_script.sh"
             },
             "sshAccessEnabled": false,
-            "startedAt": "2021-02-03T07:53:37.055+0000",
-            "status": "failed",
+            "startedAt": "2021-02-09T17:20:53.297+0000",
+            "status": "finished",
             "tag": null,
             "version": "",
             "vncAccess": {
                 "host": "199.7.162.132",
-                "password": "syV5sMMZ",
-                "port": 16653,
+                "password": "Pr0axeV9",
+                "port": 28587,
                 "username": "builder"
             },
             "workflowId": null
         },
         {
-            "_id": "601ad0089798cf00172fd2c3",
+            "_id": "601bd12329657a1c83d2b8b0",
             "appId": "5fc6539af7698e06abe1bed5",
             "artefacts": [
                 {
-                    "bundleId": "com.company.tts-demo",
-                    "md5": "fc63ca40d760beb60d341cd54d89f550",
+                    "app_name": "tts_demo",
+                    "bundleId": "com.koahealth.tts-demo",
+                    "bundle_id": "com.koahealth.tts-demo",
+                    "certificate_expires": "2021-06-05T06:10:32.000+0000",
+                    "distribution_type": "App Store",
+                    "md5": "8a4c935ac4f1bb3ee462fd265788fdb6",
+                    "min_os_version": "9.0",
                     "name": "Runner.ipa",
-                    "size": 89972546,
+                    "provisions_devices": null,
+                    "size": 89972540,
+                    "supported_platforms": [
+                        "iPhoneOS"
+                    ],
                     "type": "ipa",
-                    "url": "https://static.codemagic.io/files/3c7d814b-1391-4860-974d-dd1a54ddae4b/edab19a4-2f07-4a79-ba38-936c4c1d0774/Runner.ipa",
+                    "url": "https://static.codemagic.io/files/b8132adb-399d-4dd4-aef7-f80745f22613/dbe22aa0-3adb-4adf-a115-d365cbb52864/Runner.ipa",
+                    "version": "1.0.0",
+                    "versionName": "1.0.0",
+                    "version_code": "18"
+                },
+                {
+                    "app_name": "tts_demo",
+                    "certificate_issuer": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "certificate_subject": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "debuggable": false,
+                    "md5": "5846edcc8b9e14ed5d727d3a5e3b72aa",
+                    "min_os_version": "21",
+                    "name": "app-release.apk",
+                    "packageName": "com.example.tts_demo",
+                    "package_name": "com.example.tts_demo",
+                    "size": 12521146,
+                    "type": "apk",
+                    "url": "https://static.codemagic.io/files/e9beb675-8c7f-41d3-ae17-b5f0abcb10f7/b8986867-884c-4462-948d-4654b1809a92/app-release.apk",
+                    "version": "1.0.0",
+                    "versionName": "1.0.0",
+                    "version_code": "18"
+                },
+                {
+                    "app_name": "tts_demo",
+                    "certificate_issuer": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "certificate_subject": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "debuggable": false,
+                    "md5": "5846edcc8b9e14ed5d727d3a5e3b72aa",
+                    "min_os_version": "21",
+                    "name": "app.apk",
+                    "packageName": "com.example.tts_demo",
+                    "package_name": "com.example.tts_demo",
+                    "size": 12521146,
+                    "type": "apk",
+                    "url": "https://static.codemagic.io/files/5a077284-1c6a-4b7f-bf60-cbb395ecd8fe/1f3ebca1-49a6-4af2-872d-3384d3cdef96/app.apk",
+                    "version": "1.0.0",
+                    "versionName": "1.0.0",
+                    "version_code": "18"
+                },
+                {
+                    "md5": "5846edcc8b9e14ed5d727d3a5e3b72aa",
+                    "name": "app-release.apk",
+                    "packageName": "com.example.tts_demo",
+                    "size": 12521146,
+                    "type": "apk",
+                    "url": "https://static.codemagic.io/files/8d046dd6-1ef0-408e-bfde-9e04f5c67097/5c3434b5-619c-4585-bdee-27471fe6411b/app-release.apk",
                     "versionName": "1.0.0"
                 }
             ],
-            "branch": "fix-ios-testflight",
+            "branch": "master",
             "buildActions": [
                 {
-                    "_id": "601ad00a29657a371d951765",
-                    "finishedAt": "2021-02-03T16:32:25.045+0000",
-                    "logUrl": "https://static.codemagic.io/logs/3605483e-46c8-4e1e-961d-483eb3420f70/14eaca03-1bf3-4216-9cde-dd825c30038b",
+                    "_id": "601bd12329657a40a319d4bc",
+                    "finishedAt": "2021-02-04T10:49:35.449+0000",
+                    "logUrl": "https://static.codemagic.io/logs/d5df247f-9976-46c0-ad60-863ece302278/db6471bc-73e4-4c37-9f7f-d501a6e174f6",
                     "name": "Preparing build machine",
-                    "startedAt": "2021-02-03T16:32:12.219+0000",
+                    "startedAt": "2021-02-04T10:49:15.478+0000",
                     "status": "success",
                     "type": "preparing"
                 },
                 {
-                    "_id": "601ad00a29657a371d951766",
-                    "finishedAt": "2021-02-03T16:32:27.887+0000",
-                    "logUrl": "https://static.codemagic.io/logs/b0a2dfad-1c21-4026-9c09-5db0f8a2d7df/667ddc76-423d-4ba5-a198-1310e7f980ed",
+                    "_id": "601bd12329657a40a319d4bd",
+                    "finishedAt": "2021-02-04T10:49:37.684+0000",
+                    "logUrl": "https://static.codemagic.io/logs/7820f646-93dc-4907-ad57-f8b9cffdfd8c/3f33847f-6895-4753-b2b1-3354792b0289",
                     "name": "Fetching app sources",
-                    "startedAt": "2021-02-03T16:32:25.045+0000",
+                    "startedAt": "2021-02-04T10:49:35.449+0000",
                     "status": "success",
                     "type": "fetching"
                 },
                 {
-                    "_id": "601ad00a29657a371d951767",
-                    "finishedAt": "2021-02-03T16:32:36.312+0000",
-                    "logUrl": "https://static.codemagic.io/logs/de05052f-d4a8-45da-a6e9-d6508d35c975/47c94506-0199-417c-b652-7dc10b88376e",
+                    "_id": "601bd12329657a40a319d4be",
+                    "finishedAt": "2021-02-04T10:49:46.871+0000",
+                    "logUrl": "https://static.codemagic.io/logs/1351ee6a-b98d-46f6-a8aa-8279c34b5e11/ef604215-915f-4c97-8d81-e23c073d57d1",
                     "name": "Setup",
-                    "startedAt": "2021-02-03T16:32:27.887+0000",
+                    "startedAt": "2021-02-04T10:49:37.684+0000",
                     "status": "success",
                     "subactions": [
                         {
                             "command": "#!/usr/bin/env bash\n\n./.ci/setup_env.sh",
-                            "finishedAt": "2021-02-03T16:32:36.311+0000",
-                            "logUrl": "https://static.codemagic.io/logs/c70335af-be6d-4ffd-b67d-2043c4d0258d/3c0fec21-94a8-481b-b26b-a866cde29b29",
-                            "startedAt": "2021-02-03T16:32:27.887+0000",
+                            "finishedAt": "2021-02-04T10:49:46.870+0000",
+                            "logUrl": "https://static.codemagic.io/logs/ecd8f303-d5b6-4ac4-b837-1092e32e4abd/950e5e0e-6caf-44c1-967e-04e00e5d21ba",
+                            "startedAt": "2021-02-04T10:49:37.684+0000",
                             "status": "success"
                         }
                     ]
                 },
                 {
-                    "_id": "601ad00a29657a371d951768",
-                    "finishedAt": "2021-02-03T16:35:10.780+0000",
-                    "logUrl": "https://static.codemagic.io/logs/6457901d-b5fa-4737-aa8d-3caa47e214d6/aa75f25f-be94-498b-9a4a-9973c11d3205",
+                    "_id": "601bd12329657a40a319d4bf",
+                    "finishedAt": "2021-02-04T10:51:28.585+0000",
+                    "logUrl": "https://static.codemagic.io/logs/67bf4434-e6ba-478b-860c-86cf664cd123/2857062f-6068-449f-bb1a-c29c3c49a3fd",
+                    "name": "Build Android",
+                    "startedAt": "2021-02-04T10:49:46.871+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/usr/bin/env bash\n\n./.ci/build.sh android",
+                            "finishedAt": "2021-02-04T10:51:28.584+0000",
+                            "logUrl": "https://static.codemagic.io/logs/a2325277-f1c5-4651-91e2-e38486f80894/f120d2de-8071-4495-88b1-a4a1e0770c2a",
+                            "startedAt": "2021-02-04T10:49:46.871+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "601bd12329657a40a319d4c0",
+                    "finishedAt": "2021-02-04T10:54:07.278+0000",
+                    "logUrl": "https://static.codemagic.io/logs/81cefb4a-f9be-4f67-ad8e-eebf22864888/d5ee9e0b-02bf-4980-a85b-d3cc7c087ee1",
                     "name": "Build iOS",
-                    "startedAt": "2021-02-03T16:32:36.312+0000",
+                    "startedAt": "2021-02-04T10:51:28.585+0000",
                     "status": "success",
                     "subactions": [
                         {
                             "command": "#!/usr/bin/env bash\n\n./.ci/build.sh ios",
-                            "finishedAt": "2021-02-03T16:35:10.779+0000",
-                            "logUrl": "https://static.codemagic.io/logs/0c37a453-f1ed-4490-b5af-34258c0f01e9/ed6b9f89-6fd9-4e82-a251-7e31434b754f",
-                            "startedAt": "2021-02-03T16:32:36.312+0000",
+                            "finishedAt": "2021-02-04T10:54:07.277+0000",
+                            "logUrl": "https://static.codemagic.io/logs/77a35557-171c-441b-a332-8c009b0de0a6/88645412-9a23-4e72-bc58-4de1eb60fc9d",
+                            "startedAt": "2021-02-04T10:51:28.585+0000",
                             "status": "success"
                         }
                     ]
                 },
                 {
-                    "_id": "601ad00a29657a371d951769",
-                    "finishedAt": "2021-02-03T16:36:52.457+0000",
-                    "logUrl": "https://static.codemagic.io/logs/cf46b816-1815-4d32-9666-e3103262b3c6/e96b4c3a-eeb4-4559-9c1c-abd3535237bb",
-                    "name": "Publish Testflight",
-                    "startedAt": "2021-02-03T16:35:10.780+0000",
-                    "status": "failed",
+                    "_id": "601bd12329657a40a319d4c1",
+                    "finishedAt": "2021-02-04T10:54:58.411+0000",
+                    "logUrl": "https://static.codemagic.io/logs/dddadbdc-3f2c-44f2-8a48-4f9e84d1add6/0f14064e-24ec-426e-ae31-bd9590a67734",
+                    "name": "Publish Android build - App Center",
+                    "startedAt": "2021-02-04T10:54:07.278+0000",
+                    "status": "success",
                     "subactions": [
                         {
-                            "command": "#!/usr/bin/env bash\n\n./.ci/publish.sh ios",
-                            "finishedAt": "2021-02-03T16:36:52.455+0000",
-                            "logUrl": "https://static.codemagic.io/logs/7b917927-2098-4fb4-acf3-8a129bd36932/ff9ee5ff-58f5-4ed3-9938-a2d0c160270f",
-                            "startedAt": "2021-02-03T16:35:10.780+0000",
-                            "status": "failed"
+                            "command": "#!/usr/bin/env bash\n\n./.ci/publish.sh android",
+                            "finishedAt": "2021-02-04T10:54:58.410+0000",
+                            "logUrl": "https://static.codemagic.io/logs/841063d0-ab9a-4ea9-b4a2-85c9fa5977c3/2cc36bcc-c418-4179-9d87-6206f1c300da",
+                            "startedAt": "2021-02-04T10:54:07.278+0000",
+                            "status": "success"
                         }
                     ]
                 },
                 {
-                    "_id": "601ad00a29657a371d95176a",
+                    "_id": "601bd12329657a40a319d4c2",
+                    "finishedAt": "2021-02-04T11:01:21.036+0000",
+                    "logUrl": "https://static.codemagic.io/logs/fca24959-3505-4c3a-a303-f3faa0f6de9a/f07cf712-023c-4f06-ae31-51ee2a4bebfa",
+                    "name": "Publish Testflight",
+                    "startedAt": "2021-02-04T10:54:58.411+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/usr/bin/env bash\n\n./.ci/publish.sh ios",
+                            "finishedAt": "2021-02-04T11:01:21.035+0000",
+                            "logUrl": "https://static.codemagic.io/logs/0810a7d7-1997-4a90-815e-828f8787821a/0ce20cef-fee5-455b-8dca-63855451b62d",
+                            "startedAt": "2021-02-04T10:54:58.411+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "601bd12329657a40a319d4c3",
                     "alwaysRun": true,
-                    "finishedAt": "2021-02-03T16:36:54.487+0000",
-                    "logUrl": "https://static.codemagic.io/logs/2b92610e-b80f-44b5-a265-f86d723379d9/492586fa-99cb-4f53-af10-2f0c0b5eeafe",
+                    "finishedAt": "2021-02-04T11:01:24.054+0000",
+                    "logUrl": "https://static.codemagic.io/logs/a67925ee-2ac3-4f05-bf20-acc48d78d98c/38e68827-27b6-42af-bc8a-c7e138297cc0",
                     "name": "Publishing",
-                    "startedAt": "2021-02-03T16:36:52.457+0000",
+                    "startedAt": "2021-02-04T11:01:21.036+0000",
                     "status": "success",
                     "type": "publishing"
                 },
                 {
-                    "_id": "601ad00a29657a371d95176b",
+                    "_id": "601bd12329657a40a319d4c4",
                     "alwaysRun": true,
-                    "finishedAt": "2021-02-03T16:56:56.470+0000",
-                    "logUrl": "https://static.codemagic.io/logs/46a2f451-e3af-4525-8c90-69e5b56e439e/882c041f-d18a-4fe1-9648-fe38ec4db67e",
+                    "finishedAt": "2021-02-04T11:01:24.077+0000",
+                    "logUrl": "https://static.codemagic.io/logs/5014abef-9b24-4f87-8ddb-55e9fec867c1/fb87cd5e-bd18-40d9-8562-eccff9507122",
                     "name": "Cleaning up",
-                    "startedAt": "2021-02-03T16:36:54.487+0000",
+                    "startedAt": "2021-02-04T11:01:24.054+0000",
                     "status": "success",
                     "type": "finishing"
                 }
             ],
             "commit": {
                 "authorAvatarUrl": "https://avatars.githubusercontent.com/u/37109929?v=4",
-                "authorEmail": "john.smith@company.org",
-                "authorName": "John Smitt",
-                "branch": "fix-ios-testflight",
-                "commitMessage": "fix(codemagic): Try only with FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD",
-                "committerEmail": "john.smith@company.org",
-                "committerName": "John Smitt",
-                "hash": "16965bd18e5f8a810b57557dfbcc3125e7f8f43b",
+                "authorEmail": "37109929+joseignacioojeda@users.noreply.github.com",
+                "authorName": "John Smith",
+                "branch": "master",
+                "commitMessage": "Fix publish to Testflight (#4)",
+                "committerEmail": "noreply@github.com",
+                "committerName": "GitHub",
+                "hash": "66b538fb5b67225e5f6147ef04f60315ecaa565e",
                 "isPullRequest": false,
                 "pullRequestNumber": null,
-                "url": "https://github.com/the-company/tts_demo/commit/16965bd18e5f8a810b57557dfbcc3125e7f8f43b"
+                "url": "https://github.com/the-company/tts_demo/commit/66b538fb5b67225e5f6147ef04f60315ecaa565e"
             },
             "config": {
                 "buildSettings": {
                     "flutterVersion": "stable",
                     "platforms": [],
-                    "url": "https://github.com/the-company/tts_demo/blob/16965bd18e5f8a810b57557dfbcc3125e7f8f43b/codemagic.yaml",
+                    "url": "https://github.com/the-company/tts_demo/blob/66b538fb5b67225e5f6147ef04f60315ecaa565e/codemagic.yaml",
                     "xcodeVersion": "12.4"
                 },
                 "name": "Build TTS Demo"
             },
-            "createdAt": "2021-02-03T16:32:08.114+0000",
+            "createdAt": "2021-02-04T10:49:07.843+0000",
             "dynamicConfig": {},
             "feedback": null,
             "fileWorkflowId": "application-build",
-            "finishedAt": "2021-02-03T16:56:56.470+0000",
-            "index": 14,
+            "finishedAt": "2021-02-04T11:01:24.077+0000",
+            "index": 18,
             "instanceType": "mac_pro",
-            "message": "Step 5 script `Publish Testflight` exited with status code 1",
+            "message": null,
             "pullRequest": null,
             "scheduledBuildId": null,
             "screenshots": null,
             "sshAccess": {
-                "scriptUrl": "eyJidWlsZF9pZCI6IjYwMWFkMDA4OTc5OGNmMDAxNzJmZDJjMyJ9.tNN7p_Zv7WYw5uItsPXP_y0NUyI/ssh_access_script.sh"
+                "scriptUrl": "eyJidWlsZF9pZCI6IjYwMWJkMTIzMjk2NTdhMWM4M2QyYjhiMCJ9.5Hjd0IcE-K3TjkGpTiy753oIBSg/ssh_access_script.sh"
             },
             "sshAccessEnabled": false,
-            "startedAt": "2021-02-03T16:32:12.219+0000",
-            "status": "failed",
+            "startedAt": "2021-02-04T10:49:15.478+0000",
+            "status": "finished",
             "tag": null,
             "version": "1.0.0",
             "vncAccess": {
                 "host": "199.7.162.132",
-                "password": "PBIznlJ9",
-                "port": 16702,
+                "password": "oeLptpmh",
+                "port": 24584,
                 "username": "builder"
             },
             "workflowId": null
@@ -1987,22 +3070,38 @@
             "appId": "5ffd7bb47e8a8462a28064de",
             "artefacts": [
                 {
+                    "app_name": "stress_detection_proto",
+                    "certificate_issuer": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "certificate_subject": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "debuggable": false,
                     "md5": "55e8cc63e87b373ec83775c8ca326084",
+                    "min_os_version": "22",
                     "name": "app-release.apk",
                     "packageName": "com.example.stress_detection_proto",
+                    "package_name": "com.example.stress_detection_proto",
                     "size": 15645477,
                     "type": "apk",
                     "url": "https://static.codemagic.io/files/a673a4d6-a356-4afb-a2ef-61514ff7bf77/1b7916f4-534d-4e8c-991f-98f408ff99ed/app-release.apk",
-                    "versionName": "1.0.1"
+                    "version": "1.0.1",
+                    "versionName": "1.0.1",
+                    "version_code": "8"
                 },
                 {
+                    "app_name": "stress_detection_proto",
+                    "certificate_issuer": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "certificate_subject": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "debuggable": false,
                     "md5": "55e8cc63e87b373ec83775c8ca326084",
+                    "min_os_version": "22",
                     "name": "app.apk",
                     "packageName": "com.example.stress_detection_proto",
+                    "package_name": "com.example.stress_detection_proto",
                     "size": 15645477,
                     "type": "apk",
                     "url": "https://static.codemagic.io/files/eed7d2d9-a7bc-4b95-a628-0bf0b818ed18/60f62751-efe9-4edf-a175-3d2daca6791b/app.apk",
-                    "versionName": "1.0.1"
+                    "version": "1.0.1",
+                    "versionName": "1.0.1",
+                    "version_code": "8"
                 },
                 {
                     "md5": "55e8cc63e87b373ec83775c8ca326084",
@@ -2109,7 +3208,7 @@
             "commit": {
                 "authorAvatarUrl": "https://avatars3.githubusercontent.com/u/37109929?v=4",
                 "authorEmail": "37109929+joseignacioojeda@users.noreply.github.com",
-                "authorName": "John Smitt",
+                "authorName": "John Smith",
                 "branch": "master",
                 "commitMessage": "ci(codemagic): Migration from Travis to CodeMagic (#1)",
                 "committerEmail": "noreply@github.com",
@@ -2160,22 +3259,38 @@
             "appId": "60057ce41b08f33e8bc24157",
             "artefacts": [
                 {
+                    "app_name": "automatic_thought_record_analysis_flutter",
+                    "certificate_issuer": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "certificate_subject": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "debuggable": false,
                     "md5": "0662a76d7f7f15e4f7919eb8f8a08176",
+                    "min_os_version": "16",
                     "name": "app-release.apk",
                     "packageName": "com.example.automatic_thought_record_analysis_flutter",
+                    "package_name": "com.example.automatic_thought_record_analysis_flutter",
                     "size": 14035429,
                     "type": "apk",
                     "url": "https://static.codemagic.io/files/f66ad265-87d1-4f06-8c88-d71bdfe959b7/e588e1ca-2266-493c-8cfd-437843ac8417/app-release.apk",
-                    "versionName": "1.0.1"
+                    "version": "1.0.1",
+                    "versionName": "1.0.1",
+                    "version_code": "11"
                 },
                 {
+                    "app_name": "automatic_thought_record_analysis_flutter",
+                    "certificate_issuer": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "certificate_subject": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "debuggable": false,
                     "md5": "0662a76d7f7f15e4f7919eb8f8a08176",
+                    "min_os_version": "16",
                     "name": "app.apk",
                     "packageName": "com.example.automatic_thought_record_analysis_flutter",
+                    "package_name": "com.example.automatic_thought_record_analysis_flutter",
                     "size": 14035429,
                     "type": "apk",
                     "url": "https://static.codemagic.io/files/fbf0c3ce-bd82-4625-91e5-699b99e6ff31/95481b2e-296f-49bf-89b1-f74ba2c59f93/app.apk",
-                    "versionName": "1.0.1"
+                    "version": "1.0.1",
+                    "versionName": "1.0.1",
+                    "version_code": "11"
                 },
                 {
                     "md5": "0662a76d7f7f15e4f7919eb8f8a08176",
@@ -2281,7 +3396,7 @@
             "commit": {
                 "authorAvatarUrl": "",
                 "authorEmail": "37109929+joseignacioojeda@users.noreply.github.com",
-                "authorName": "John Smitt",
+                "authorName": "John Smith",
                 "branch": "master",
                 "commitMessage": "ci(codemagic): Fix feedback message (#4)",
                 "committerEmail": "noreply@github.com",
@@ -2332,22 +3447,38 @@
             "appId": "6005b3cec3030b252c53d750",
             "artefacts": [
                 {
+                    "app_name": "metacognition",
+                    "certificate_issuer": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "certificate_subject": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "debuggable": false,
                     "md5": "6342b95b543be44348f42dcca45eb87c",
+                    "min_os_version": "16",
                     "name": "app-release.apk",
                     "packageName": "com.example.metacognition",
+                    "package_name": "com.example.metacognition",
                     "size": 54033218,
                     "type": "apk",
                     "url": "https://static.codemagic.io/files/7a129635-2606-451c-af41-cd2727fe593d/7a6a6f52-ae1d-42c7-9597-84b715045b09/app-release.apk",
-                    "versionName": "1.0.1"
+                    "version": "1.0.1",
+                    "versionName": "1.0.1",
+                    "version_code": "4"
                 },
                 {
+                    "app_name": "metacognition",
+                    "certificate_issuer": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "certificate_subject": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "debuggable": false,
                     "md5": "6342b95b543be44348f42dcca45eb87c",
+                    "min_os_version": "16",
                     "name": "app.apk",
                     "packageName": "com.example.metacognition",
+                    "package_name": "com.example.metacognition",
                     "size": 54033218,
                     "type": "apk",
                     "url": "https://static.codemagic.io/files/4f3a82f5-55e8-421a-b6cb-36c511511043/7e30b670-a0d8-4d33-80d2-35aeae46e0ce/app.apk",
-                    "versionName": "1.0.1"
+                    "version": "1.0.1",
+                    "versionName": "1.0.1",
+                    "version_code": "4"
                 },
                 {
                     "md5": "6342b95b543be44348f42dcca45eb87c",
@@ -2454,7 +3585,7 @@
             "commit": {
                 "authorAvatarUrl": "https://avatars3.githubusercontent.com/u/37109929?v=4",
                 "authorEmail": "37109929+joseignacioojeda@users.noreply.github.com",
-                "authorName": "John Smitt",
+                "authorName": "John Smith",
                 "branch": "master",
                 "commitMessage": "Merge pull request #95 from the-company/develop",
                 "committerEmail": "noreply@github.com",
@@ -2505,13 +3636,75 @@
             "appId": "60069d68c3030b8436a0ff29",
             "artefacts": [
                 {
+                    "app_name": "bodysignals_example",
                     "bundleId": "com.wingmanalpha.bodysignalsExample",
+                    "bundle_id": "com.wingmanalpha.bodysignalsExample",
+                    "certificate_expires": "2021-06-05T06:10:32.000+0000",
+                    "distribution_type": "Ad Hoc",
                     "md5": "97f96f7d939786bb28ca4092c4c17d94",
+                    "min_os_version": "9.0",
                     "name": "Runner.ipa",
+                    "provisions_devices": [
+                        "00008020-000444C221D0003A",
+                        "bc777062bb886ba5311daf991f0b80cb238e036a",
+                        "00008030-0006289221FA802E",
+                        "f405415510c166bd1bfbc92eb1fea4922d5acfd4",
+                        "dd5f35a710d11e89ac6f460635d5f76b2175c5fa",
+                        "d562969f0222c07693206eeef86e9bb1c6e00498",
+                        "9dd991a2b57e9062ac3d76b0e44bbaac164bf294",
+                        "00008020-00061C243EDA002E",
+                        "00008020-001C715214E1002E",
+                        "f28d6f4ef3b021bd111471274cc172e9a5e109a0",
+                        "a3740bd0d48fbe4eec4b62645363dad112e9dd35",
+                        "2f6e28d7c77bde1c58a3a2a495d4a8315df48b43",
+                        "0421518b3b5d481b5bccc7a9480a21e65a6283ba",
+                        "49149aad41e0df9d90102d5fed4e57434c5de4af",
+                        "187f43c79724bfd707f907a6a8d080280458f444",
+                        "49d5a2ad542acd3a919cac305d4553e3d8cf9926",
+                        "6dae4680a625bba2231b59056b6b32f9974cd8ae",
+                        "39c77b43183e45d3a49efdce83e4798c68439773",
+                        "d6549fe059bacaf3d95f23b5decfa4d91218f72d",
+                        "d707aa8f627d81192fc2929c6d1a895dfb687eaa",
+                        "66aa5790925d8a5909d9cee1e030cf09c5634859",
+                        "2fc49cd4b4bb38e1bea305466ead7a7fc9ca3862",
+                        "b3ea6d01b668723befa8d24aac82c745f29f8057",
+                        "22b4f9a1c48c661cb026d61cfeafc243b7b5d0b5",
+                        "89dfbbbdb84e0984b7498d06b67fde38f0eafcd8",
+                        "bb8681988d29ab6a20d65804ece5148d119b40ab",
+                        "00008020-001C09240CF2002E",
+                        "4e0545eb8b8a4a188a5e10a416d8323e811ecc3b",
+                        "e0231280708736b5a9afd168232d07944b1eb57e",
+                        "9f854d3fa7607106a8210c4ae8ff0c35db377145",
+                        "dd976a23e699d65764f8e4d09ccb5b5e637f9e7f",
+                        "226bc689feef78834ec0bb613284b0d0c7b685b5",
+                        "300e8d0ed0d95318c8d585d5d5c94537c8dc7ecc",
+                        "6a891a0b50a5ab347bc30dbb2da2f80d9e30ca2b",
+                        "df57ad95df18e53c522699d3408ea5c7cf9b0e79",
+                        "00008020-001C61EA2E50003A",
+                        "aefdfcc113af04b15f529c2d624f19a839e2692f",
+                        "00008030-000958C10A80802E",
+                        "ba216244c45b661f4c217df41ebca4265715caea",
+                        "00008020-00150C943482002E",
+                        "00008030-000324AE0EA0802E",
+                        "c35d8d51a24acd04dd9cead7f15599d6ae71c34a",
+                        "89abdcc82df9b41b24a6245d148a4422aae13269",
+                        "ccb7409ab6fdbe0cdce3cbf255540606c993cd8b",
+                        "8cc8234cb76605f38f8b567034762d6ef69901fd",
+                        "e57df919ca0bbaf1820086293accf21cdbf16044",
+                        "be450e718e02c7d98f97e8838ca22dde00f37d76",
+                        "00008030-001A6D400C0A802E",
+                        "00008030-001A4D5A2185802E",
+                        "00008030-000D591A1151802E"
+                    ],
                     "size": 13031487,
+                    "supported_platforms": [
+                        "iPhoneOS"
+                    ],
                     "type": "ipa",
                     "url": "https://static.codemagic.io/files/13d3a55a-f43d-4ef2-8607-8e09bc66e970/39222edb-da1a-44af-98c7-68460ead54e9/Runner.ipa",
-                    "versionName": "1.0.1"
+                    "version": "1.0.1",
+                    "versionName": "1.0.1",
+                    "version_code": "22"
                 }
             ],
             "branch": "master",
@@ -2643,7 +3836,7 @@
             "commit": {
                 "authorAvatarUrl": "https://avatars3.githubusercontent.com/u/37109929?v=4",
                 "authorEmail": "37109929+joseignacioojeda@users.noreply.github.com",
-                "authorName": "John Smitt",
+                "authorName": "John Smith",
                 "branch": "master",
                 "commitMessage": "Merge pull request #78 from the-company/develop",
                 "committerEmail": "noreply@github.com",
@@ -2690,126 +3883,166 @@
             "workflowId": null
         },
         {
-            "_id": "601abe0e29657a0010d2b8e4",
+            "_id": "6022b1b629657a0c71a06cb1",
             "appId": "60101f30cb2f384082f476a4",
-            "artefacts": [
-                {
-                    "md5": "e6d500d727e13d6f458d2a0ee2391c19",
-                    "name": "koa-flutter_29_artifacts.zip",
-                    "size": 1115,
-                    "type": "bundle",
-                    "url": "https://static.codemagic.io/files/1363edc6-043e-428f-bb3a-80709ae27f45/dc35e098-509e-42ee-9f20-d30cd46be0b6/koa-flutter_29_artifacts.zip"
-                }
-            ],
-            "branch": "feat/2181-include-additional-url-in-wingman-analytics",
+            "artefacts": null,
+            "branch": "master",
             "buildActions": [
                 {
-                    "_id": "601abe1029657a1ad8687726",
-                    "finishedAt": "2021-02-03T15:15:55.982+0000",
-                    "logUrl": "https://static.codemagic.io/logs/0a1c420e-8a68-4526-b7d3-7dd056a51489/debca479-9111-4ea9-80a5-57db34493185",
+                    "_id": "6022b1b629657a691f88b937",
+                    "finishedAt": "2021-02-09T16:01:50.714+0000",
+                    "logUrl": "https://static.codemagic.io/logs/012a5d75-7c59-44b8-9262-af480e51ebd6/1fc5a4fc-8b4f-4bf1-bd8b-c659422711c6",
                     "name": "Preparing build machine",
-                    "startedAt": "2021-02-03T15:15:33.393+0000",
+                    "startedAt": "2021-02-09T16:01:05.830+0000",
                     "status": "success",
                     "type": "preparing"
                 },
                 {
-                    "_id": "601abe1029657a1ad8687727",
-                    "finishedAt": "2021-02-03T15:16:00.960+0000",
-                    "logUrl": "https://static.codemagic.io/logs/36c27ee5-dc64-4428-8fd8-bcb2b1d7e0d6/7b5787d2-7552-443d-9b3e-d33be10a685f",
+                    "_id": "6022b1b629657a691f88b938",
+                    "finishedAt": "2021-02-09T16:01:53.231+0000",
+                    "logUrl": "https://static.codemagic.io/logs/53654ada-1e17-44d8-92a1-5002865aa076/71670a60-bd9a-4799-92fe-1086e0096e71",
                     "name": "Fetching app sources",
-                    "startedAt": "2021-02-03T15:15:55.982+0000",
+                    "startedAt": "2021-02-09T16:01:50.714+0000",
                     "status": "success",
                     "type": "fetching"
                 },
                 {
-                    "_id": "601abe1029657a1ad8687728",
-                    "finishedAt": "2021-02-03T15:16:01.185+0000",
-                    "logUrl": "https://static.codemagic.io/logs/a49edaed-bbb1-4a85-b152-052a54c60ef4/c867be5a-7101-44ee-b0c6-22110b693278",
+                    "_id": "6022b1b629657a691f88b939",
+                    "finishedAt": "2021-02-09T16:01:53.456+0000",
+                    "logUrl": "https://static.codemagic.io/logs/678770ac-f9e0-419e-83c4-d2b9a27e0bc6/7729cf17-68d4-44da-afdd-cdb02bd6f289",
                     "name": "Setup",
-                    "startedAt": "2021-02-03T15:16:00.960+0000",
+                    "startedAt": "2021-02-09T16:01:53.231+0000",
                     "status": "success",
                     "subactions": [
                         {
                             "command": "#!/usr/bin/env bash\n\n./.ci/setup_env.sh",
-                            "finishedAt": "2021-02-03T15:16:01.184+0000",
-                            "logUrl": "https://static.codemagic.io/logs/f625f9f5-ccb8-4bd4-abeb-12b53e56114b/f7b06d65-ef93-4e20-97c8-38b4b5745b2a",
-                            "startedAt": "2021-02-03T15:16:00.960+0000",
+                            "finishedAt": "2021-02-09T16:01:53.455+0000",
+                            "logUrl": "https://static.codemagic.io/logs/755e35b2-dd19-49e0-8cb1-0a77545330e5/746eeff5-6a53-470e-bf96-d5219f8c2ea2",
+                            "startedAt": "2021-02-09T16:01:53.231+0000",
                             "status": "success"
                         }
                     ]
                 },
                 {
-                    "_id": "601abe1029657a1ad8687729",
-                    "finishedAt": "2021-02-03T15:16:48.160+0000",
-                    "logUrl": "https://static.codemagic.io/logs/371e128e-8070-42ad-9c22-f1b28116dd7e/bb8b1e48-03ee-4a33-9ba8-f9bb4d73b45c",
+                    "_id": "6022b1b629657a691f88b93a",
+                    "finishedAt": "2021-02-09T16:02:23.592+0000",
+                    "logUrl": "https://static.codemagic.io/logs/96d9f08c-7a5e-4700-9af8-a67359cc350d/fbe65c4a-d0a3-4fb6-83b0-5e6b51d3ead2",
                     "name": "Unit tests",
-                    "results": [
-                        {
-                            "errored": 0,
-                            "failed": 0,
-                            "name": "packages/wingman_analytics/unit-test-results.json",
-                            "passed": 1,
-                            "skipped": 2,
-                            "suites": [
-                                {
-                                    "errored": 0,
-                                    "failed": 0,
-                                    "id": 0,
-                                    "name": "wingman_analytics_test.dart",
-                                    "passed": 1,
-                                    "skipped": 2,
-                                    "tests": [
-                                        {
-                                            "id": 5,
-                                            "name": "send an event which returns an error, returns false",
-                                            "status": "success"
-                                        },
-                                        {
-                                            "id": 4,
-                                            "name": "sends a feelings event with the proper schema",
-                                            "status": "skipped"
-                                        },
-                                        {
-                                            "id": 3,
-                                            "name": "sends a personality event with the proper schema",
-                                            "status": "skipped"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "tests": 3
-                        }
-                    ],
-                    "startedAt": "2021-02-03T15:16:01.185+0000",
+                    "startedAt": "2021-02-09T16:01:53.456+0000",
                     "status": "success",
                     "subactions": [
                         {
                             "command": "#!/usr/bin/env bash\n\n./.ci/test.sh",
-                            "finishedAt": "2021-02-03T15:16:48.066+0000",
-                            "logUrl": "https://static.codemagic.io/logs/68018a22-7d79-4d6e-86dc-41dbaee2da5f/651c88ac-e14a-414d-93a9-e3bca08f9e5c",
-                            "startedAt": "2021-02-03T15:16:01.185+0000",
+                            "finishedAt": "2021-02-09T16:02:23.502+0000",
+                            "logUrl": "https://static.codemagic.io/logs/cf10ef46-a2af-458b-8383-8a5cc1ba4fdb/6ba0a605-d0a2-4c3e-b53d-5dc9e6f92422",
+                            "startedAt": "2021-02-09T16:01:53.456+0000",
                             "status": "success"
                         }
                     ],
                     "test_report": "packages/**/*-test-results.json"
                 },
                 {
-                    "_id": "601abe1029657a1ad868772a",
+                    "_id": "6022b1b629657a691f88b93b",
+                    "finishedAt": "2021-02-09T16:02:23.813+0000",
+                    "logUrl": "https://static.codemagic.io/logs/b492d61e-8ff6-4c73-a965-bc2616c0bd63/d264250e-8b0a-40ae-99ce-794e5b9a6e54",
+                    "name": "Validate build execution",
+                    "startedAt": "2021-02-09T16:02:23.592+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/usr/bin/env bash\n\n./.ci/allow_build.sh \"${PACKAGE}\"",
+                            "finishedAt": "2021-02-09T16:02:23.812+0000",
+                            "logUrl": "https://static.codemagic.io/logs/a17e545a-c4c7-400e-bce0-28ac5c191e91/1a8a8e5e-92cd-4dfd-ad02-3735a56703ea",
+                            "startedAt": "2021-02-09T16:02:23.592+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6022b1b629657a691f88b93c",
+                    "finishedAt": "2021-02-09T16:02:24.035+0000",
+                    "logUrl": "https://static.codemagic.io/logs/46bafba0-8271-4c6a-97d6-fb2cafdbd94a/2d41dd07-c136-48ad-88f1-bddf607d2829",
+                    "name": "Build Android",
+                    "startedAt": "2021-02-09T16:02:23.813+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/usr/bin/env bash\n\n./.ci/build.sh android ${PACKAGE} ${APP}",
+                            "finishedAt": "2021-02-09T16:02:24.034+0000",
+                            "logUrl": "https://static.codemagic.io/logs/51cb58e6-902d-438b-a647-9d553e4a60cb/c33233cd-a728-4a9e-b16c-9859df447e41",
+                            "startedAt": "2021-02-09T16:02:23.813+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6022b1b629657a691f88b93d",
+                    "finishedAt": "2021-02-09T16:02:24.154+0000",
+                    "logUrl": "https://static.codemagic.io/logs/f0b04338-b5ad-496d-9eed-a53fbd2fdc26/a232af24-44c3-4dee-a12c-8fa330c0ed64",
+                    "name": "Build iOS",
+                    "startedAt": "2021-02-09T16:02:24.035+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/usr/bin/env bash\n\n./.ci/build.sh ios ${PACKAGE} ${APP}",
+                            "finishedAt": "2021-02-09T16:02:24.153+0000",
+                            "logUrl": "https://static.codemagic.io/logs/5bffa7fd-2bfe-421c-86d7-2f1fdf6ec375/168e5b49-2f90-41b1-9bf0-6e8b1c95f52b",
+                            "startedAt": "2021-02-09T16:02:24.035+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6022b1b629657a691f88b93e",
+                    "finishedAt": "2021-02-09T16:02:24.377+0000",
+                    "logUrl": "https://static.codemagic.io/logs/a3c9f6fd-45d5-481e-8356-8144bcad2389/d4e73482-ca84-46c9-8d85-a9e963b9f580",
+                    "name": "Publish Android build - App Center",
+                    "startedAt": "2021-02-09T16:02:24.154+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/usr/bin/env bash\n\n./.ci/publish.sh android ${PACKAGE} ${APP}",
+                            "finishedAt": "2021-02-09T16:02:24.376+0000",
+                            "logUrl": "https://static.codemagic.io/logs/e1cf18c0-1436-441d-bb9d-5f04f8df7580/8123f45b-6787-4dc2-931c-f4ab8ab48275",
+                            "startedAt": "2021-02-09T16:02:24.154+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6022b1b629657a691f88b93f",
+                    "finishedAt": "2021-02-09T16:02:24.496+0000",
+                    "logUrl": "https://static.codemagic.io/logs/092db369-ffd5-4073-9291-448e3906d55f/6bf990dc-ee63-446d-9474-37d48f945869",
+                    "name": "Publish iOS build - App Center",
+                    "startedAt": "2021-02-09T16:02:24.377+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/usr/bin/env bash\n\n./.ci/publish.sh ios ${PACKAGE} ${APP}",
+                            "finishedAt": "2021-02-09T16:02:24.495+0000",
+                            "logUrl": "https://static.codemagic.io/logs/fc3ae579-e54b-46c9-b960-48412e0f64bb/5b786b17-dcd9-42bf-926b-edcc7157a097",
+                            "startedAt": "2021-02-09T16:02:24.377+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6022b1b629657a691f88b940",
                     "alwaysRun": true,
-                    "finishedAt": "2021-02-03T15:16:48.805+0000",
-                    "logUrl": "https://static.codemagic.io/logs/8d0d62ba-2897-45e5-b74d-40f1c1a0abf6/683611f3-23a4-4aa4-a4a6-d7596444511b",
+                    "finishedAt": "2021-02-09T16:02:24.665+0000",
+                    "logUrl": "https://static.codemagic.io/logs/ba6c0f6d-3bcb-4cce-96a7-eedcbc979521/1804275c-4837-407b-833c-c7bdd374e732",
                     "name": "Publishing",
-                    "startedAt": "2021-02-03T15:16:48.160+0000",
+                    "startedAt": "2021-02-09T16:02:24.496+0000",
                     "status": "success",
                     "type": "publishing"
                 },
                 {
-                    "_id": "601abe1029657a1ad868772b",
+                    "_id": "6022b1b629657a691f88b941",
                     "alwaysRun": true,
-                    "finishedAt": "2021-02-03T15:16:48.828+0000",
-                    "logUrl": "https://static.codemagic.io/logs/73ff9573-2eb8-4f5f-a8df-c990619c3f5b/fac7d919-4fd1-4efd-8a12-173e0a33ed49",
+                    "finishedAt": "2021-02-09T16:02:24.687+0000",
+                    "logUrl": "https://static.codemagic.io/logs/102f8722-1bc7-4d8b-ba82-462eca3e1ca3/574fd8ec-1e18-4dc1-987b-47cbfc40e05d",
                     "name": "Cleaning up",
-                    "startedAt": "2021-02-03T15:16:48.805+0000",
+                    "startedAt": "2021-02-09T16:02:24.665+0000",
                     "status": "success",
                     "type": "finishing"
                 }
@@ -2817,53 +4050,48 @@
             "commit": {
                 "authorAvatarUrl": "https://avatars.githubusercontent.com/u/3179333?v=4",
                 "authorEmail": "mary.watson@company.org",
-                "authorName": "Andreu",
-                "branch": "feat/2181-include-additional-url-in-wingman-analytics",
-                "commitMessage": "update code to maximum line length of 100 char",
-                "committerEmail": "mary.watson@company.org",
-                "committerName": "Andreu",
-                "hash": "cc090c29af46f1d67bc5dc21faceb9ce1fe3702e",
-                "isPullRequest": true,
-                "pullRequestNumber": 373,
-                "url": "https://github.com/the-company/koa-flutter/commit/cc090c29af46f1d67bc5dc21faceb9ce1fe3702e"
+                "authorName": "Mary",
+                "branch": "master",
+                "commitMessage": "update wingman analytics in wingman logging example",
+                "committerEmail": "mary.watson.91@gmail.com",
+                "committerName": "Mary",
+                "hash": "5143ebabb38a767169bf36be6aa22b1da70ade2c",
+                "isPullRequest": false,
+                "pullRequestNumber": null,
+                "url": "https://github.com/the-company/koa-flutter/commit/5143ebabb38a767169bf36be6aa22b1da70ade2c"
             },
             "config": {
                 "buildSettings": {
                     "flutterVersion": "stable",
                     "platforms": [],
-                    "url": "https://github.com/the-company/koa-flutter/blob/cc090c29af46f1d67bc5dc21faceb9ce1fe3702e/codemagic.yaml",
+                    "url": "https://github.com/the-company/koa-flutter/blob/5143ebabb38a767169bf36be6aa22b1da70ade2c/codemagic.yaml",
                     "xcodeVersion": "12.4"
                 },
-                "name": "Pull request validation"
+                "name": "Build Design System App"
             },
-            "createdAt": "2021-02-03T15:15:26.731+0000",
+            "createdAt": "2021-02-09T16:00:54.116+0000",
             "dynamicConfig": {},
             "feedback": null,
-            "fileWorkflowId": "pull-request",
-            "finishedAt": "2021-02-03T15:16:48.828+0000",
-            "index": 29,
+            "fileWorkflowId": "design-system-build",
+            "finishedAt": "2021-02-09T16:02:24.687+0000",
+            "index": 10,
             "instanceType": "mac_pro",
             "message": null,
-            "pullRequest": {
-                "destinationBranch": "master",
-                "number": 373,
-                "sourceBranch": "feat/2181-include-additional-url-in-wingman-analytics",
-                "url": "https://github.com/the-company/koa-flutter/pull/373"
-            },
+            "pullRequest": null,
             "scheduledBuildId": null,
             "screenshots": null,
             "sshAccess": {
-                "scriptUrl": "eyJidWlsZF9pZCI6IjYwMWFiZTBlMjk2NTdhMDAxMGQyYjhlNCJ9.Yi0vh6PiGGKquRgxa6JvKlsBbwo/ssh_access_script.sh"
+                "scriptUrl": "eyJidWlsZF9pZCI6IjYwMjJiMWI2Mjk2NTdhMGM3MWEwNmNiMSJ9.R9__HbI_bicsBaoYpDs_G7mBnmo/ssh_access_script.sh"
             },
             "sshAccessEnabled": false,
-            "startedAt": "2021-02-03T15:15:33.393+0000",
+            "startedAt": "2021-02-09T16:01:05.830+0000",
             "status": "finished",
             "tag": null,
             "version": "",
             "vncAccess": {
                 "host": "199.7.162.132",
-                "password": "lomsTbtX",
-                "port": 19830,
+                "password": "GE-qHs_h",
+                "port": 23115,
                 "username": "builder"
             },
             "workflowId": null

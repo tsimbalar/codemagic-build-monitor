@@ -1,0 +1,2627 @@
+{
+    "applications": [
+        {
+            "_id": "5fc6539af7698e06abe1becd",
+            "appName": "foundations-app",
+            "archived": false,
+            "branches": [
+                "chore/create-fake-programmes-testing",
+                "chore/vscode-visualization",
+                "design-branch-merge",
+                "design-branch",
+                "develop",
+                "feat/KDSChips",
+                "feat/SUB-1168-HRBR-plugin-support",
+                "feat/SUB-1955-recsys-analytics",
+                "feat/SUB-2020-recsys-activity-verification",
+                "feat/SUB-2048-add-production-url-in-recsys",
+                "feat/SUB-2199-make-app-state-parsing-null-free",
+                "feat/add-ios-obfuscate",
+                "feat/2122-tag-focus-areas",
+                "feat/2181-send-analytics-to-old-and-new-data-lakes",
+                "fix/SUB-1028-analytics",
+                "fix/SUB-1390-incorrect-recommended-programmes-on-logout",
+                "library-improvements",
+                "master",
+                "nates-root-branch",
+                "refactor(library-page)",
+                "scroll-changes",
+                "spike/koa-buttons",
+                "task/KDSButtons"
+            ],
+            "buildSchedule": [],
+            "createdAt": "2020-12-01T14:30:50.963+0000",
+            "iconUrl": "https://static.codemagic.io/files/4ed644bb-fc30-475f-958e-4a2b99c471b7/8f7ec124-a2b6-4b26-99ca-ed0a90703f30.png",
+            "isConfigured": true,
+            "lastBuildId": "6023fe9b29657a000f3169c9",
+            "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
+            "projectFiles": [
+                "."
+            ],
+            "projectType": "flutter-package",
+            "repository": {
+                "defaultBranch": "develop",
+                "htmlUrl": "https://github.com/koa-health/foundations-app",
+                "id": 198808131,
+                "isAuthenticationEnabled": false,
+                "language": "Dart",
+                "owner": {
+                    "name": "koa-health"
+                },
+                "provider": "github",
+                "publicSshKey": null,
+                "username": null
+            },
+            "userRights": [],
+            "workflowIds": [
+                "5fc6539af7698e06abe1becc"
+            ],
+            "workflows": {
+                "5fc6539af7698e06abe1becc": {
+                    "_id": "5fc6539af7698e06abe1becc",
+                    "branchPatterns": [],
+                    "buildSettings": {
+                        "androidBuildOutputFormat": "apk",
+                        "automaticBuilds": false,
+                        "buildOnPrUpdate": false,
+                        "cancelPending": true,
+                        "cancelPreviousBuilds": false,
+                        "flutterMode": "debug",
+                        "flutterVerbose": false,
+                        "flutterVersion": "stable",
+                        "platforms": [
+                            "android",
+                            "ios"
+                        ],
+                        "projectFile": ".",
+                        "tagBuilds": false,
+                        "target": "debug",
+                        "xcodeVersion": "latest"
+                    },
+                    "codeSigning": {
+                        "android": {
+                            "enabled": false,
+                            "keyAlias": null,
+                            "keyPassword": null,
+                            "keystore": null,
+                            "keystorePassword": null
+                        },
+                        "ios": {
+                            "appStoreConnectKeyId": null,
+                            "certificatePassword": null,
+                            "developerCertificate": null,
+                            "developerPortalBundleIdentifier": null,
+                            "developerPortalPassword": null,
+                            "developerPortalProfileType": null,
+                            "developerPortalTeamId": null,
+                            "developerPortalUsername": null,
+                            "enabled": null,
+                            "encryptedKey": null,
+                            "provisioningProfiles": [],
+                            "signingMethod": null
+                        }
+                    },
+                    "customScripts": {
+                        "postBuild": "",
+                        "postClone": "",
+                        "postPublish": "",
+                        "postTest": "",
+                        "preBuild": "",
+                        "prePublish": "",
+                        "preTest": ""
+                    },
+                    "dependencyCache": {
+                        "cachePaths": [],
+                        "enabled": false
+                    },
+                    "environmentVariables": [],
+                    "instanceType": "mac_mini",
+                    "isPublic": false,
+                    "maxBuildDuration": 3600,
+                    "name": "Default Workflow",
+                    "publishers": {
+                        "appStoreConnect": {
+                            "appStoreConnectAppleId": null,
+                            "appStoreConnectPassword": null,
+                            "enabled": null,
+                            "publishWhenFail": null
+                        },
+                        "email": {
+                            "enabled": true,
+                            "recipients": [
+                                "joseignacio.ojeda@koahealth.com"
+                            ]
+                        },
+                        "githubReleases": {
+                            "artifactPatterns": [
+                                "*.apk",
+                                "*.ipa"
+                            ],
+                            "enabled": false,
+                            "prerelease": false
+                        },
+                        "googlePlay": {
+                            "credentials": {},
+                            "enabled": null,
+                            "inAppUpdatePriority": null,
+                            "publishWhenFail": null,
+                            "rolloutFraction": null,
+                            "track": null
+                        },
+                        "s3StaticPages": {},
+                        "slack": {},
+                        "staticPages": {}
+                    },
+                    "testRunners": {
+                        "flutterAnalyze": {},
+                        "flutterDrive": {
+                            "frameworkType": "flutter_driver"
+                        },
+                        "flutterTest": {
+                            "frameworkType": "flutter_test"
+                        },
+                        "stopBuildIfTestsFail": true
+                    }
+                }
+            }
+        },
+        {
+            "_id": "5fc6539af7698e06abe1becf",
+            "appName": "mindset-depression-app",
+            "archived": false,
+            "branches": [
+                "build/migrate-to-codemagic",
+                "feat(onboarding)",
+                "feat/settings_items",
+                "master"
+            ],
+            "buildSchedule": [],
+            "createdAt": "2020-12-01T14:30:50.973+0000",
+            "iconUrl": "https://static.codemagic.io/files/ad3c102d-657f-42dc-887c-372cdd18d00c/0f203b98-681c-4435-9261-9e292fc8069e.png",
+            "isConfigured": true,
+            "lastBuildId": "60241f7f29657a000e316cd4",
+            "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
+            "projectFiles": [
+                "."
+            ],
+            "projectType": "flutter-package",
+            "repository": {
+                "defaultBranch": "master",
+                "htmlUrl": "https://github.com/koa-health/mindset-depression-app",
+                "id": 263033818,
+                "isAuthenticationEnabled": false,
+                "language": "Dart",
+                "owner": {
+                    "name": "koa-health"
+                },
+                "provider": "github",
+                "publicSshKey": null,
+                "username": null
+            },
+            "userRights": [],
+            "workflowIds": [
+                "5fc6539af7698e06abe1bece"
+            ],
+            "workflows": {
+                "5fc6539af7698e06abe1bece": {
+                    "_id": "5fc6539af7698e06abe1bece",
+                    "branchPatterns": [],
+                    "buildSettings": {
+                        "androidBuildOutputFormat": "apk",
+                        "automaticBuilds": false,
+                        "buildOnPrUpdate": false,
+                        "cancelPending": true,
+                        "cancelPreviousBuilds": false,
+                        "flutterMode": "debug",
+                        "flutterVerbose": false,
+                        "flutterVersion": "stable",
+                        "platforms": [
+                            "android",
+                            "ios"
+                        ],
+                        "projectFile": ".",
+                        "tagBuilds": false,
+                        "target": "debug",
+                        "xcodeVersion": "latest"
+                    },
+                    "codeSigning": {
+                        "android": {
+                            "enabled": false,
+                            "keyAlias": null,
+                            "keyPassword": null,
+                            "keystore": null,
+                            "keystorePassword": null
+                        },
+                        "ios": {
+                            "appStoreConnectKeyId": null,
+                            "certificatePassword": null,
+                            "developerCertificate": null,
+                            "developerPortalBundleIdentifier": null,
+                            "developerPortalPassword": null,
+                            "developerPortalProfileType": null,
+                            "developerPortalTeamId": null,
+                            "developerPortalUsername": null,
+                            "enabled": null,
+                            "encryptedKey": null,
+                            "provisioningProfiles": [],
+                            "signingMethod": null
+                        }
+                    },
+                    "customScripts": {
+                        "postBuild": "",
+                        "postClone": "",
+                        "postPublish": "",
+                        "postTest": "",
+                        "preBuild": "",
+                        "prePublish": "",
+                        "preTest": ""
+                    },
+                    "dependencyCache": {
+                        "cachePaths": [],
+                        "enabled": false
+                    },
+                    "environmentVariables": [],
+                    "instanceType": "mac_mini",
+                    "isPublic": false,
+                    "maxBuildDuration": 3600,
+                    "name": "Default Workflow",
+                    "publishers": {
+                        "appStoreConnect": {
+                            "appStoreConnectAppleId": null,
+                            "appStoreConnectPassword": null,
+                            "enabled": null,
+                            "publishWhenFail": null
+                        },
+                        "email": {
+                            "enabled": true,
+                            "recipients": [
+                                "joseignacio.ojeda@koahealth.com"
+                            ]
+                        },
+                        "githubReleases": {
+                            "artifactPatterns": [
+                                "*.apk",
+                                "*.ipa"
+                            ],
+                            "enabled": false,
+                            "prerelease": false
+                        },
+                        "googlePlay": {
+                            "credentials": {},
+                            "enabled": null,
+                            "inAppUpdatePriority": null,
+                            "publishWhenFail": null,
+                            "rolloutFraction": null,
+                            "track": null
+                        },
+                        "s3StaticPages": {},
+                        "slack": {},
+                        "staticPages": {}
+                    },
+                    "testRunners": {
+                        "flutterAnalyze": {},
+                        "flutterDrive": {
+                            "frameworkType": "flutter_driver"
+                        },
+                        "flutterTest": {
+                            "frameworkType": "flutter_test"
+                        },
+                        "stopBuildIfTestsFail": true
+                    }
+                }
+            }
+        },
+        {
+            "_id": "5fc6539af7698e06abe1bed1",
+            "appName": "perspectives-app",
+            "archived": false,
+            "branches": [
+                "PER-1586/fix-stage-testflight",
+                "PoC/Swipe-navigation-improvements",
+                "PoC/exposure-guidance",
+                "build/xcode-update",
+                "develop",
+                "experiment/research-sensors-fine-location",
+                "experiment/research-sensors",
+                "feat/PER-1931-video",
+                "fix/bug-questionnaire-me-tab",
+                "fix/ios-build-errors",
+                "fix/sensors-before-deletion",
+                "fix/test-questionnaire-service",
+                "fix/test",
+                "ios-fastlane-temporary-stuff",
+                "jenkins-recurrent-job-v2",
+                "release/v2",
+                "sensors/PER-2184-apk-for-research",
+                "spike/cognito",
+                "task/readd_sensors"
+            ],
+            "buildSchedule": [],
+            "createdAt": "2020-12-01T14:30:50.975+0000",
+            "iconUrl": "https://static.codemagic.io/files/5a7c8205-e0e5-4036-aa04-e5019bdec383/ef347c05-f181-4027-8b57-5c3f23a6eb89.png",
+            "isConfigured": null,
+            "lastBuildId": null,
+            "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
+            "projectFiles": [
+                "."
+            ],
+            "projectType": null,
+            "repository": {
+                "defaultBranch": "develop",
+                "htmlUrl": "https://github.com/koa-health/perspectives-app",
+                "id": 140295711,
+                "isAuthenticationEnabled": false,
+                "language": "TypeScript",
+                "owner": {
+                    "name": "koa-health"
+                },
+                "provider": "github",
+                "publicSshKey": null,
+                "username": null
+            },
+            "userRights": [],
+            "workflowIds": [
+                "5fc6539af7698e06abe1bed0"
+            ],
+            "workflows": {
+                "5fc6539af7698e06abe1bed0": {
+                    "_id": "5fc6539af7698e06abe1bed0",
+                    "branchPatterns": [],
+                    "buildSettings": {
+                        "androidBuildOutputFormat": "apk",
+                        "automaticBuilds": false,
+                        "buildOnPrUpdate": false,
+                        "cancelPending": true,
+                        "cancelPreviousBuilds": false,
+                        "flutterMode": "debug",
+                        "flutterVerbose": false,
+                        "flutterVersion": "stable",
+                        "platforms": [
+                            "android",
+                            "ios"
+                        ],
+                        "projectFile": ".",
+                        "tagBuilds": false,
+                        "target": "debug",
+                        "xcodeVersion": "latest"
+                    },
+                    "codeSigning": {
+                        "android": {
+                            "enabled": false,
+                            "keyAlias": null,
+                            "keyPassword": null,
+                            "keystore": null,
+                            "keystorePassword": null
+                        },
+                        "ios": {
+                            "appStoreConnectKeyId": null,
+                            "certificatePassword": null,
+                            "developerCertificate": null,
+                            "developerPortalBundleIdentifier": null,
+                            "developerPortalPassword": null,
+                            "developerPortalProfileType": null,
+                            "developerPortalTeamId": null,
+                            "developerPortalUsername": null,
+                            "enabled": null,
+                            "encryptedKey": null,
+                            "provisioningProfiles": [],
+                            "signingMethod": null
+                        }
+                    },
+                    "customScripts": {
+                        "postBuild": "",
+                        "postClone": "",
+                        "postPublish": "",
+                        "postTest": "",
+                        "preBuild": "",
+                        "prePublish": "",
+                        "preTest": ""
+                    },
+                    "dependencyCache": {
+                        "cachePaths": [],
+                        "enabled": false
+                    },
+                    "environmentVariables": [],
+                    "instanceType": "mac_mini",
+                    "isPublic": false,
+                    "maxBuildDuration": 3600,
+                    "name": "Default Workflow",
+                    "publishers": {
+                        "appStoreConnect": {
+                            "appStoreConnectAppleId": null,
+                            "appStoreConnectPassword": null,
+                            "enabled": null,
+                            "publishWhenFail": null
+                        },
+                        "email": {
+                            "enabled": true,
+                            "recipients": [
+                                "joseignacio.ojeda@koahealth.com"
+                            ]
+                        },
+                        "githubReleases": {
+                            "artifactPatterns": [
+                                "*.apk",
+                                "*.ipa"
+                            ],
+                            "enabled": false,
+                            "prerelease": false
+                        },
+                        "googlePlay": {
+                            "credentials": {},
+                            "enabled": null,
+                            "inAppUpdatePriority": null,
+                            "publishWhenFail": null,
+                            "rolloutFraction": null,
+                            "track": null
+                        },
+                        "s3StaticPages": {},
+                        "slack": {},
+                        "staticPages": {}
+                    },
+                    "testRunners": {
+                        "flutterAnalyze": {},
+                        "flutterDrive": {
+                            "frameworkType": "flutter_driver"
+                        },
+                        "flutterTest": {
+                            "frameworkType": "flutter_test"
+                        },
+                        "stopBuildIfTestsFail": true
+                    }
+                }
+            }
+        },
+        {
+            "_id": "5fc6539af7698e06abe1bed3",
+            "appName": "wingman-sensors",
+            "archived": false,
+            "branches": [
+                "analytics",
+                "bug/settings-scroll",
+                "develop",
+                "feature/detect_google_play",
+                "feature/notifications_sensor",
+                "fix/userid",
+                "habitsUI",
+                "master",
+                "signup",
+                "task/android_device_specifics",
+                "task/bg_fetch",
+                "task/data_collector",
+                "task/habits_UI",
+                "task/habits_sensors",
+                "task/habits_test",
+                "task/location_test",
+                "task/raw_events",
+                "task/sleep_inject_native"
+            ],
+            "buildSchedule": [],
+            "createdAt": "2020-12-01T14:30:50.978+0000",
+            "iconUrl": null,
+            "isConfigured": null,
+            "lastBuildId": null,
+            "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
+            "projectFiles": [
+                "."
+            ],
+            "projectType": null,
+            "repository": {
+                "defaultBranch": "develop",
+                "htmlUrl": "https://github.com/koa-health/wingman-sensors",
+                "id": 75529996,
+                "isAuthenticationEnabled": false,
+                "language": "Jupyter Notebook",
+                "owner": {
+                    "name": "koa-health"
+                },
+                "provider": "github",
+                "publicSshKey": null,
+                "username": null
+            },
+            "userRights": [],
+            "workflowIds": [
+                "5fc6539af7698e06abe1bed2"
+            ],
+            "workflows": {
+                "5fc6539af7698e06abe1bed2": {
+                    "_id": "5fc6539af7698e06abe1bed2",
+                    "branchPatterns": [],
+                    "buildSettings": {
+                        "androidBuildOutputFormat": "apk",
+                        "automaticBuilds": false,
+                        "buildOnPrUpdate": false,
+                        "cancelPending": true,
+                        "cancelPreviousBuilds": false,
+                        "flutterMode": "debug",
+                        "flutterVerbose": false,
+                        "flutterVersion": "stable",
+                        "platforms": [
+                            "android",
+                            "ios"
+                        ],
+                        "projectFile": ".",
+                        "tagBuilds": false,
+                        "target": "debug",
+                        "xcodeVersion": "latest"
+                    },
+                    "codeSigning": {
+                        "android": {
+                            "enabled": false,
+                            "keyAlias": null,
+                            "keyPassword": null,
+                            "keystore": null,
+                            "keystorePassword": null
+                        },
+                        "ios": {
+                            "appStoreConnectKeyId": null,
+                            "certificatePassword": null,
+                            "developerCertificate": null,
+                            "developerPortalBundleIdentifier": null,
+                            "developerPortalPassword": null,
+                            "developerPortalProfileType": null,
+                            "developerPortalTeamId": null,
+                            "developerPortalUsername": null,
+                            "enabled": null,
+                            "encryptedKey": null,
+                            "provisioningProfiles": [],
+                            "signingMethod": null
+                        }
+                    },
+                    "customScripts": {
+                        "postBuild": "",
+                        "postClone": "",
+                        "postPublish": "",
+                        "postTest": "",
+                        "preBuild": "",
+                        "prePublish": "",
+                        "preTest": ""
+                    },
+                    "dependencyCache": {
+                        "cachePaths": [],
+                        "enabled": false
+                    },
+                    "environmentVariables": [],
+                    "instanceType": "mac_mini",
+                    "isPublic": false,
+                    "maxBuildDuration": 3600,
+                    "name": "Default Workflow",
+                    "publishers": {
+                        "appStoreConnect": {
+                            "appStoreConnectAppleId": null,
+                            "appStoreConnectPassword": null,
+                            "enabled": null,
+                            "publishWhenFail": null
+                        },
+                        "email": {
+                            "enabled": true,
+                            "recipients": [
+                                "joseignacio.ojeda@koahealth.com"
+                            ]
+                        },
+                        "githubReleases": {
+                            "artifactPatterns": [
+                                "*.apk",
+                                "*.ipa"
+                            ],
+                            "enabled": false,
+                            "prerelease": false
+                        },
+                        "googlePlay": {
+                            "credentials": {},
+                            "enabled": null,
+                            "inAppUpdatePriority": null,
+                            "publishWhenFail": null,
+                            "rolloutFraction": null,
+                            "track": null
+                        },
+                        "s3StaticPages": {},
+                        "slack": {},
+                        "staticPages": {}
+                    },
+                    "testRunners": {
+                        "flutterAnalyze": {},
+                        "flutterDrive": {
+                            "frameworkType": "flutter_driver"
+                        },
+                        "flutterTest": {
+                            "frameworkType": "flutter_test"
+                        },
+                        "stopBuildIfTestsFail": true
+                    }
+                }
+            }
+        },
+        {
+            "_id": "5fc6539af7698e06abe1bed5",
+            "appName": "tts_demo",
+            "archived": false,
+            "branches": [
+                "fix-ios-testflight",
+                "master"
+            ],
+            "buildSchedule": [],
+            "createdAt": "2020-12-01T14:30:50.981+0000",
+            "iconUrl": "https://static.codemagic.io/files/eb6810fa-3b94-4530-a5ef-ded9b5098889/e7f5aa05-276f-4039-b51c-79b08de9fc35.png",
+            "isConfigured": true,
+            "lastBuildId": "601bd12329657a1c83d2b8b0",
+            "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
+            "projectFiles": [
+                "."
+            ],
+            "projectType": "flutter-package",
+            "repository": {
+                "defaultBranch": "master",
+                "htmlUrl": "https://github.com/koa-health/tts_demo",
+                "id": 310345424,
+                "isAuthenticationEnabled": false,
+                "language": "Dart",
+                "owner": {
+                    "name": "koa-health"
+                },
+                "provider": "github",
+                "publicSshKey": null,
+                "username": null
+            },
+            "userRights": [],
+            "workflowIds": [
+                "5fc6539af7698e06abe1bed4"
+            ],
+            "workflows": {
+                "5fc6539af7698e06abe1bed4": {
+                    "_id": "5fc6539af7698e06abe1bed4",
+                    "branchPatterns": [],
+                    "buildSettings": {
+                        "androidBuildOutputFormat": "apk",
+                        "automaticBuilds": false,
+                        "buildOnPrUpdate": true,
+                        "cancelPending": true,
+                        "cancelPreviousBuilds": false,
+                        "flutterMode": "debug",
+                        "flutterVerbose": false,
+                        "flutterVersion": "stable",
+                        "platforms": [],
+                        "projectFile": ".",
+                        "tagBuilds": false,
+                        "target": "debug",
+                        "xcodeVersion": "latest"
+                    },
+                    "codeSigning": {
+                        "android": {
+                            "enabled": false,
+                            "keyAlias": null,
+                            "keyPassword": null,
+                            "keystore": null,
+                            "keystorePassword": null
+                        },
+                        "ios": {
+                            "appStoreConnectKeyId": null,
+                            "certificatePassword": null,
+                            "developerCertificate": null,
+                            "developerPortalBundleIdentifier": null,
+                            "developerPortalPassword": null,
+                            "developerPortalProfileType": null,
+                            "developerPortalTeamId": null,
+                            "developerPortalUsername": null,
+                            "enabled": null,
+                            "encryptedKey": null,
+                            "provisioningProfiles": [],
+                            "signingMethod": null
+                        }
+                    },
+                    "customScripts": {
+                        "postBuild": "",
+                        "postClone": "",
+                        "postPublish": "",
+                        "postTest": "",
+                        "preBuild": "",
+                        "prePublish": "",
+                        "preTest": ""
+                    },
+                    "dependencyCache": {
+                        "cachePaths": [],
+                        "enabled": false
+                    },
+                    "environmentVariables": [],
+                    "instanceType": "mac_mini",
+                    "isPublic": false,
+                    "maxBuildDuration": 3600,
+                    "name": "Default Workflow",
+                    "publishers": {
+                        "appStoreConnect": {
+                            "appStoreConnectAppleId": null,
+                            "appStoreConnectPassword": null,
+                            "enabled": null,
+                            "publishWhenFail": null
+                        },
+                        "email": {
+                            "enabled": true,
+                            "recipients": [
+                                "joseignacio.ojeda@koahealth.com"
+                            ]
+                        },
+                        "githubReleases": {
+                            "artifactPatterns": [
+                                "*.apk",
+                                "*.ipa"
+                            ],
+                            "enabled": false,
+                            "prerelease": false
+                        },
+                        "googlePlay": {
+                            "credentials": {},
+                            "enabled": null,
+                            "inAppUpdatePriority": null,
+                            "publishWhenFail": null,
+                            "rolloutFraction": null,
+                            "track": null
+                        },
+                        "s3StaticPages": {},
+                        "slack": {},
+                        "staticPages": {}
+                    },
+                    "testRunners": {
+                        "flutterAnalyze": {},
+                        "flutterDrive": {
+                            "frameworkType": "flutter_driver"
+                        },
+                        "flutterTest": {
+                            "frameworkType": "flutter_test"
+                        },
+                        "stopBuildIfTestsFail": true
+                    }
+                }
+            }
+        },
+        {
+            "_id": "5fca473959d78f00114deb66",
+            "appName": "ionic-sample-project",
+            "archived": false,
+            "branches": [
+                "master"
+            ],
+            "buildSchedule": [],
+            "createdAt": "2020-12-04T14:27:05.751+0000",
+            "iconUrl": null,
+            "isConfigured": null,
+            "lastBuildId": null,
+            "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
+            "projectFiles": [
+                "."
+            ],
+            "projectType": "ionic",
+            "repository": {
+                "defaultBranch": "master",
+                "htmlUrl": "git@github.com:koa-health/ionic-sample-project.git",
+                "id": "0b0c87be-8a93-4468-a79f-55bfd091ce62",
+                "isAuthenticationEnabled": true,
+                "language": "other",
+                "owner": {
+                    "name": "Manually added"
+                },
+                "provider": "generic",
+                "publicSshKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDLvkkLct0hF1xgl2aeuwvOAqedA5rNk8FlpIt65ECutq/XDWljIS/Ruyp0PEETcMJX9RMqcW6tF8ga0+o7Ydhc7jeTrCE6ZoNeMyF+5BhHhUGF5C1tj995/q2gue4KXSqJKInc6ZprsMCT42z0YneZw6LzuT0lLHl11zalnEuQombGKssvwrnGTTib8T6kmU1/4KYXa4zr2QBxdFGEZ3aDfqfx7QZnPeDAp8CP4cBcd6gFXuusKD9nfQolj2MmRcgEHB63T8HObJov41L7xiaWGOlXqLHgt+M3DbH42EUCmkfsziAixSO9Qu29r+yhJ6MVNuecdtK/9ytCpDwYgZCIb3EDoY30dCxfc+qu+Ch7izyzvNQJcvj3Lx/ITbR/PLSHp5EenELNXXzZ1vy2hc/K2YOX7+8crHfRLgEgXuxJKtLPNkBjUsmBD+kqDIAtWYr5SnRW8j8Sq2Gt1crMs2DFADLHS1GKfWnzjnYOX9lOT539ufMfb4lG8KPs18fYzy7EPh1lrKJT+pKkd+mgKUW0jeZ0NUvV9/dZIFZKDZ8Fw0w4Qt79ZI4j/70atKfFS+giuxNu0iSSvYvXMtj7kSogqYrERK5X7ADO1cYUKsVbASrgmkKDv/AEouYN2v7Y4k1DUuxj9kV/VljeDWP6HtSsi+vzXcKNs86LKgabbSbvfQ==",
+                "username": null
+            },
+            "userRights": [],
+            "workflowIds": [
+                "5fca473959d78f00114deb65"
+            ],
+            "workflows": {
+                "5fca473959d78f00114deb65": {
+                    "_id": "5fca473959d78f00114deb65",
+                    "branchPatterns": [],
+                    "buildSettings": {
+                        "androidBuildOutputFormat": "apk",
+                        "automaticBuilds": false,
+                        "buildOnPrUpdate": false,
+                        "cancelPending": true,
+                        "cancelPreviousBuilds": false,
+                        "flutterMode": "debug",
+                        "flutterVerbose": false,
+                        "flutterVersion": "stable",
+                        "platforms": [
+                            "android",
+                            "ios"
+                        ],
+                        "projectFile": ".",
+                        "tagBuilds": false,
+                        "target": "debug",
+                        "xcodeVersion": "latest"
+                    },
+                    "codeSigning": {
+                        "android": {
+                            "enabled": false,
+                            "keyAlias": null,
+                            "keyPassword": null,
+                            "keystore": null,
+                            "keystorePassword": null
+                        },
+                        "ios": {
+                            "appStoreConnectKeyId": null,
+                            "certificatePassword": null,
+                            "developerCertificate": null,
+                            "developerPortalBundleIdentifier": null,
+                            "developerPortalPassword": null,
+                            "developerPortalProfileType": null,
+                            "developerPortalTeamId": null,
+                            "developerPortalUsername": null,
+                            "enabled": null,
+                            "encryptedKey": null,
+                            "provisioningProfiles": [],
+                            "signingMethod": null
+                        }
+                    },
+                    "customScripts": {
+                        "postBuild": "",
+                        "postClone": "",
+                        "postPublish": "",
+                        "postTest": "",
+                        "preBuild": "",
+                        "prePublish": "",
+                        "preTest": ""
+                    },
+                    "dependencyCache": {
+                        "cachePaths": [],
+                        "enabled": false
+                    },
+                    "environmentVariables": [],
+                    "instanceType": "mac_mini",
+                    "isPublic": false,
+                    "maxBuildDuration": 3600,
+                    "name": "Default Workflow",
+                    "publishers": {
+                        "appStoreConnect": {
+                            "appStoreConnectAppleId": null,
+                            "appStoreConnectPassword": null,
+                            "enabled": null,
+                            "publishWhenFail": null
+                        },
+                        "email": {
+                            "enabled": true,
+                            "recipients": [
+                                "miquel.olivares@koahealth.com"
+                            ]
+                        },
+                        "githubReleases": {
+                            "artifactPatterns": [
+                                "*.apk",
+                                "*.ipa"
+                            ],
+                            "enabled": false,
+                            "prerelease": false
+                        },
+                        "googlePlay": {
+                            "credentials": {},
+                            "enabled": null,
+                            "inAppUpdatePriority": null,
+                            "publishWhenFail": null,
+                            "rolloutFraction": null,
+                            "track": null
+                        },
+                        "s3StaticPages": {},
+                        "slack": {},
+                        "staticPages": {}
+                    },
+                    "testRunners": {
+                        "flutterAnalyze": {},
+                        "flutterDrive": {
+                            "frameworkType": "flutter_driver"
+                        },
+                        "flutterTest": {
+                            "frameworkType": "flutter_test"
+                        },
+                        "stopBuildIfTestsFail": true
+                    }
+                }
+            }
+        },
+        {
+            "_id": "5ffd7bb47e8a8462a28064de",
+            "appName": "stress_detection_proto",
+            "archived": false,
+            "branches": [
+                "alpha_proto",
+                "master",
+                "tinder_interaction"
+            ],
+            "buildSchedule": [],
+            "createdAt": "2021-01-12T10:36:36.566+0000",
+            "iconUrl": "https://static.codemagic.io/files/b49a9a43-5d28-4fdb-ab38-55de0a599d3c/d7662d6f-1499-4f54-89e9-d32e39d6d199.png",
+            "isConfigured": true,
+            "lastBuildId": "60053c9329657a0014ca4541",
+            "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
+            "projectFiles": [
+                "."
+            ],
+            "projectType": "flutter-package",
+            "repository": {
+                "defaultBranch": "master",
+                "htmlUrl": "git@github.com:koa-health/stress_detection_proto.git",
+                "id": "83eaac1b-e0ac-4056-9c84-bbb6d5108f73",
+                "isAuthenticationEnabled": true,
+                "language": "other",
+                "owner": {
+                    "name": "Manually added"
+                },
+                "provider": "generic",
+                "publicSshKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+OjvUAjCNR0PTVJjo6EbciTLi/x0b62bdTDeMg7gX6I2S0c/LhWaKYtbkFQVjz/vovzgwJ/rooanOXfJFbpljCD5PCqpSAVz5POkvPhVi75curgCRSZcm6xSfRyLinzdR4NLALIBZpEXIGJicGR5ejq6qnYr421yM6BQ1hk+tgmfoe6a9isFs85FHqFDQu7B9mYynARJ+4QVdS0itUYufqYnA9JztJX0zKeX+JM2As/DK3yc8qIsWvYTQJY4u+xBg5ILHEf0/X/MBYNFJzmK3GfKIYsc3ZcWNxgCUOdnk0NmSyUvhRq+Ygjsk0Rp1D4pF1OnDG2tF589xuicNEa/fu51+UP0uAwF/C3NVXKQNx0DuXu5RasOSZrZ49Mnk78AKks+tAY+ozOS5WbPOr1mHqcUuKLAoMHPc1y3VK6lP8deV8e63Fxfhoc0HXuAVlRQUZyt/OobUJhXWAJM74qjz3XqjIp+TwCmRaj5XdppiFLgGKB9k5L09gFu/4dCAmI2h5EqxdaGqlFn1akkcCgbOQ+fl0Vms+IxA6BgRIqg79oFK5pSAxJhLLjbxx5jVdbZDMp9jDMc3TKLdHHL0p2MmNxKykDNh21fWm2OiaqfuCtBiu54iwYPTcqzGsX9U/5C2vLF9zBnzU8pMH/eBiBI/bW9AbKueQchUO6bsMTwSZw==",
+                "username": null
+            },
+            "userRights": [],
+            "workflowIds": [
+                "5ffd7bb47e8a8462a28064dd"
+            ],
+            "workflows": {
+                "5ffd7bb47e8a8462a28064dd": {
+                    "_id": "5ffd7bb47e8a8462a28064dd",
+                    "branchPatterns": [],
+                    "buildSettings": {
+                        "androidBuildOutputFormat": "apk",
+                        "automaticBuilds": true,
+                        "buildOnPrUpdate": false,
+                        "cancelPending": true,
+                        "cancelPreviousBuilds": false,
+                        "flutterMode": "debug",
+                        "flutterVerbose": false,
+                        "flutterVersion": "stable",
+                        "platforms": [],
+                        "projectFile": ".",
+                        "tagBuilds": false,
+                        "target": "debug",
+                        "xcodeVersion": "latest"
+                    },
+                    "codeSigning": {
+                        "android": {
+                            "enabled": false,
+                            "keyAlias": null,
+                            "keyPassword": null,
+                            "keystore": null,
+                            "keystorePassword": null
+                        },
+                        "ios": {
+                            "appStoreConnectKeyId": null,
+                            "certificatePassword": null,
+                            "developerCertificate": null,
+                            "developerPortalBundleIdentifier": null,
+                            "developerPortalPassword": null,
+                            "developerPortalProfileType": null,
+                            "developerPortalTeamId": null,
+                            "developerPortalUsername": null,
+                            "enabled": null,
+                            "encryptedKey": null,
+                            "provisioningProfiles": [],
+                            "signingMethod": null
+                        }
+                    },
+                    "customScripts": {
+                        "postBuild": "",
+                        "postClone": "",
+                        "postPublish": "",
+                        "postTest": "",
+                        "preBuild": "",
+                        "prePublish": "",
+                        "preTest": ""
+                    },
+                    "dependencyCache": {
+                        "cachePaths": [],
+                        "enabled": false
+                    },
+                    "environmentVariables": [],
+                    "instanceType": "mac_mini",
+                    "isPublic": false,
+                    "maxBuildDuration": 3600,
+                    "name": "Default Workflow",
+                    "publishers": {
+                        "appStoreConnect": {
+                            "appStoreConnectAppleId": null,
+                            "appStoreConnectPassword": null,
+                            "enabled": null,
+                            "publishWhenFail": null
+                        },
+                        "email": {
+                            "enabled": true,
+                            "recipients": [
+                                "joseignacio.ojeda@koahealth.com"
+                            ]
+                        },
+                        "githubReleases": {
+                            "artifactPatterns": [
+                                "*.apk",
+                                "*.ipa"
+                            ],
+                            "enabled": false,
+                            "prerelease": false
+                        },
+                        "googlePlay": {
+                            "credentials": {},
+                            "enabled": null,
+                            "inAppUpdatePriority": null,
+                            "publishWhenFail": null,
+                            "rolloutFraction": null,
+                            "track": null
+                        },
+                        "s3StaticPages": {},
+                        "slack": {},
+                        "staticPages": {}
+                    },
+                    "testRunners": {
+                        "flutterAnalyze": {},
+                        "flutterDrive": {
+                            "frameworkType": "flutter_driver"
+                        },
+                        "flutterTest": {
+                            "frameworkType": "flutter_test"
+                        },
+                        "stopBuildIfTestsFail": true
+                    }
+                }
+            }
+        },
+        {
+            "_id": "60057ce41b08f33e8bc24157",
+            "appName": "automatic_thought_record_analysis_flutter",
+            "archived": false,
+            "branches": [
+                "master"
+            ],
+            "buildSchedule": [],
+            "createdAt": "2021-01-18T12:19:48.076+0000",
+            "iconUrl": "https://static.codemagic.io/files/e6b5d86b-9cac-4173-94f9-032b6dc2efe0/699fee77-4d3a-422e-82f0-0022c072d00f.png",
+            "isConfigured": true,
+            "lastBuildId": "6007ddf2c3030b4bcfb6f401",
+            "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
+            "projectFiles": [
+                "."
+            ],
+            "projectType": "flutter-package",
+            "repository": {
+                "defaultBranch": "master",
+                "htmlUrl": "git@github.com:koa-health/automatic_thought_record_analysis_flutter.git",
+                "id": "98a1ee2d-47c6-4407-a288-088342b5f7d1",
+                "isAuthenticationEnabled": true,
+                "language": "other",
+                "owner": {
+                    "name": "Manually added"
+                },
+                "provider": "generic",
+                "publicSshKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDZAM3if2/CiZa8gwJC48YvGiOh7/pmlQ02co9jfykqk9MrM0Ve039bJcvlwbj3U0JZEEO5JvsrMIHNzuIu0fK9B9LwsKpPq5CZTlA4vryc4VeSqVDGYHX2YgnPiMoMfeJqvTxRzs9BI2e1ds4r9kravKmNQVUKwNfplKz/ui5kJI/RWEosGE7Bltt1ydpLFGzWGO48mprR6ipslCyd8YgWFFt4eGLUgpAFGSMFOwbsYkPErrlZ2kbqfsSHqp3S+4SKM+QQianpIfEElmaCzsf/cay+dGeM0Pg1g8WNlURSEJb1StUmbJNVbUc5Uiw3HEAAu/fGFg2b5T39KQU92Vmckv0NvBm+N30qUumrmlnajLIb5JhRjfYNmrDOVSzADVZePVwPWWD6q86BKLIgj69HtpEeynxdOgfB8b4ls4v/rgT4othNsF1ln1oJq+cQ5Yx5/mEtaOPF4ypCbD/Swmm43A4raNID2tvyD+qYAV6ASQpdoSXetfQFSAas0qzbuLWBr9aFsuosx0BV4O9nf4BjzgCDd6BowviXKri++6dyKapaNu9mhnbJAl0EW/JiEf0AZtNDvQDuCu8vr5Te/cKVv9e2mM7NUs3bv3OlSf8chm0IXnX2RSEyB4lARo5NGrK+Q2MNnJNqwkayVk4dfYqp5Wzknnyl6QoNCJhfYY/Vsw==",
+                "username": null
+            },
+            "userRights": [],
+            "workflowIds": [
+                "60057ce41b08f33e8bc24156"
+            ],
+            "workflows": {
+                "60057ce41b08f33e8bc24156": {
+                    "_id": "60057ce41b08f33e8bc24156",
+                    "branchPatterns": [],
+                    "buildSettings": {
+                        "androidBuildOutputFormat": "apk",
+                        "automaticBuilds": true,
+                        "buildOnPrUpdate": false,
+                        "cancelPending": true,
+                        "cancelPreviousBuilds": false,
+                        "flutterMode": "debug",
+                        "flutterVerbose": false,
+                        "flutterVersion": "stable",
+                        "platforms": [],
+                        "projectFile": ".",
+                        "tagBuilds": false,
+                        "target": "debug",
+                        "xcodeVersion": "latest"
+                    },
+                    "codeSigning": {
+                        "android": {
+                            "enabled": false,
+                            "keyAlias": null,
+                            "keyPassword": null,
+                            "keystore": null,
+                            "keystorePassword": null
+                        },
+                        "ios": {
+                            "appStoreConnectKeyId": null,
+                            "certificatePassword": null,
+                            "developerCertificate": null,
+                            "developerPortalBundleIdentifier": null,
+                            "developerPortalPassword": null,
+                            "developerPortalProfileType": null,
+                            "developerPortalTeamId": null,
+                            "developerPortalUsername": null,
+                            "enabled": null,
+                            "encryptedKey": null,
+                            "provisioningProfiles": [],
+                            "signingMethod": null
+                        }
+                    },
+                    "customScripts": {
+                        "postBuild": "",
+                        "postClone": "",
+                        "postPublish": "",
+                        "postTest": "",
+                        "preBuild": "",
+                        "prePublish": "",
+                        "preTest": ""
+                    },
+                    "dependencyCache": {
+                        "cachePaths": [],
+                        "enabled": false
+                    },
+                    "environmentVariables": [],
+                    "instanceType": "mac_mini",
+                    "isPublic": false,
+                    "maxBuildDuration": 3600,
+                    "name": "Default Workflow",
+                    "publishers": {
+                        "appStoreConnect": {
+                            "appStoreConnectAppleId": null,
+                            "appStoreConnectPassword": null,
+                            "enabled": null,
+                            "publishWhenFail": null
+                        },
+                        "email": {
+                            "enabled": true,
+                            "recipients": [
+                                "joseignacio.ojeda@koahealth.com"
+                            ]
+                        },
+                        "githubReleases": {
+                            "artifactPatterns": [
+                                "*.apk",
+                                "*.ipa"
+                            ],
+                            "enabled": false,
+                            "prerelease": false
+                        },
+                        "googlePlay": {
+                            "credentials": {},
+                            "enabled": null,
+                            "inAppUpdatePriority": null,
+                            "publishWhenFail": null,
+                            "rolloutFraction": null,
+                            "track": null
+                        },
+                        "s3StaticPages": {},
+                        "slack": {},
+                        "staticPages": {}
+                    },
+                    "testRunners": {
+                        "flutterAnalyze": {},
+                        "flutterDrive": {
+                            "frameworkType": "flutter_driver"
+                        },
+                        "flutterTest": {
+                            "frameworkType": "flutter_test"
+                        },
+                        "stopBuildIfTestsFail": true
+                    }
+                }
+            }
+        },
+        {
+            "_id": "6005b3cec3030b252c53d750",
+            "appName": "upf-metacognition",
+            "archived": false,
+            "branches": [
+                "develop",
+                "fix/imagenoiselevel",
+                "fix/key",
+                "fix/report-sleep",
+                "fix/restart",
+                "login-fix",
+                "master"
+            ],
+            "buildSchedule": [],
+            "createdAt": "2021-01-18T16:14:06.697+0000",
+            "iconUrl": "https://static.codemagic.io/files/4258ac42-c214-4e8a-88cc-d5a7f040328a/7d4bcd6c-ab78-46b9-abed-21c9b0bded6f.png",
+            "isConfigured": null,
+            "lastBuildId": "6005cb6a29657a000e1e8dd3",
+            "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
+            "projectFiles": [
+                "."
+            ],
+            "projectType": "flutter-package",
+            "repository": {
+                "defaultBranch": "master",
+                "htmlUrl": "git@github.com:koa-health/upf-metacognition.git",
+                "id": "e7a9207d-889b-490d-ac80-7695baab4efb",
+                "isAuthenticationEnabled": true,
+                "language": "other",
+                "owner": {
+                    "name": "Manually added"
+                },
+                "provider": "generic",
+                "publicSshKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDN3BTVZn46ejMUTsivd55KskfAWA8ssHAX1Fb3iQ0YHQ4XKrLO6FyrRLNc3CCDUcK5VT12f4Jld0lop8t8bHAXqK06pI9WiS+O4bPiCh8I5LL+4/EuwEW7oZeGtkJpxE+SOVc4ZeIwKznHZfGppCSmec5avRPGsE7Wk5oNVvdfY+sjO2tHPhe12zJOa/0fO7ylsfieVjZ8V6qo33gB7kOt82TKWImT8wIOWbLZhIDsbjSq/fDanmMyYY7BGZcWRsKPXc71kmHVXGS9FvL7RL3KZBNSv/3y56GMF41yQbLUdHERswi15fPmXDO0bXXPHKZLJZfCTmLEO/5rUURqHKpS6I2bWGgTcQrl2ptYjdp3ur+HOFqvrhlV1MHYkHZ5v2n4TzlDlDd/YagrpU3qyljvHe7/LgbUYaedhHXwqwAsb+tuF8aDnCQS7muSNIKpGwFtF4OmQF2f46+Fje2v2FxSbkyfijBW0vNVeGUPLitgr4j2xrQdSxYO/j81lSZ+PKQJ5Kpk9qY4P6XkSc99CHg3D2x9vSfIbd/HXckKxym83MNGzzExbdB3Q6Qwy4qh7KF+D8EiL+Q1G/UitGEXmQB/0bEXZ8237O+3KKdhb84GIwI/F+geyqQdbVoEcKjcB1IwiFJunPrfstLUrnGHiVvDA97g4ZqnEMjv+pPYHWUbHQ==",
+                "username": null
+            },
+            "userRights": [],
+            "workflowIds": [
+                "6005b3cec3030b252c53d74f"
+            ],
+            "workflows": {
+                "6005b3cec3030b252c53d74f": {
+                    "_id": "6005b3cec3030b252c53d74f",
+                    "branchPatterns": [],
+                    "buildSettings": {
+                        "androidBuildOutputFormat": "apk",
+                        "automaticBuilds": true,
+                        "buildOnPrUpdate": false,
+                        "cancelPending": true,
+                        "cancelPreviousBuilds": false,
+                        "flutterMode": "debug",
+                        "flutterVerbose": false,
+                        "flutterVersion": "stable",
+                        "platforms": [],
+                        "projectFile": ".",
+                        "tagBuilds": false,
+                        "target": "debug",
+                        "xcodeVersion": "latest"
+                    },
+                    "codeSigning": {
+                        "android": {
+                            "enabled": false,
+                            "keyAlias": null,
+                            "keyPassword": null,
+                            "keystore": null,
+                            "keystorePassword": null
+                        },
+                        "ios": {
+                            "appStoreConnectKeyId": null,
+                            "certificatePassword": null,
+                            "developerCertificate": null,
+                            "developerPortalBundleIdentifier": null,
+                            "developerPortalPassword": null,
+                            "developerPortalProfileType": null,
+                            "developerPortalTeamId": null,
+                            "developerPortalUsername": null,
+                            "enabled": null,
+                            "encryptedKey": null,
+                            "provisioningProfiles": [],
+                            "signingMethod": null
+                        }
+                    },
+                    "customScripts": {
+                        "postBuild": "",
+                        "postClone": "",
+                        "postPublish": "",
+                        "postTest": "",
+                        "preBuild": "",
+                        "prePublish": "",
+                        "preTest": ""
+                    },
+                    "dependencyCache": {
+                        "cachePaths": [],
+                        "enabled": false
+                    },
+                    "environmentVariables": [],
+                    "instanceType": "mac_mini",
+                    "isPublic": false,
+                    "maxBuildDuration": 3600,
+                    "name": "Default Workflow",
+                    "publishers": {
+                        "appStoreConnect": {
+                            "appStoreConnectAppleId": null,
+                            "appStoreConnectPassword": null,
+                            "enabled": null,
+                            "publishWhenFail": null
+                        },
+                        "email": {
+                            "enabled": true,
+                            "recipients": [
+                                "joseignacio.ojeda@koahealth.com"
+                            ]
+                        },
+                        "githubReleases": {
+                            "artifactPatterns": [
+                                "*.apk",
+                                "*.ipa"
+                            ],
+                            "enabled": false,
+                            "prerelease": false
+                        },
+                        "googlePlay": {
+                            "credentials": {},
+                            "enabled": null,
+                            "inAppUpdatePriority": null,
+                            "publishWhenFail": null,
+                            "rolloutFraction": null,
+                            "track": null
+                        },
+                        "s3StaticPages": {},
+                        "slack": {},
+                        "staticPages": {}
+                    },
+                    "testRunners": {
+                        "flutterAnalyze": {},
+                        "flutterDrive": {
+                            "frameworkType": "flutter_driver"
+                        },
+                        "flutterTest": {
+                            "frameworkType": "flutter_test"
+                        },
+                        "stopBuildIfTestsFail": true
+                    }
+                }
+            }
+        },
+        {
+            "_id": "60069d68c3030b8436a0ff29",
+            "appName": "plugin_accelerometer-heartrate",
+            "archived": false,
+            "branches": [
+                "develop",
+                "fix/ios-deploy-apccenter",
+                "fix/json-encoder-perdiciontsdata-fix",
+                "fix/path-provider",
+                "fix/stop",
+                "fix/timestamps",
+                "initialize",
+                "master",
+                "model-update",
+                "path-provider",
+                "qa",
+                "refactor",
+                "task/android5",
+                "task/build_system_ios",
+                "task/entroy",
+                "task/fastlane_fix",
+                "task/normalize_se",
+                "task/ofuscation_fix",
+                "task/sample_rate_refactor",
+                "task/support_old_plugin_model",
+                "testapp"
+            ],
+            "buildSchedule": [],
+            "createdAt": "2021-01-19T08:50:48.925+0000",
+            "iconUrl": "https://static.codemagic.io/files/abf06f4b-fb69-422b-b318-bc871acca254/2df091f0-c599-4a3f-a9bc-4b0736bb35a7.png",
+            "isConfigured": true,
+            "lastBuildId": "6006ee4e29657a00101e9b74",
+            "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
+            "projectFiles": [
+                "."
+            ],
+            "projectType": "flutter-package",
+            "repository": {
+                "defaultBranch": "master",
+                "htmlUrl": "git@github.com:koa-health/plugin_accelerometer-heartrate.git",
+                "id": "3ec77bd0-6a3a-4ad2-b258-1e6f0dc6817d",
+                "isAuthenticationEnabled": true,
+                "language": "other",
+                "owner": {
+                    "name": "Manually added"
+                },
+                "provider": "generic",
+                "publicSshKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDKm2xDZFXOUdPKnqvSnSFv23mU7+byfy4UcfTwOfUUk4M715gjYUDmkhvxsuJJqXIE8aogRG3XSt6qLQbhNbOrI3xuGqOOoReFkbN7tSZkF0cllZsfyJc/kaXbEFjBAKwlQRWy7Z65LqY92t3ZedseNxOPaKat+qF1yn/gqAv58YA4ZkHkpQNxEJdj8Pt3WopDANdq9jQHiaK26MbrngNEczC0nxEms5SjDqYo58QooAvEs/2DToBoJaOr1QuqKjNVr6H/97DbLHnJPomQGAwBBF46Rvp64WjiPVHZfM6I1DN2z1k3K3917G0nn6kYg4xfNFQIdFIjfIwUc8pDViYjiw6AO1oGXBmZCP0RFLQiSQ711TNWOpHV1/UdNgDthsbrAQZ1Q5035TQExqxeUu2g6NXdt/ViNNj9WtcAcyeM/BkI0+jdOXNaq3M4K1k8VI/+YVTkVu3haAMrfhInCJcxXgi/P3buVfu41FvX8hJUFc76h7HaR2tzpognsS4LW8gyQ4j3aLsex5Ud9iPXOwW85Gu4nDKQ1W+8mQd31LIOCh2hNqOH9XF8AzsqJ76J3ukibWsZNLnFC5DhzYIu0WIBHSQV3o85Ri866IHAhPEmk5lZSermTDYXMqC4LDZGKgQwXg5rlTXubge4BF3q+v4VjfC4QAI4M4CDvzhTdBFOBw==",
+                "username": null
+            },
+            "userRights": [],
+            "workflowIds": [
+                "60069d68c3030b8436a0ff28"
+            ],
+            "workflows": {
+                "60069d68c3030b8436a0ff28": {
+                    "_id": "60069d68c3030b8436a0ff28",
+                    "branchPatterns": [],
+                    "buildSettings": {
+                        "androidBuildOutputFormat": "apk",
+                        "automaticBuilds": true,
+                        "buildOnPrUpdate": false,
+                        "cancelPending": true,
+                        "cancelPreviousBuilds": false,
+                        "cocoapodsVersion": "default",
+                        "flutterMode": "debug",
+                        "flutterVerbose": false,
+                        "flutterVersion": "stable",
+                        "platforms": [],
+                        "projectFile": ".",
+                        "tagBuilds": false,
+                        "target": "debug",
+                        "xcodeVersion": "11.3.1"
+                    },
+                    "codeSigning": {
+                        "android": {
+                            "enabled": false,
+                            "keyAlias": null,
+                            "keyPassword": null,
+                            "keystore": null,
+                            "keystorePassword": null
+                        },
+                        "ios": {
+                            "appStoreConnectKeyId": null,
+                            "certificatePassword": null,
+                            "developerCertificate": null,
+                            "developerPortalBundleIdentifier": null,
+                            "developerPortalPassword": null,
+                            "developerPortalProfileType": null,
+                            "developerPortalTeamId": null,
+                            "developerPortalUsername": null,
+                            "enabled": null,
+                            "encryptedKey": null,
+                            "provisioningProfiles": [],
+                            "signingMethod": null
+                        }
+                    },
+                    "customScripts": {
+                        "postBuild": "",
+                        "postClone": "",
+                        "postPublish": "",
+                        "postTest": "",
+                        "preBuild": "",
+                        "prePublish": "",
+                        "preTest": ""
+                    },
+                    "dependencyCache": {
+                        "cachePaths": [],
+                        "enabled": false
+                    },
+                    "environmentVariables": [],
+                    "instanceType": "mac_mini",
+                    "isPublic": false,
+                    "maxBuildDuration": 3600,
+                    "name": "Default Workflow",
+                    "publishers": {
+                        "appStoreConnect": {
+                            "appStoreConnectAppleId": null,
+                            "appStoreConnectPassword": null,
+                            "enabled": null,
+                            "publishWhenFail": null
+                        },
+                        "email": {
+                            "enabled": true,
+                            "recipients": [
+                                "joseignacio.ojeda@koahealth.com"
+                            ]
+                        },
+                        "githubReleases": {
+                            "artifactPatterns": [
+                                "*.apk",
+                                "*.ipa"
+                            ],
+                            "enabled": false,
+                            "prerelease": false
+                        },
+                        "googlePlay": {
+                            "credentials": {},
+                            "enabled": null,
+                            "inAppUpdatePriority": null,
+                            "publishWhenFail": null,
+                            "rolloutFraction": null,
+                            "track": null
+                        },
+                        "s3StaticPages": {},
+                        "slack": {},
+                        "staticPages": {}
+                    },
+                    "testRunners": {
+                        "flutterAnalyze": {},
+                        "flutterDrive": {
+                            "frameworkType": "flutter_driver"
+                        },
+                        "flutterTest": {
+                            "frameworkType": "flutter_test"
+                        },
+                        "stopBuildIfTestsFail": true
+                    }
+                }
+            }
+        },
+        {
+            "_id": "60101f30cb2f384082f476a4",
+            "appName": "koa-flutter",
+            "archived": false,
+            "branches": [
+                "DSInputLarge_maxLength",
+                "KDSBadges",
+                "KDSChips-sizes",
+                "KDSChips-themes",
+                "KDSComponentType",
+                "KDSDialogs",
+                "KDSSnackBars",
+                "Poc/rich-text",
+                "chore/nomenclature",
+                "chore/test-branch",
+                "dart-strict",
+                "element-transform",
+                "experiments/docs-2",
+                "feat/POC-analyticss",
+                "feat/buttons-theme-refactor",
+                "feat/change-kdsbuttontext-height",
+                "feat/poc-translations",
+                "feat/wingman_audio_player_v1",
+                "fix/audio-player-completion-fixes",
+                "fix/color-palette",
+                "input-border",
+                "master",
+                "task/event-service",
+                "testing-library"
+            ],
+            "buildSchedule": [],
+            "createdAt": "2021-01-26T13:54:56.246+0000",
+            "iconUrl": "https://static.codemagic.io/files/9b925120-dafb-4509-81e7-0eec40ccf07f/d97ae908-f5de-4878-afa3-004cd6c60f32.png",
+            "isConfigured": true,
+            "lastBuildId": "6022b1b629657a0c71a06cb1",
+            "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
+            "projectFiles": [
+                "."
+            ],
+            "projectType": "flutter-package",
+            "repository": {
+                "defaultBranch": "master",
+                "htmlUrl": "https://github.com/koa-health/koa-flutter",
+                "id": 195981159,
+                "isAuthenticationEnabled": false,
+                "language": "Dart",
+                "owner": {
+                    "name": "koa-health"
+                },
+                "provider": "github",
+                "publicSshKey": null,
+                "username": null
+            },
+            "userRights": [],
+            "workflowIds": [
+                "60101f30cb2f384082f476a3"
+            ],
+            "workflows": {
+                "60101f30cb2f384082f476a3": {
+                    "_id": "60101f30cb2f384082f476a3",
+                    "branchPatterns": [],
+                    "buildSettings": {
+                        "androidBuildOutputFormat": "apk",
+                        "automaticBuilds": false,
+                        "buildOnPrUpdate": false,
+                        "cancelPending": true,
+                        "cancelPreviousBuilds": false,
+                        "flutterMode": "debug",
+                        "flutterVerbose": false,
+                        "flutterVersion": "stable",
+                        "platforms": [
+                            "android",
+                            "ios"
+                        ],
+                        "projectFile": ".",
+                        "tagBuilds": false,
+                        "target": "debug",
+                        "xcodeVersion": "latest"
+                    },
+                    "codeSigning": {
+                        "android": {
+                            "enabled": false,
+                            "keyAlias": null,
+                            "keyPassword": null,
+                            "keystore": null,
+                            "keystorePassword": null
+                        },
+                        "ios": {
+                            "appStoreConnectKeyId": null,
+                            "certificatePassword": null,
+                            "developerCertificate": null,
+                            "developerPortalBundleIdentifier": null,
+                            "developerPortalPassword": null,
+                            "developerPortalProfileType": null,
+                            "developerPortalTeamId": null,
+                            "developerPortalUsername": null,
+                            "enabled": null,
+                            "encryptedKey": null,
+                            "provisioningProfiles": [],
+                            "signingMethod": null
+                        }
+                    },
+                    "customScripts": {
+                        "postBuild": "",
+                        "postClone": "",
+                        "postPublish": "",
+                        "postTest": "cp  -r build/screenshots $FCI_EXPORT_DIR/screenshots",
+                        "preBuild": "",
+                        "prePublish": "",
+                        "preTest": ""
+                    },
+                    "dependencyCache": {
+                        "cachePaths": [],
+                        "enabled": false
+                    },
+                    "environmentVariables": [],
+                    "instanceType": "mac_mini",
+                    "isPublic": false,
+                    "maxBuildDuration": 3600,
+                    "name": "Default Workflow",
+                    "publishers": {
+                        "appStoreConnect": {
+                            "appStoreConnectAppleId": null,
+                            "appStoreConnectPassword": null,
+                            "enabled": null,
+                            "publishWhenFail": null
+                        },
+                        "email": {
+                            "enabled": true,
+                            "recipients": [
+                                "joseignacio.ojeda@koahealth.com"
+                            ]
+                        },
+                        "githubReleases": {
+                            "artifactPatterns": [
+                                "*.apk",
+                                "*.ipa"
+                            ],
+                            "enabled": false,
+                            "prerelease": false
+                        },
+                        "googlePlay": {
+                            "credentials": {},
+                            "enabled": null,
+                            "inAppUpdatePriority": null,
+                            "publishWhenFail": null,
+                            "rolloutFraction": null,
+                            "track": null
+                        },
+                        "s3StaticPages": {},
+                        "slack": {},
+                        "staticPages": {}
+                    },
+                    "testRunners": {
+                        "flutterAnalyze": {},
+                        "flutterDrive": {
+                            "frameworkType": "flutter_driver"
+                        },
+                        "flutterTest": {
+                            "frameworkType": "flutter_test"
+                        },
+                        "stopBuildIfTestsFail": true
+                    }
+                }
+            }
+        },
+        {
+            "_id": "60238af3dbf13d9d4a487372",
+            "appName": "LSEAsy-app",
+            "archived": false,
+            "branches": [
+                "chore/ci-cd",
+                "master",
+                "scaffold"
+            ],
+            "buildSchedule": [],
+            "createdAt": "2021-02-10T07:27:47.564+0000",
+            "iconUrl": "https://static.codemagic.io/files/a8adc0ce-b231-4266-bab2-a9186dd91b8c/38e4e7a4-4ad4-4baf-a277-e35602371665.png",
+            "isConfigured": true,
+            "lastBuildId": "6023e8de29657a000b316813",
+            "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
+            "projectFiles": [
+                "."
+            ],
+            "projectType": "flutter-package",
+            "repository": {
+                "defaultBranch": "master",
+                "htmlUrl": "https://github.com/koa-health/LSEAsy-app",
+                "id": 333707276,
+                "isAuthenticationEnabled": false,
+                "language": "Ruby",
+                "owner": {
+                    "name": "koa-health"
+                },
+                "provider": "github",
+                "publicSshKey": null,
+                "username": null
+            },
+            "userRights": [],
+            "workflowIds": [
+                "60238af3dbf13d9d4a487371"
+            ],
+            "workflows": {
+                "60238af3dbf13d9d4a487371": {
+                    "_id": "60238af3dbf13d9d4a487371",
+                    "branchPatterns": [],
+                    "buildSettings": {
+                        "androidBuildOutputFormat": "apk",
+                        "automaticBuilds": false,
+                        "buildOnPrUpdate": false,
+                        "cancelPending": true,
+                        "cancelPreviousBuilds": false,
+                        "flutterMode": "debug",
+                        "flutterVerbose": false,
+                        "flutterVersion": "stable",
+                        "platforms": [
+                            "android",
+                            "ios"
+                        ],
+                        "projectFile": ".",
+                        "tagBuilds": false,
+                        "target": "debug",
+                        "xcodeVersion": "latest"
+                    },
+                    "codeSigning": {
+                        "android": {
+                            "enabled": false,
+                            "keyAlias": null,
+                            "keyPassword": null,
+                            "keystore": null,
+                            "keystorePassword": null
+                        },
+                        "ios": {
+                            "appStoreConnectKeyId": null,
+                            "certificatePassword": null,
+                            "developerCertificate": null,
+                            "developerPortalBundleIdentifier": null,
+                            "developerPortalPassword": null,
+                            "developerPortalProfileType": null,
+                            "developerPortalTeamId": null,
+                            "developerPortalUsername": null,
+                            "enabled": null,
+                            "encryptedKey": null,
+                            "provisioningProfiles": [],
+                            "signingMethod": null
+                        }
+                    },
+                    "customScripts": {
+                        "postBuild": "",
+                        "postClone": "",
+                        "postPublish": "",
+                        "postTest": "",
+                        "preBuild": "",
+                        "prePublish": "",
+                        "preTest": ""
+                    },
+                    "dependencyCache": {
+                        "cachePaths": [],
+                        "enabled": false
+                    },
+                    "environmentVariables": [],
+                    "instanceType": "mac_mini",
+                    "isPublic": false,
+                    "maxBuildDuration": 3600,
+                    "name": "Default Workflow",
+                    "publishers": {
+                        "appStoreConnect": {
+                            "appStoreConnectAppleId": null,
+                            "appStoreConnectPassword": null,
+                            "enabled": null,
+                            "publishWhenFail": null
+                        },
+                        "email": {
+                            "enabled": true,
+                            "recipients": [
+                                "joseignacio.ojeda@koahealth.com"
+                            ]
+                        },
+                        "githubReleases": {
+                            "artifactPatterns": [
+                                "*.apk",
+                                "*.ipa"
+                            ],
+                            "enabled": false,
+                            "prerelease": false
+                        },
+                        "googlePlay": {
+                            "credentials": {},
+                            "enabled": null,
+                            "inAppUpdatePriority": null,
+                            "publishWhenFail": null,
+                            "rolloutFraction": null,
+                            "track": null
+                        },
+                        "s3StaticPages": {},
+                        "slack": {},
+                        "staticPages": {}
+                    },
+                    "testRunners": {
+                        "flutterAnalyze": {},
+                        "flutterDrive": {
+                            "frameworkType": "flutter_driver"
+                        },
+                        "flutterTest": {
+                            "frameworkType": "flutter_test"
+                        },
+                        "stopBuildIfTestsFail": true
+                    }
+                }
+            }
+        }
+    ],
+    "builds": [
+        {
+            "_id": "6005cb6a29657a000e1e8dd3",
+            "appId": "6005b3cec3030b252c53d750",
+            "artefacts": [
+                {
+                    "app_name": "metacognition",
+                    "certificate_issuer": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "certificate_subject": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "debuggable": false,
+                    "md5": "6342b95b543be44348f42dcca45eb87c",
+                    "min_os_version": "16",
+                    "name": "app-release.apk",
+                    "packageName": "com.example.metacognition",
+                    "package_name": "com.example.metacognition",
+                    "size": 54033218,
+                    "type": "apk",
+                    "url": "https://static.codemagic.io/files/7a129635-2606-451c-af41-cd2727fe593d/7a6a6f52-ae1d-42c7-9597-84b715045b09/app-release.apk",
+                    "version": "1.0.1",
+                    "versionName": "1.0.1",
+                    "version_code": "4"
+                },
+                {
+                    "app_name": "metacognition",
+                    "certificate_issuer": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "certificate_subject": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "debuggable": false,
+                    "md5": "6342b95b543be44348f42dcca45eb87c",
+                    "min_os_version": "16",
+                    "name": "app.apk",
+                    "packageName": "com.example.metacognition",
+                    "package_name": "com.example.metacognition",
+                    "size": 54033218,
+                    "type": "apk",
+                    "url": "https://static.codemagic.io/files/4f3a82f5-55e8-421a-b6cb-36c511511043/7e30b670-a0d8-4d33-80d2-35aeae46e0ce/app.apk",
+                    "version": "1.0.1",
+                    "versionName": "1.0.1",
+                    "version_code": "4"
+                },
+                {
+                    "md5": "6342b95b543be44348f42dcca45eb87c",
+                    "name": "app-release.apk",
+                    "packageName": "com.example.metacognition",
+                    "size": 54033218,
+                    "type": "apk",
+                    "url": "https://static.codemagic.io/files/fa366bda-1748-41ed-976c-ff68db2125e0/95cb43bf-2162-426b-9ac5-baca9e1024ad/app-release.apk",
+                    "versionName": "1.0.1"
+                }
+            ],
+            "branch": "master",
+            "buildActions": [
+                {
+                    "_id": "6005cb6b29657a24eadbb66c",
+                    "finishedAt": "2021-01-18T17:55:14.945+0000",
+                    "logUrl": "https://static.codemagic.io/logs/1d483919-3ee2-4ccf-a4f2-5fa929579a6e/98ca905c-b764-4a47-8e99-e7c87b5ebf6c",
+                    "name": "Preparing build machine",
+                    "startedAt": "2021-01-18T17:54:54.505+0000",
+                    "status": "success",
+                    "type": "preparing"
+                },
+                {
+                    "_id": "6005cb6b29657a24eadbb66d",
+                    "finishedAt": "2021-01-18T17:55:18.217+0000",
+                    "logUrl": "https://static.codemagic.io/logs/effd6879-d835-457f-a266-11f84eb1e74b/5ce0a752-10ff-4d96-8ca5-62ca970a1ec6",
+                    "name": "Fetching app sources",
+                    "startedAt": "2021-01-18T17:55:14.945+0000",
+                    "status": "success",
+                    "type": "fetching"
+                },
+                {
+                    "_id": "6005cb6b29657a24eadbb66e",
+                    "finishedAt": "2021-01-18T17:55:25.234+0000",
+                    "logUrl": "https://static.codemagic.io/logs/97a66f83-ff35-4786-8de6-f37f657ccebc/8fc4a1c4-e675-458a-8bcc-05771e018cb1",
+                    "name": "Setup",
+                    "startedAt": "2021-01-18T17:55:18.217+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/bin/sh\n\n./.ci/setup_env.sh",
+                            "finishedAt": "2021-01-18T17:55:25.234+0000",
+                            "logUrl": "https://static.codemagic.io/logs/e332a1a5-b699-4a22-8aae-f665c78dd902/bc959ee6-30a6-4483-b55f-32b13343eb83",
+                            "startedAt": "2021-01-18T17:55:18.217+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6005cb6b29657a24eadbb66f",
+                    "finishedAt": "2021-01-18T17:57:25.904+0000",
+                    "logUrl": "https://static.codemagic.io/logs/4eb6d92c-2a8e-4a04-8562-2f96bb84e501/6b7b40fe-f4b7-445d-97ab-122ee7b5cb2a",
+                    "name": "Build Android",
+                    "startedAt": "2021-01-18T17:55:25.234+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/bin/sh\n\n./.ci/build.sh android",
+                            "finishedAt": "2021-01-18T17:57:25.903+0000",
+                            "logUrl": "https://static.codemagic.io/logs/c7d56254-bce4-4f46-81c0-38bddb7d0dcc/b032f348-6ebc-4e94-8407-599b7127277b",
+                            "startedAt": "2021-01-18T17:55:25.234+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6005cb6b29657a24eadbb670",
+                    "finishedAt": "2021-01-18T17:58:20.151+0000",
+                    "logUrl": "https://static.codemagic.io/logs/9e16223b-b6eb-4e3e-9471-5ba85b7d2508/42a5b405-410b-4172-b51d-8a2107a0523f",
+                    "name": "Publish Android build - App Center",
+                    "startedAt": "2021-01-18T17:57:25.904+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/bin/sh\n\n./.ci/publish.sh android",
+                            "finishedAt": "2021-01-18T17:58:20.150+0000",
+                            "logUrl": "https://static.codemagic.io/logs/6665a733-57de-47ff-b28c-33e4574b81da/40428922-d0ea-4912-a224-d3df9a90b9ec",
+                            "startedAt": "2021-01-18T17:57:25.904+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6005cb6b29657a24eadbb671",
+                    "alwaysRun": true,
+                    "finishedAt": "2021-01-18T17:58:26.011+0000",
+                    "logUrl": "https://static.codemagic.io/logs/981cf7d8-b2b5-4a38-b572-4d31f3484d61/68f82da1-5ff0-4597-8168-a6a3e04d0899",
+                    "name": "Publishing",
+                    "startedAt": "2021-01-18T17:58:20.151+0000",
+                    "status": "success",
+                    "type": "publishing"
+                },
+                {
+                    "_id": "6005cb6b29657a24eadbb672",
+                    "alwaysRun": true,
+                    "finishedAt": "2021-01-18T17:58:26.028+0000",
+                    "logUrl": "https://static.codemagic.io/logs/e3815463-5811-47bb-9b24-604d9d584a44/1ac55c97-79e6-4299-9303-cb35844cc22a",
+                    "name": "Cleaning up",
+                    "startedAt": "2021-01-18T17:58:26.011+0000",
+                    "status": "success",
+                    "type": "finishing"
+                }
+            ],
+            "commit": {
+                "authorAvatarUrl": "https://avatars3.githubusercontent.com/u/37109929?v=4",
+                "authorEmail": "37109929+joseignacioojeda@users.noreply.github.com",
+                "authorName": "Jose Ignacio Ojeda",
+                "branch": "master",
+                "commitMessage": "Merge pull request #95 from koa-health/develop",
+                "committerEmail": "noreply@github.com",
+                "committerName": "GitHub",
+                "hash": "1576d6979f7beab4ee7e8224b5f29125b8b596e2",
+                "isPullRequest": false,
+                "pullRequestNumber": null,
+                "url": "https://github.com/koa-health/upf-metacognition/commit/1576d6979f7beab4ee7e8224b5f29125b8b596e2"
+            },
+            "config": {
+                "buildSettings": {
+                    "flutterVersion": "stable",
+                    "platforms": [],
+                    "url": null,
+                    "xcodeVersion": "12.3"
+                },
+                "name": "Build UPF Metacongnition"
+            },
+            "createdAt": "2021-01-18T17:54:50.260+0000",
+            "dynamicConfig": {},
+            "feedback": null,
+            "fileWorkflowId": "application-build",
+            "finishedAt": "2021-01-18T17:58:26.028+0000",
+            "index": 4,
+            "instanceType": "mac_pro",
+            "message": null,
+            "pullRequest": null,
+            "scheduledBuildId": null,
+            "screenshots": null,
+            "sshAccess": {
+                "scriptUrl": "eyJidWlsZF9pZCI6IjYwMDVjYjZhMjk2NTdhMDAwZTFlOGRkMyJ9.xyYbqkYVg4xd4uDPQu_DHn4CiW4/ssh_access_script.sh"
+            },
+            "sshAccessEnabled": false,
+            "startedAt": "2021-01-18T17:54:54.505+0000",
+            "status": "finished",
+            "tag": null,
+            "version": "1.0.1",
+            "vncAccess": {
+                "host": "199.7.162.132",
+                "password": "k5uJXf2i",
+                "port": 21571,
+                "username": "builder"
+            },
+            "workflowId": null
+        },
+        {
+            "_id": "6005c9c329657a00141e8e27",
+            "appId": "6005b3cec3030b252c53d750",
+            "artefacts": [
+                {
+                    "app_name": "metacognition",
+                    "certificate_issuer": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "certificate_subject": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "debuggable": false,
+                    "md5": "2b1d89264d886b7437a8e1b1e34fbcac",
+                    "min_os_version": "16",
+                    "name": "app-release.apk",
+                    "packageName": "com.example.metacognition",
+                    "package_name": "com.example.metacognition",
+                    "size": 54033214,
+                    "type": "apk",
+                    "url": "https://static.codemagic.io/files/cf6fe8ee-e665-45a2-a6e0-71abcfb7ff49/387761fe-3b2b-45ee-a1a6-859a56cb84f6/app-release.apk",
+                    "version": "1.0.1",
+                    "versionName": "1.0.1",
+                    "version_code": "3"
+                },
+                {
+                    "app_name": "metacognition",
+                    "certificate_issuer": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "certificate_subject": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "debuggable": false,
+                    "md5": "2b1d89264d886b7437a8e1b1e34fbcac",
+                    "min_os_version": "16",
+                    "name": "app.apk",
+                    "packageName": "com.example.metacognition",
+                    "package_name": "com.example.metacognition",
+                    "size": 54033214,
+                    "type": "apk",
+                    "url": "https://static.codemagic.io/files/feaaa109-49db-4c17-b251-ce0be2e3c591/663fa158-66a3-4f4b-8b06-9db4d6029397/app.apk",
+                    "version": "1.0.1",
+                    "versionName": "1.0.1",
+                    "version_code": "3"
+                },
+                {
+                    "md5": "2b1d89264d886b7437a8e1b1e34fbcac",
+                    "name": "app-release.apk",
+                    "packageName": "com.example.metacognition",
+                    "size": 54033214,
+                    "type": "apk",
+                    "url": "https://static.codemagic.io/files/6eed6f4e-a08c-467e-9bff-51be4eb8deac/898b10ba-99d2-41cc-9162-ded09b50d0c3/app-release.apk",
+                    "versionName": "1.0.1"
+                }
+            ],
+            "branch": "master",
+            "buildActions": [
+                {
+                    "_id": "6005c9c429657a1097dbb682",
+                    "finishedAt": "2021-01-18T17:48:11.430+0000",
+                    "logUrl": "https://static.codemagic.io/logs/541f9ae4-6a46-43ed-b05f-1d1da338eb44/803d3468-bcd8-46b2-83f5-a9b1fb2e21e9",
+                    "name": "Preparing build machine",
+                    "startedAt": "2021-01-18T17:47:52.389+0000",
+                    "status": "success",
+                    "type": "preparing"
+                },
+                {
+                    "_id": "6005c9c429657a1097dbb683",
+                    "finishedAt": "2021-01-18T17:48:19.610+0000",
+                    "logUrl": "https://static.codemagic.io/logs/548f9ecd-9a1c-455f-acaa-eb1cdd75d000/e981466f-8afa-4d4a-ac09-72bee8e01f80",
+                    "name": "Fetching app sources",
+                    "startedAt": "2021-01-18T17:48:11.430+0000",
+                    "status": "success",
+                    "type": "fetching"
+                },
+                {
+                    "_id": "6005c9c429657a1097dbb684",
+                    "finishedAt": "2021-01-18T17:48:26.010+0000",
+                    "logUrl": "https://static.codemagic.io/logs/6f9c237a-2a04-4e16-b5cd-13ae0245425e/9a2fc156-319a-4264-a34c-a5f20e0978ee",
+                    "name": "Setup",
+                    "startedAt": "2021-01-18T17:48:19.610+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/bin/sh\n\n./.ci/setup_env.sh",
+                            "finishedAt": "2021-01-18T17:48:26.009+0000",
+                            "logUrl": "https://static.codemagic.io/logs/8f2b0533-3d13-4e69-9854-fbaa4eae54f8/774ce1d8-6d78-42d1-b048-5bda7b56d998",
+                            "startedAt": "2021-01-18T17:48:19.610+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6005c9c429657a1097dbb685",
+                    "finishedAt": "2021-01-18T17:50:23.265+0000",
+                    "logUrl": "https://static.codemagic.io/logs/577d46eb-06d7-430d-8b32-d7dee3c3c94c/bed43185-7eb5-4793-a47e-57460b370863",
+                    "name": "Build Android",
+                    "startedAt": "2021-01-18T17:48:26.010+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/bin/sh\n\n./.ci/build.sh android",
+                            "finishedAt": "2021-01-18T17:50:23.264+0000",
+                            "logUrl": "https://static.codemagic.io/logs/09cf6cb0-02c5-4680-8a59-d49476815dae/e83f63f3-7e09-466b-ac4f-297eb876e0a5",
+                            "startedAt": "2021-01-18T17:48:26.010+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6005c9c429657a1097dbb686",
+                    "finishedAt": "2021-01-18T17:51:18.637+0000",
+                    "logUrl": "https://static.codemagic.io/logs/7aa283cc-ca8d-49a7-baa3-ca355dfb71e4/292392e2-8cbf-4a8e-ae3e-568ba9e85f9b",
+                    "name": "Publish Android build - App Center",
+                    "startedAt": "2021-01-18T17:50:23.265+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/bin/sh\n\n./.ci/publish.sh android",
+                            "finishedAt": "2021-01-18T17:51:18.636+0000",
+                            "logUrl": "https://static.codemagic.io/logs/91c61a7a-d53c-40b7-aca5-273fe544120e/519abe66-8a88-4569-b933-368c8fbbfc3d",
+                            "startedAt": "2021-01-18T17:50:23.265+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6005c9c429657a1097dbb687",
+                    "alwaysRun": true,
+                    "finishedAt": "2021-01-18T17:51:23.166+0000",
+                    "logUrl": "https://static.codemagic.io/logs/b7efcf61-49c8-45cf-ad71-8e2010b0edd0/3e321ba7-c511-41e8-a785-7ddb6b59847e",
+                    "name": "Publishing",
+                    "startedAt": "2021-01-18T17:51:18.637+0000",
+                    "status": "success",
+                    "type": "publishing"
+                },
+                {
+                    "_id": "6005c9c429657a1097dbb688",
+                    "alwaysRun": true,
+                    "finishedAt": "2021-01-18T17:51:23.183+0000",
+                    "logUrl": "https://static.codemagic.io/logs/555852f6-4599-41c0-930e-8dbb089534f8/93250d69-8a23-479e-a6f4-5d8c8d574689",
+                    "name": "Cleaning up",
+                    "startedAt": "2021-01-18T17:51:23.166+0000",
+                    "status": "success",
+                    "type": "finishing"
+                }
+            ],
+            "commit": {
+                "authorAvatarUrl": "https://avatars3.githubusercontent.com/u/37109929?v=4",
+                "authorEmail": "37109929+joseignacioojeda@users.noreply.github.com",
+                "authorName": "Jose Ignacio Ojeda",
+                "branch": "master",
+                "commitMessage": "ci(codemagic): Migration from Travis to CodeMagic (#94)",
+                "committerEmail": "noreply@github.com",
+                "committerName": "GitHub",
+                "hash": "e19a94bcef6b43cd652d06a4252bd1bf5caa3bea",
+                "isPullRequest": false,
+                "pullRequestNumber": null,
+                "url": "https://github.com/koa-health/upf-metacognition/commit/e19a94bcef6b43cd652d06a4252bd1bf5caa3bea"
+            },
+            "config": {
+                "buildSettings": {
+                    "flutterVersion": "stable",
+                    "platforms": [],
+                    "url": null,
+                    "xcodeVersion": "12.3"
+                },
+                "name": "Build UPF Metacongnition"
+            },
+            "createdAt": "2021-01-18T17:47:47.282+0000",
+            "dynamicConfig": {},
+            "feedback": null,
+            "fileWorkflowId": "application-build",
+            "finishedAt": "2021-01-18T17:51:23.183+0000",
+            "index": 3,
+            "instanceType": "mac_pro",
+            "message": null,
+            "pullRequest": null,
+            "scheduledBuildId": null,
+            "screenshots": null,
+            "sshAccess": {
+                "scriptUrl": "eyJidWlsZF9pZCI6IjYwMDVjOWMzMjk2NTdhMDAxNDFlOGUyNyJ9.D3M6GlKsziUX9G81fFS_pd7FOAQ/ssh_access_script.sh"
+            },
+            "sshAccessEnabled": false,
+            "startedAt": "2021-01-18T17:47:52.389+0000",
+            "status": "finished",
+            "tag": null,
+            "version": "1.0.1",
+            "vncAccess": {
+                "host": "199.7.162.132",
+                "password": "0vzv7lZH",
+                "port": 29768,
+                "username": "builder"
+            },
+            "workflowId": null
+        },
+        {
+            "_id": "6005bcc929657a000d1e8ccd",
+            "appId": "6005b3cec3030b252c53d750",
+            "artefacts": null,
+            "branch": "temporal",
+            "buildActions": [
+                {
+                    "_id": "6005bccb29657a576edbb66d",
+                    "finishedAt": "2021-01-18T16:52:49.833+0000",
+                    "logUrl": "https://static.codemagic.io/logs/f21bc8ab-7009-4af1-810a-f2c55cd62e63/0b677a89-8a4d-48a9-9ff1-387f235d1446",
+                    "name": "Preparing build machine",
+                    "startedAt": "2021-01-18T16:52:29.506+0000",
+                    "status": "success",
+                    "type": "preparing"
+                },
+                {
+                    "_id": "6005bccb29657a576edbb66e",
+                    "finishedAt": "2021-01-18T16:52:53.206+0000",
+                    "logUrl": "https://static.codemagic.io/logs/095e0fd4-8a46-4e54-b457-04bde5941c6d/e90a66df-181e-443c-a0a1-05f29f7964f1",
+                    "name": "Fetching app sources",
+                    "startedAt": "2021-01-18T16:52:49.833+0000",
+                    "status": "success",
+                    "type": "fetching"
+                },
+                {
+                    "_id": "6005bccb29657a576edbb66f",
+                    "finishedAt": "2021-01-18T16:52:54.791+0000",
+                    "logUrl": "https://static.codemagic.io/logs/f43dd30b-57c9-4e41-9ce1-1aa997fb9127/06f47199-b275-4be1-b0b0-b3a304c18f04",
+                    "name": "Installing dependencies",
+                    "startedAt": "2021-01-18T16:52:53.206+0000",
+                    "status": "failed",
+                    "type": "installing"
+                },
+                {
+                    "_id": "6005bccb29657a576edbb670",
+                    "alwaysRun": true,
+                    "finishedAt": "2021-01-18T16:52:54.795+0000",
+                    "logUrl": "https://static.codemagic.io/logs/dba29551-7532-4943-b67f-e6bed74520c2/77619392-7eb2-429d-aa4e-a1bee7fa6263",
+                    "name": "Publishing",
+                    "startedAt": "2021-01-18T16:52:54.791+0000",
+                    "status": "success",
+                    "type": "publishing"
+                },
+                {
+                    "_id": "6005bccb29657a576edbb671",
+                    "alwaysRun": true,
+                    "finishedAt": "2021-01-18T16:52:54.809+0000",
+                    "logUrl": "https://static.codemagic.io/logs/fc238170-3dd8-4494-afd1-ad54ee4b3a40/ee5e95b6-d59a-443c-be32-c2320abd793e",
+                    "name": "Cleaning up",
+                    "startedAt": "2021-01-18T16:52:54.795+0000",
+                    "status": "success",
+                    "type": "finishing"
+                }
+            ],
+            "commit": {
+                "authorAvatarUrl": "https://avatars3.githubusercontent.com/u/37109929?v=4",
+                "authorEmail": "stephen.etheredge@koahealth.com",
+                "authorName": "Stephen Etheredge",
+                "branch": "temporal",
+                "commitMessage": "Merge pull request #90 from koa-health/develop",
+                "committerEmail": "noreply@github.com",
+                "committerName": "GitHub",
+                "hash": "c48902612097707b52766317bb9511455310eaab",
+                "isPullRequest": false,
+                "pullRequestNumber": null,
+                "url": "https://github.com/koa-health/upf-metacognition/commit/c48902612097707b52766317bb9511455310eaab"
+            },
+            "config": {
+                "buildSettings": {
+                    "flutterMode": "debug",
+                    "flutterVersion": "stable",
+                    "platforms": [],
+                    "stopBuildIfTestsFail": true,
+                    "xcodeVersion": "12.3"
+                },
+                "name": "Default Workflow"
+            },
+            "createdAt": "2021-01-18T16:52:25.882+0000",
+            "dynamicConfig": {},
+            "feedback": null,
+            "fileWorkflowId": null,
+            "finishedAt": "2021-01-18T16:52:54.809+0000",
+            "index": 1,
+            "instanceType": "mac_pro",
+            "message": "Failed to install dependencies",
+            "pullRequest": null,
+            "scheduledBuildId": null,
+            "screenshots": null,
+            "sshAccess": {
+                "scriptUrl": "eyJidWlsZF9pZCI6IjYwMDViY2M5Mjk2NTdhMDAwZDFlOGNjZCJ9.DYpBpxRjXZYdQW26Ev0S_3DUNb4/ssh_access_script.sh"
+            },
+            "sshAccessEnabled": false,
+            "startedAt": "2021-01-18T16:52:29.506+0000",
+            "status": "failed",
+            "tag": null,
+            "version": "",
+            "vncAccess": {
+                "host": "199.7.162.132",
+                "password": "vGMuAq1T",
+                "port": 27839,
+                "username": "builder"
+            },
+            "workflowId": "6005b3cec3030b252c53d74f"
+        },
+        {
+            "_id": "6005b9d529657a00131e8ce9",
+            "appId": "6005b3cec3030b252c53d750",
+            "artefacts": null,
+            "branch": "master",
+            "buildActions": [
+                {
+                    "_id": "6005b9d729657a2929dbb66e",
+                    "finishedAt": "2021-01-18T16:40:01.885+0000",
+                    "logUrl": "https://static.codemagic.io/logs/fca3bed0-7e12-41d3-a64d-f3630e657ddc/56ac931e-25a7-4ed9-a695-9628611e84af",
+                    "name": "Preparing build machine",
+                    "startedAt": "2021-01-18T16:39:53.598+0000",
+                    "status": "failed",
+                    "type": "preparing"
+                },
+                {
+                    "_id": "6005b9d729657a2929dbb66f",
+                    "finishedAt": "2021-01-18T16:40:01.886+0000",
+                    "logUrl": "https://static.codemagic.io/logs/c9469d25-e6da-4c33-9180-9499838396cf/6ff91644-c9fa-4360-b8e6-0e7f26adc718",
+                    "name": "Fetching app sources",
+                    "startedAt": "2021-01-18T16:40:01.885+0000",
+                    "status": "skipped",
+                    "type": "fetching"
+                },
+                {
+                    "_id": "6005b9d729657a2929dbb670",
+                    "finishedAt": "2021-01-18T16:40:01.887+0000",
+                    "logUrl": "https://static.codemagic.io/logs/689cc8f5-1b18-476e-a28d-92f1c6108162/7346338c-8de8-4fe5-941b-30d69788b448",
+                    "name": "Setup",
+                    "startedAt": "2021-01-18T16:40:01.886+0000",
+                    "status": "skipped",
+                    "subactions": [
+                        {
+                            "command": "#!/bin/sh\n\n./.ci/setup_env.sh",
+                            "startedAt": "2021-01-18T16:40:01.886+0000"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6005b9d729657a2929dbb671",
+                    "finishedAt": "2021-01-18T16:40:01.888+0000",
+                    "logUrl": "https://static.codemagic.io/logs/e6a4532d-50cb-4768-9f9b-efb7671f97ee/3280a28b-ce70-44c2-a3a3-d82ee1fad34a",
+                    "name": "Build Android",
+                    "startedAt": "2021-01-18T16:40:01.887+0000",
+                    "status": "skipped",
+                    "subactions": [
+                        {
+                            "command": "#!/bin/sh\n\n./.ci/build.sh android",
+                            "startedAt": "2021-01-18T16:40:01.887+0000"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6005b9d729657a2929dbb672",
+                    "finishedAt": "2021-01-18T16:40:01.888+0000",
+                    "logUrl": "https://static.codemagic.io/logs/bb5f9d59-ec99-4587-9223-fa1b56d44425/63b1ea15-44e4-4976-a017-22f7b41579d8",
+                    "name": "Publish Android build - App Center",
+                    "startedAt": "2021-01-18T16:40:01.888+0000",
+                    "status": "skipped",
+                    "subactions": [
+                        {
+                            "command": "#!/bin/sh\n\n./.ci/publish.sh android",
+                            "startedAt": "2021-01-18T16:40:01.888+0000"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6005b9d729657a2929dbb673",
+                    "alwaysRun": true,
+                    "finishedAt": "2021-01-18T16:40:01.893+0000",
+                    "logUrl": "https://static.codemagic.io/logs/3a2d7ef0-9cba-40f6-a3c5-759800ffc74f/aeef5bdd-ad82-4b47-ae4b-82493689ab12",
+                    "name": "Publishing",
+                    "startedAt": "2021-01-18T16:40:01.888+0000",
+                    "status": "success",
+                    "type": "publishing"
+                },
+                {
+                    "_id": "6005b9d729657a2929dbb674",
+                    "alwaysRun": true,
+                    "finishedAt": "2021-01-18T16:40:01.914+0000",
+                    "logUrl": "https://static.codemagic.io/logs/997f57bc-025d-473d-9df0-83369cc6eb1b/d7d359a7-d6dc-4b4d-8d69-a7e27b76f6f4",
+                    "name": "Cleaning up",
+                    "startedAt": "2021-01-18T16:40:01.893+0000",
+                    "status": "success",
+                    "type": "finishing"
+                }
+            ],
+            "commit": {
+                "authorAvatarUrl": "https://avatars3.githubusercontent.com/u/37109929?v=4",
+                "authorEmail": "37109929+joseignacioojeda@users.noreply.github.com",
+                "authorName": "Jose Ignacio Ojeda",
+                "branch": "master",
+                "commitMessage": "ci(codemagic): Migration from Travis to CodeMagic (#91) (#92)",
+                "hash": "63814676bc42818fe22d344f0ece91b785de1510",
+                "isPullRequest": false,
+                "pullRequestNumber": null,
+                "url": "https://github.com/koa-health/upf-metacognition/commit/63814676bc42818fe22d344f0ece91b785de1510"
+            },
+            "config": {
+                "buildSettings": {
+                    "flutterVersion": "stable",
+                    "platforms": [],
+                    "url": null,
+                    "xcodeVersion": "12.3"
+                },
+                "name": "Build UPF Metacongnition"
+            },
+            "createdAt": "2021-01-18T16:39:49.200+0000",
+            "dynamicConfig": {},
+            "feedback": null,
+            "fileWorkflowId": "application-build",
+            "finishedAt": "2021-01-18T16:40:01.914+0000",
+            "index": 2,
+            "instanceType": "mac_pro",
+            "message": "Unable to decrypt environment variable MATCH_PASSWORD: Invalid encryption key - encrypted variables work only with builds in the same team they were created with",
+            "pullRequest": null,
+            "scheduledBuildId": null,
+            "screenshots": null,
+            "sshAccess": {
+                "scriptUrl": null
+            },
+            "sshAccessEnabled": false,
+            "startedAt": "2021-01-18T16:39:53.598+0000",
+            "status": "failed",
+            "tag": null,
+            "version": "",
+            "vncAccess": {
+                "host": null,
+                "password": null,
+                "port": 23026,
+                "username": null
+            },
+            "workflowId": null
+        },
+        {
+            "_id": "6005b49b29657a000d1e8c30",
+            "appId": "6005b3cec3030b252c53d750",
+            "artefacts": [
+                {
+                    "app_name": "metacognition",
+                    "certificate_issuer": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "certificate_subject": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "debuggable": false,
+                    "md5": "4b028394cd9ec214aa4c0e694b44fb50",
+                    "min_os_version": "16",
+                    "name": "app-release.apk",
+                    "packageName": "com.example.metacognition",
+                    "package_name": "com.example.metacognition",
+                    "size": 54033212,
+                    "type": "apk",
+                    "url": "https://static.codemagic.io/files/9dfd6508-07a1-4d6c-9c87-ab4e54eaf37a/68cb70d1-28ed-4818-b64a-0704c306a6f7/app-release.apk",
+                    "version": "1.0.0",
+                    "versionName": "1.0.0",
+                    "version_code": "1"
+                },
+                {
+                    "app_name": "metacognition",
+                    "certificate_issuer": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "certificate_subject": "Common Name: Android Debug, Organization: Android, Country: US",
+                    "debuggable": false,
+                    "md5": "4b028394cd9ec214aa4c0e694b44fb50",
+                    "min_os_version": "16",
+                    "name": "app.apk",
+                    "packageName": "com.example.metacognition",
+                    "package_name": "com.example.metacognition",
+                    "size": 54033212,
+                    "type": "apk",
+                    "url": "https://static.codemagic.io/files/0282c1f6-bf3d-4f9e-bc44-95960f35ee90/324d54c7-e8e8-4311-acb1-73bf287c30c4/app.apk",
+                    "version": "1.0.0",
+                    "versionName": "1.0.0",
+                    "version_code": "1"
+                },
+                {
+                    "md5": "4b028394cd9ec214aa4c0e694b44fb50",
+                    "name": "app-release.apk",
+                    "packageName": "com.example.metacognition",
+                    "size": 54033212,
+                    "type": "apk",
+                    "url": "https://static.codemagic.io/files/68cedafb-2b88-48d4-8c92-7483c1daa62f/1a21ac17-52cf-4edc-8ee1-4bf01befa9ed/app-release.apk",
+                    "versionName": "1.0.0"
+                }
+            ],
+            "branch": "codemagic-migration",
+            "buildActions": [
+                {
+                    "_id": "6005b49d29657a5adbdbb66b",
+                    "finishedAt": "2021-01-18T16:17:55.217+0000",
+                    "logUrl": "https://static.codemagic.io/logs/3d90c66c-9e37-46c2-90ac-5b670b6c9ceb/f4f6ee5b-b83f-4161-8977-dfafbe74faa8",
+                    "name": "Preparing build machine",
+                    "startedAt": "2021-01-18T16:17:35.744+0000",
+                    "status": "success",
+                    "type": "preparing"
+                },
+                {
+                    "_id": "6005b49d29657a5adbdbb66c",
+                    "finishedAt": "2021-01-18T16:18:01.028+0000",
+                    "logUrl": "https://static.codemagic.io/logs/dce45cfb-1ce7-43f7-8502-95a8653e8628/ea582be3-52bc-4b52-97cc-85a8011a8098",
+                    "name": "Fetching app sources",
+                    "startedAt": "2021-01-18T16:17:55.217+0000",
+                    "status": "success",
+                    "type": "fetching"
+                },
+                {
+                    "_id": "6005b49d29657a5adbdbb66d",
+                    "finishedAt": "2021-01-18T16:18:09.089+0000",
+                    "logUrl": "https://static.codemagic.io/logs/f1d70054-8b71-444f-add4-4de385a61856/cf02585c-d3e8-4273-b980-0a31e95b5aef",
+                    "name": "Setup",
+                    "startedAt": "2021-01-18T16:18:01.028+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/bin/sh\n\n./.ci/setup_env.sh",
+                            "finishedAt": "2021-01-18T16:18:09.088+0000",
+                            "logUrl": "https://static.codemagic.io/logs/e215af7e-092a-47e9-a0c2-b549936ae052/2dc7e46c-7e00-417d-a554-b5e32a92dc62",
+                            "startedAt": "2021-01-18T16:18:01.028+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6005b49d29657a5adbdbb66e",
+                    "finishedAt": "2021-01-18T16:20:40.552+0000",
+                    "logUrl": "https://static.codemagic.io/logs/296dfd7e-d253-478b-933c-0e1c92b927af/63b5a2b4-1275-4919-8984-c037391dcfff",
+                    "name": "Build Android",
+                    "startedAt": "2021-01-18T16:18:09.089+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/bin/sh\n\n./.ci/build.sh android",
+                            "finishedAt": "2021-01-18T16:20:40.549+0000",
+                            "logUrl": "https://static.codemagic.io/logs/4dc30d26-4b5e-44d3-a54f-477ed1c3340b/49150cb7-9694-4d4f-9d8e-debb2761249d",
+                            "startedAt": "2021-01-18T16:18:09.089+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6005b49d29657a5adbdbb66f",
+                    "finishedAt": "2021-01-18T16:21:51.928+0000",
+                    "logUrl": "https://static.codemagic.io/logs/750401c0-452e-4943-b4c3-1b71ff815096/617c044d-4650-4af5-bcf9-763e848517b1",
+                    "name": "Publish Android build - App Center",
+                    "startedAt": "2021-01-18T16:20:40.552+0000",
+                    "status": "success",
+                    "subactions": [
+                        {
+                            "command": "#!/bin/sh\n\n./.ci/publish.sh android",
+                            "finishedAt": "2021-01-18T16:21:51.925+0000",
+                            "logUrl": "https://static.codemagic.io/logs/4b8fa7b8-794b-40f1-8a46-c950c593ffaa/52fc85b0-c47a-4886-b8a5-60c08cb63c6e",
+                            "startedAt": "2021-01-18T16:20:40.552+0000",
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6005b49d29657a5adbdbb670",
+                    "alwaysRun": true,
+                    "finishedAt": "2021-01-18T16:21:55.890+0000",
+                    "logUrl": "https://static.codemagic.io/logs/e55d87d8-e84d-4042-b580-a399f67dfb56/0046dbee-ae6c-4554-960c-790d96dd1ac5",
+                    "name": "Publishing",
+                    "startedAt": "2021-01-18T16:21:51.928+0000",
+                    "status": "success",
+                    "type": "publishing"
+                },
+                {
+                    "_id": "6005b49d29657a5adbdbb671",
+                    "alwaysRun": true,
+                    "finishedAt": "2021-01-18T16:21:55.915+0000",
+                    "logUrl": "https://static.codemagic.io/logs/00d48f6b-7660-4277-9447-a41735f4b35e/f75ae6f5-d229-4b42-a515-faa11bc67205",
+                    "name": "Cleaning up",
+                    "startedAt": "2021-01-18T16:21:55.890+0000",
+                    "status": "success",
+                    "type": "finishing"
+                }
+            ],
+            "commit": {
+                "authorAvatarUrl": "https://avatars3.githubusercontent.com/u/37109929?v=4",
+                "authorEmail": "stephen.etheredge@koahealth.com",
+                "authorName": "Stephen Etheredge",
+                "branch": "codemagic-migration",
+                "commitMessage": "ci(codemagic): Migration from Travis to CodeMagic",
+                "committerEmail": "joseignacio.ojeda@koahealth.com",
+                "committerName": "Jose Ignacio Ojeda",
+                "hash": "c59e39de4215b535cace0187be5bdc0d722a474c",
+                "isPullRequest": false,
+                "pullRequestNumber": null,
+                "url": "https://github.com/koa-health/upf-metacognition/commit/c59e39de4215b535cace0187be5bdc0d722a474c"
+            },
+            "config": {
+                "buildSettings": {
+                    "flutterVersion": "stable",
+                    "platforms": [],
+                    "url": null,
+                    "xcodeVersion": "12.3"
+                },
+                "name": "Build UPF Metacongnition"
+            },
+            "createdAt": "2021-01-18T16:17:31.625+0000",
+            "dynamicConfig": {},
+            "feedback": null,
+            "fileWorkflowId": "application-build",
+            "finishedAt": "2021-01-18T16:21:55.915+0000",
+            "index": 1,
+            "instanceType": "mac_mini",
+            "message": null,
+            "pullRequest": null,
+            "scheduledBuildId": null,
+            "screenshots": null,
+            "sshAccess": {
+                "scriptUrl": "eyJidWlsZF9pZCI6IjYwMDViNDliMjk2NTdhMDAwZDFlOGMzMCJ9.dSga8wE9mUB0FmOPeJ3jQ7Ulr54/ssh_access_script.sh"
+            },
+            "sshAccessEnabled": false,
+            "startedAt": "2021-01-18T16:17:35.744+0000",
+            "status": "finished",
+            "tag": null,
+            "version": "1.0.0",
+            "vncAccess": {
+                "host": "199.7.162.132",
+                "password": "I42wjZ79",
+                "port": 17435,
+                "username": "builder"
+            },
+            "workflowId": null
+        }
+    ]
+}

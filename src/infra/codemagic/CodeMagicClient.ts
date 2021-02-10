@@ -1,16 +1,36 @@
 /* eslint-disable no-underscore-dangle */
+import { application } from 'express';
 import fetch from 'node-fetch';
 
 export interface CodeMagicApp {
   readonly id: string;
   readonly name: string;
   readonly owner: string;
-  readonly workflows: CodeMagicWorkflow[];
 }
 
+export type CodeMagicBuild = CodeMagicWorkflowBuild | CodeMagicYamlBuild;
+
+export interface CodeMagicYamlBuild {
+  readonly type: 'yaml';
+  readonly id: string;
+  readonly yamlWorkflowId: string;
+  readonly name: string;
+}
+
+export interface CodeMagicWorkflowBuild {
+  readonly type: 'workflow';
+  readonly id: string;
+  readonly workflowId: string;
+  readonly name: string;
+}
 export interface CodeMagicWorkflow {
   readonly id: string;
   readonly name: string;
+}
+
+export interface CodeMagicWorkflowsAndBuilds {
+  readonly builds: CodeMagicBuild[];
+  readonly workflows: CodeMagicWorkflow[];
 }
 
 export class CodeMagicClient {
@@ -34,10 +54,63 @@ export class CodeMagicClient {
       id: a._id,
       name: a.appName,
       owner: a.repository.owner.name,
-      workflows: Object.entries(a.workflows).map(([id, wf]) => ({
-        id: (wf as any)._id,
-        name: (wf as any).name,
-      })),
     }));
+  }
+
+  public async listWorkflowsAndBuilds(appId: string): Promise<CodeMagicWorkflowsAndBuilds> {
+    const response = await fetch(`https://api.codemagic.io/builds?appId=${appId}`, {
+      headers: {
+        'x-auth-token': this.apiToken,
+      },
+    });
+    const body = await response.json();
+    const builds = body.builds;
+    if (!builds) {
+      throw new Error('Returned body had no "builds" property');
+    }
+    if (!Array.isArray(builds)) {
+      throw new Error('body.builds is not an array');
+    }
+    const applications = body.applications;
+    if (!applications) {
+      throw new Error('Returned body had no "applications" property');
+    }
+    if (!Array.isArray(applications)) {
+      throw new Error('body.applications is not an array');
+    }
+
+    const appDetails = applications.find((a) => a._id === appId);
+    if (!appDetails) {
+      throw new Error(
+        `Application with id ${appId} not returned from backend. Available : ${applications.map(
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+          (a) => a._id
+        )}`
+      );
+    }
+    const workflows = appDetails.workflows as { [key: string]: any };
+
+    return {
+      workflows: [...Object.values(workflows)].map((wf) => ({
+        id: wf._id,
+        name: wf.name,
+      })),
+      builds: builds.map<CodeMagicBuild>((b) => {
+        if (b.fileWorkflowId) {
+          return {
+            type: 'yaml',
+            id: b._id,
+            yamlWorkflowId: b.fileWorkflowId,
+            name: b.config?.name ?? b.fileWorkflowId,
+          };
+        }
+        return {
+          type: 'workflow',
+          id: b._id,
+          workflowId: b.workflowId,
+          name: b.config?.name ?? b.workflowId,
+        };
+      }),
+    };
   }
 }
