@@ -178,7 +178,6 @@ export class BuildInfoController extends Controller {
       id: workflow.id,
       name: `${repo.name} · ${workflow.name}`,
       folder: repo.fullName,
-      webUrl: workflow.webUrl,
     };
   }
 }

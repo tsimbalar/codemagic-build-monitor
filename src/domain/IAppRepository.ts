@@ -36,7 +36,6 @@ export class RepoName {
 export interface Workflow {
   readonly id: string;
   readonly name: string;
-  readonly webUrl: string;
 }
 
 export interface IAppRepository {

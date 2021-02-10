@@ -1,0 +1,167 @@
+{
+    "application": {
+        "_id": "5fc6539af7698e06abe1becd",
+        "appName": "foundations-app",
+        "archived": false,
+        "branches": [
+            "chore/create-fake-programmes-testing",
+            "chore/vscode-visualization",
+            "design-branch-merge",
+            "design-branch",
+            "develop",
+            "feat/KDSChips",
+            "feat/SUB-1168-HRBR-plugin-support",
+            "feat/SUB-1955-recsys-analytics",
+            "feat/SUB-2020-recsys-activity-verification",
+            "feat/SUB-2048-add-production-url-in-recsys",
+            "feat/SUB-2199-make-app-state-parsing-null-free",
+            "feat/add-ios-obfuscate",
+            "feat/2122-tag-focus-areas",
+            "feat/2181-send-analytics-to-old-and-new-data-lakes",
+            "fix/SUB-1028-analytics",
+            "fix/SUB-1390-incorrect-recommended-programmes-on-logout",
+            "library-improvements",
+            "master",
+            "nates-root-branch",
+            "refactor(library-page)",
+            "scroll-changes",
+            "spike/koa-buttons",
+            "task/KDSButtons"
+        ],
+        "buildSchedule": [],
+        "createdAt": "2020-12-01T14:30:50.963+0000",
+        "iconUrl": "https://static.codemagic.io/files/4ed644bb-fc30-475f-958e-4a2b99c471b7/8f7ec124-a2b6-4b26-99ca-ed0a90703f30.png",
+        "isConfigured": true,
+        "lastBuildId": "6022c47329657a7733a06d58",
+        "ownerTeam": "5fc633e4253cd4d5f37eeb8e",
+        "projectFiles": [
+            "."
+        ],
+        "projectType": "flutter-package",
+        "repository": {
+            "defaultBranch": "develop",
+            "htmlUrl": "https://github.com/koa-health/foundations-app",
+            "id": 198808131,
+            "isAuthenticationEnabled": false,
+            "language": "Dart",
+            "owner": {
+                "name": "koa-health"
+            },
+            "provider": "github",
+            "publicSshKey": null,
+            "username": null
+        },
+        "userRights": [],
+        "workflowIds": [
+            "5fc6539af7698e06abe1becc"
+        ],
+        "workflows": {
+            "5fc6539af7698e06abe1becc": {
+                "_id": "5fc6539af7698e06abe1becc",
+                "branchPatterns": [],
+                "buildSettings": {
+                    "androidBuildOutputFormat": "apk",
+                    "automaticBuilds": false,
+                    "buildOnPrUpdate": false,
+                    "cancelPending": true,
+                    "cancelPreviousBuilds": false,
+                    "flutterMode": "debug",
+                    "flutterVerbose": false,
+                    "flutterVersion": "stable",
+                    "platforms": [
+                        "android",
+                        "ios"
+                    ],
+                    "projectFile": ".",
+                    "tagBuilds": false,
+                    "target": "debug",
+                    "xcodeVersion": "latest"
+                },
+                "codeSigning": {
+                    "android": {
+                        "enabled": false,
+                        "keyAlias": null,
+                        "keyPassword": null,
+                        "keystore": null,
+                        "keystorePassword": null
+                    },
+                    "ios": {
+                        "appStoreConnectKeyId": null,
+                        "certificatePassword": null,
+                        "developerCertificate": null,
+                        "developerPortalBundleIdentifier": null,
+                        "developerPortalPassword": null,
+                        "developerPortalProfileType": null,
+                        "developerPortalTeamId": null,
+                        "developerPortalUsername": null,
+                        "enabled": null,
+                        "encryptedKey": null,
+                        "provisioningProfiles": [],
+                        "signingMethod": null
+                    }
+                },
+                "customScripts": {
+                    "postBuild": "",
+                    "postClone": "",
+                    "postPublish": "",
+                    "postTest": "",
+                    "preBuild": "",
+                    "prePublish": "",
+                    "preTest": ""
+                },
+                "dependencyCache": {
+                    "cachePaths": [],
+                    "enabled": false
+                },
+                "environmentVariables": [],
+                "instanceType": "mac_mini",
+                "isPublic": false,
+                "maxBuildDuration": 3600,
+                "name": "Default Workflow",
+                "publishers": {
+                    "appStoreConnect": {
+                        "appStoreConnectAppleId": null,
+                        "appStoreConnectPassword": null,
+                        "enabled": null,
+                        "publishWhenFail": null
+                    },
+                    "email": {
+                        "enabled": true,
+                        "recipients": [
+                            "joseignacio.ojeda@koahealth.com"
+                        ]
+                    },
+                    "githubReleases": {
+                        "artifactPatterns": [
+                            "*.apk",
+                            "*.ipa"
+                        ],
+                        "enabled": false,
+                        "prerelease": false
+                    },
+                    "googlePlay": {
+                        "credentials": {},
+                        "enabled": null,
+                        "inAppUpdatePriority": null,
+                        "publishWhenFail": null,
+                        "rolloutFraction": null,
+                        "track": null
+                    },
+                    "s3StaticPages": {},
+                    "slack": {},
+                    "staticPages": {}
+                },
+                "testRunners": {
+                    "flutterAnalyze": {},
+                    "flutterDrive": {
+                        "frameworkType": "flutter_driver"
+                    },
+                    "flutterTest": {
+                        "frameworkType": "flutter_test"
+                    },
+                    "stopBuildIfTestsFail": true
+                }
+            }
+        }
+    }
+}
