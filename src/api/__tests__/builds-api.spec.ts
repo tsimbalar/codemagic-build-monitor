@@ -6,10 +6,10 @@ import {
   DynamicFilteredBuildInfoRequest,
   DynamicFilteredBuildInfoResponse,
 } from '../api-types';
-import { RepoName, Workflow } from '../../domain/IAppRepository';
 import { InMemoryAppRepository } from '../../infra/memory/InMemoryAppRepository';
 import { InMemoryWorkflowRunRepository } from '../../infra/memory/InMemoryWorkflowRunRepository';
 import { ValidationErrorJson } from '../middleware/schema-validation';
+import { Workflow } from '../../domain/IAppRepository';
 import { WorkflowRun } from '../../domain/IWorkflowRunRepository';
 
 describe('/builds', () => {
@@ -66,31 +66,30 @@ describe('/builds', () => {
       });
 
       test('should return spaces of user', async () => {
-        const repo1 = { id: '789', name: new RepoName('orgx', 'repoa'), webUrl: '', workflows: [] };
-        const repo2 = { id: '123', name: new RepoName('orgx', 'repoz'), webUrl: '', workflows: [] };
-        appRepo.addApp(token, repo1);
-        appRepo.addApp(token, repo2);
+        const app1 = { id: '789', name: 'repoa', webUrl: '', workflows: [] };
+        const app2 = { id: '123', name: 'repoz', webUrl: '', workflows: [] };
+        appRepo.addApp(token, app1);
+        appRepo.addApp(token, app2);
         const response = await agent.get('/builds').set('Authorization', `Bearer ${token}`).send();
 
         const body = response.body as DynamicBuildInfoMetadataResponse;
         expect(body.spaces).toEqual<SpaceMetadata[]>([
           {
-            id: repo1.name.fullName,
-            name: repo1.name.fullName,
-            webUrl: repo1.webUrl,
+            id: app1.id,
+            name: app1.name,
+            webUrl: app1.webUrl,
             buildDefinitions: expect.anything(),
           },
           {
-            id: repo2.name.fullName,
-            name: repo2.name.fullName,
-            webUrl: repo2.webUrl,
+            id: app2.id,
+            name: app2.name,
+            webUrl: app2.webUrl,
             buildDefinitions: expect.anything(),
           },
         ]);
       });
 
       test('should return build definitions', async () => {
-        const repoOwner = 'orgx';
         const workflow1: Workflow = {
           id: 'worflow-id',
           name: 'workflow-name',
@@ -99,10 +98,10 @@ describe('/builds', () => {
           id: 'worflow-id2',
           name: 'workflow-name2',
         };
-        const repoName = new RepoName(repoOwner, 'repoz');
+        const appName = 'repoz';
         appRepo.addApp(token, {
           id: '123',
-          name: repoName,
+          name: appName,
           webUrl: '',
           workflows: [workflow1, workflow2],
         });
@@ -115,12 +114,12 @@ describe('/builds', () => {
           {
             id: workflow1.id,
             name: 'repoz · workflow-name',
-            folder: repoName.fullName,
+            folder: appName,
           },
           {
             id: workflow2.id,
             name: 'repoz · workflow-name2',
-            folder: repoName.fullName,
+            folder: appName,
           },
         ]);
       });
@@ -169,32 +168,6 @@ describe('/builds', () => {
         expect(body.technicalDetails.errors).toContain("filters.spaces - 'spaces' is required");
       });
 
-      test('should return a 422 status code when provided a badly formatted space id', async () => {
-        const invalidRequestBody: DynamicFilteredBuildInfoRequest = {
-          ...VALID_MINIMAL_POST_PAYLOAD,
-          spaces: [
-            {
-              id: 'not-a-valid-repo',
-              buildDefinitions: [],
-            },
-          ],
-        };
-
-        const response = await agent
-          .post('/builds')
-          .set('Authorization', `Bearer ${token}`)
-          .send(invalidRequestBody);
-
-        expect(response.status).toBe(422);
-        expect(response.type).toBe('application/json');
-
-        const body = response.body as ValidationErrorJson;
-        expect(body.technicalDetails.msg).toContain('Validation failed');
-        expect(body.technicalDetails.errors).toContain(
-          'spaces.$0.id - Not match in \'^[^/]+/[^/]+$\'(provided : "not-a-valid-repo")'
-        );
-      });
-
       test('should return a 200 status code', async () => {
         const response = await agent
           .post('/builds')
@@ -219,20 +192,18 @@ describe('/builds', () => {
       });
 
       test('should return details when a single build info is requested', async () => {
-        const repoName = new RepoName('orgx', 'repoa');
-
         const workflow1: Workflow = {
           id: 'worflow-id',
           name: 'workflow-name',
         };
-        const repo1 = {
+        const app1 = {
           id: '789',
-          name: repoName,
+          name: 'repoa',
           webUrl: '',
           workflows: [workflow1],
         };
 
-        appRepo.addApp(token, repo1);
+        appRepo.addApp(token, app1);
 
         const branch1 = 'master';
         const branch1Runs: WorkflowRun[] = [
@@ -256,14 +227,14 @@ describe('/builds', () => {
           },
         ];
 
-        workflowRunRepo.addRuns(repoName, workflow1.id, branch1, branch1Runs);
-        workflowRunRepo.addRuns(repoName, workflow1.id, branch2, branch2Runs);
+        workflowRunRepo.addRuns(app1.id, workflow1.id, branch1, branch1Runs);
+        workflowRunRepo.addRuns(app1.id, workflow1.id, branch2, branch2Runs);
 
         const requestBody: DynamicFilteredBuildInfoRequest = {
           id: VALID_MINIMAL_POST_PAYLOAD.id,
           spaces: [
             {
-              id: repo1.name.fullName,
+              id: app1.id,
               buildDefinitions: [
                 {
                   id: workflow1.id,

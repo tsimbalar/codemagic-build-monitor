@@ -1,5 +1,3 @@
-import { RepoName } from './IAppRepository';
-
 export type WorkflowRunStatus =
   | 'Queued'
   | 'Running'
@@ -32,7 +30,7 @@ export type WorkflowRunsPerBranch = ReadonlyMap<string, ReadonlyArray<WorkflowRu
 export interface IWorkflowRunRepository {
   getLatestRunsForWorkflow(
     token: string,
-    repoName: RepoName,
+    appId: string,
     workflowId: string,
     filter: WorflowRunFilter
   ): Promise<WorkflowRunsPerBranch>;

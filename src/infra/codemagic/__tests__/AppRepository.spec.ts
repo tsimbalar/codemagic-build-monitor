@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { App, RepoName, Workflow } from '../../../domain/IAppRepository';
+import { App, Workflow } from '../../../domain/IAppRepository';
 import { AppRepository } from '../AppRepository';
 import { getCodeMagicClientFactory } from '../CodeMagicClientFactory';
 import { testCredentials } from '../__testTools__/TestCredentials';
@@ -19,13 +19,11 @@ describe('AppRepository', () => {
       expect(actual).not.toHaveLength(0);
 
       // check one that we know will exist
-      const specificApp = actual.find((s) =>
-        s.name.equals(new RepoName('koa-health', 'koa-flutter'))
-      );
+      const specificApp = actual.find((s) => s.name === 'koa-flutter');
       expect(specificApp).toBeDefined();
       expect(specificApp).toEqual<App>({
         id: '60101f30cb2f384082f476a4',
-        name: new RepoName('koa-health', 'koa-flutter'),
+        name: 'koa-flutter',
         webUrl: 'https://codemagic.io/app/60101f30cb2f384082f476a4',
         workflows: expect.anything(),
       });
