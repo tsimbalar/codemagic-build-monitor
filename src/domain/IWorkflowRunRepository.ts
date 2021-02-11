@@ -12,10 +12,8 @@ export interface WorkflowRunAuthor {
 }
 export interface WorkflowRun {
   readonly id: string;
-  readonly name?: string;
   readonly webUrl: string;
   readonly status: WorkflowRunStatus;
-  readonly event: string;
   readonly startTime: Date;
   readonly finishTime?: Date;
   readonly mainAuthor?: WorkflowRunAuthor;
