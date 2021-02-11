@@ -1,4 +1,4 @@
-import { App, IAppRepository, RepoName, Workflow } from '../../domain/IAppRepository';
+import { App, IAppRepository, Workflow } from '../../domain/IAppRepository';
 import { CodeMagicApp, CodeMagicBuild, CodeMagicClient } from './CodeMagicClient';
 import { CodeMagicClientFactory } from './CodeMagicClientFactory';
 
@@ -15,7 +15,7 @@ export class AppRepository implements IAppRepository {
     return allApps.map<App>((a) => ({
       id: a.id,
       webUrl: `https://codemagic.io/app/${a.id}`,
-      name: new RepoName(a.owner, a.name),
+      name: a.name,
       workflows: workflowsPerAppId.get(a.id) ?? [],
     }));
   }

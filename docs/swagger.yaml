@@ -243,9 +243,7 @@ components:
                 id:
                     type: string
                     description: 'Space id should be unique on the server.'
-                    example: owner/repo
                     minLength: 1
-                    pattern: '^[^/]+/[^/]+$'
                 buildDefinitions:
                     items:
                         $ref: '#/components/schemas/BuildDefinitionStateRequest'

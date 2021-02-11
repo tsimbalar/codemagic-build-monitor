@@ -7,7 +7,7 @@ import {
   DynamicFilteredBuildInfoRequest,
   DynamicFilteredBuildInfoResponse,
 } from '../api-types';
-import { IAppRepository, RepoName, Workflow } from '../../domain/IAppRepository';
+import { IAppRepository, Workflow } from '../../domain/IAppRepository';
 import {
   IWorkflowRunRepository,
   WorkflowRun,
@@ -27,7 +27,7 @@ interface BuildDefinitionAndRuns {
 export class BuildInfoController extends Controller {
   public constructor(
     private readonly metaInfo: MetaInfo,
-    private readonly repos: IAppRepository,
+    private readonly apps: IAppRepository,
     private readonly workflowRuns: IWorkflowRunRepository
   ) {
     super();
@@ -41,7 +41,7 @@ export class BuildInfoController extends Controller {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const currentUser = request.user!;
 
-    const repos = await this.repos.listForToken(currentUser.token);
+    const appplications = await this.apps.listForToken(currentUser.token);
 
     return {
       protocol: 'https://catlight.io/protocol/v1.0/dynamic',
@@ -51,12 +51,12 @@ export class BuildInfoController extends Controller {
       webUrl: 'https://github.com/tsimbalar/codemagic-build-monitor',
       // TODO : how to get current user info ?
       currentUser: undefined,
-      spaces: repos.map((repo) => ({
-        id: repo.name.fullName,
-        name: repo.name.fullName,
-        webUrl: repo.webUrl,
-        buildDefinitions: repo.workflows.map((wf) =>
-          this.mapToBuildDefinitionMetadata(repo.name, wf)
+      spaces: appplications.map((app) => ({
+        id: app.id,
+        name: app.name,
+        webUrl: app.webUrl,
+        buildDefinitions: app.workflows.map((wf) =>
+          this.mapToBuildDefinitionMetadata(app.name, wf)
         ),
       })),
     };
@@ -93,21 +93,15 @@ export class BuildInfoController extends Controller {
   ): Promise<Map<string, ReadonlyArray<BuildDefinitionAndRuns>>> {
     const getAllWorkflows = filters.spaces
       .map((space) => {
-        const spaceId = space.id;
-        const repoName = RepoName.parse(spaceId);
+        const appId = space.id;
         const buildDefinitions = space.buildDefinitions;
         return buildDefinitions.map(async (buildDef) => {
-          const runs = await this.workflowRuns.getLatestRunsForWorkflow(
-            token,
-            repoName,
-            buildDef.id,
-            {
-              maxAgeInDays: 3,
-              maxRunsPerBranch: 5,
-            }
-          );
+          const runs = await this.workflowRuns.getLatestRunsForWorkflow(token, appId, buildDef.id, {
+            maxAgeInDays: 3,
+            maxRunsPerBranch: 5,
+          });
           return {
-            spaceId,
+            spaceId: appId,
             buildDefinition: buildDef,
             runs,
           };
@@ -119,12 +113,12 @@ export class BuildInfoController extends Controller {
     const result = new Map<string, ReadonlyArray<BuildDefinitionAndRuns>>();
     for (const item of all) {
       const { spaceId, ...workflowAndRuns } = item;
-      const repoKey = spaceId;
-      const existing = result.get(repoKey) || [];
+      const appKey = spaceId;
+      const existing = result.get(appKey) || [];
 
       const updated = [...existing, workflowAndRuns];
 
-      result.set(repoKey, updated);
+      result.set(appKey, updated);
     }
     return result;
   }
@@ -171,13 +165,13 @@ export class BuildInfoController extends Controller {
   }
 
   private mapToBuildDefinitionMetadata(
-    repo: RepoName,
+    appName: string,
     workflow: Workflow
   ): catlightDynamic.BuildDefinitionMetadata {
     return {
       id: workflow.id,
-      name: `${repo.name} · ${workflow.name}`,
-      folder: repo.fullName,
+      name: `${appName} · ${workflow.name}`,
+      folder: appName,
     };
   }
 }

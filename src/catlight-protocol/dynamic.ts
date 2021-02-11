@@ -110,8 +110,6 @@ interface SpaceStateRequest {
    * Space id should be unique on the server.
    *
    * @minLength 1
-   * @pattern ^[^/]+/[^/]+$
-   * @example "owner/repo"
    */
   readonly id: string;
   readonly buildDefinitions: BuildDefinitionStateRequest[];

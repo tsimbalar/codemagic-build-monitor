@@ -1,31 +1,31 @@
-import { App, RepoName } from '../../../domain/IAppRepository';
+import { App } from '../../../domain/IAppRepository';
 import { CachedAppRepository } from '../CachedAppRepository';
 import { InMemoryAppRepository } from '../../memory/InMemoryAppRepository';
 import LRUCache from 'lru-cache';
 import MockDate from 'mockdate';
 
-describe('CachedRepoRepository', () => {
+describe('CachedAppRepository', () => {
   describe('listForToken', () => {
     afterEach(() => {
       MockDate.reset();
     });
 
-    test('should returned repos of wrapped repo', async () => {
-      const existingRepo: App = {
-        id: 'repo',
-        name: new RepoName('owner', 'repo-name'),
+    test('should returned apps of wrapped repo', async () => {
+      const existingApp: App = {
+        id: 'app-id',
+        name: 'app-name',
         webUrl: 'http://www.perdu.com',
         workflows: [],
       };
       const token1 = 'token';
       const wrapped = new InMemoryAppRepository();
-      wrapped.addApp(token1, existingRepo);
+      wrapped.addApp(token1, existingApp);
 
       const sut = new CachedAppRepository(new LRUCache<string, any>(), wrapped);
 
       const actual = await sut.listForToken(token1);
 
-      expect(actual).toEqual([existingRepo]);
+      expect(actual).toEqual([existingApp]);
     });
 
     test('should cache during 1 minute', async () => {
@@ -38,14 +38,14 @@ describe('CachedRepoRepository', () => {
       const actual1 = await sut.listForToken(token);
       expect(spy).toHaveBeenCalledTimes(1);
 
-      // a new repo has been added ... but we are still hitting the cache
-      const existingRepo: App = {
-        id: 'repo',
-        name: new RepoName('owner', 'repo-name'),
+      // a new app has been added ... but we are still hitting the cache
+      const existingApp: App = {
+        id: 'app-id',
+        name: 'app name',
         webUrl: 'http://www.perdu.com',
         workflows: [],
       };
-      wrapped.addApp(token, existingRepo);
+      wrapped.addApp(token, existingApp);
 
       const actual2 = await sut.listForToken(token);
       expect(actual2).toEqual(actual1);
@@ -64,14 +64,14 @@ describe('CachedRepoRepository', () => {
       const token1 = 'token';
       const token2 = 'token2';
       const wrapped = new InMemoryAppRepository();
-      // a new repo has been added ... but we are still hitting the cache
-      const existingRepo1: App = {
-        id: 'repo1',
-        name: new RepoName('owner', 'repo-name'),
+      // a new app has been added ... but we are still hitting the cache
+      const existingApp11: App = {
+        id: 'app1',
+        name: 'app1-name',
         webUrl: 'http://www.perdu.com',
         workflows: [],
       };
-      wrapped.addApp(token1, existingRepo1);
+      wrapped.addApp(token1, existingApp11);
 
       const sut = new CachedAppRepository(new LRUCache<string, any>(), wrapped);
 
