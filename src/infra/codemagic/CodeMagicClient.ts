@@ -1,5 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-import { application } from 'express';
 import fetch from 'node-fetch';
 
 export interface CodeMagicApp {
@@ -31,6 +30,23 @@ export interface CodeMagicWorkflow {
 export interface CodeMagicWorkflowsAndBuilds {
   readonly builds: CodeMagicBuild[];
   readonly workflows: CodeMagicWorkflow[];
+}
+
+export interface PullRequestInfo {
+  readonly destinationBranch: string;
+  readonly number: number;
+  readonly sourceBranch: string;
+  readonly url: string;
+}
+
+export interface CodeMagicBuildDetails {
+  readonly id: string;
+  readonly branch: string;
+  readonly createdAt: string;
+  readonly finishedAt?: string;
+  readonly startedAt?: string;
+  readonly status: string;
+  readonly pullRequestInfo?: PullRequestInfo;
 }
 
 export class CodeMagicClient {
@@ -112,5 +128,61 @@ export class CodeMagicClient {
         };
       }),
     };
+  }
+
+  public async listBuilds(
+    appId: string,
+    workflowId: string
+  ): Promise<ReadonlyArray<CodeMagicBuildDetails>> {
+    const response = await fetch(
+      `https://api.codemagic.io/builds?appId=${appId}&workflowId=${workflowId}`,
+      {
+        headers: {
+          'x-auth-token': this.apiToken,
+        },
+      }
+    );
+    const body = await response.json();
+    const builds = body.builds;
+    if (!builds) {
+      throw new Error('Returned body had no "builds" property');
+    }
+    if (!Array.isArray(builds)) {
+      throw new Error('body.builds is not an array');
+    }
+    const applications = body.applications;
+    if (!applications) {
+      throw new Error('Returned body had no "applications" property');
+    }
+    if (!Array.isArray(applications)) {
+      throw new Error('body.applications is not an array');
+    }
+    const appDetails = applications.find((a) => a._id === appId);
+    if (!appDetails) {
+      throw new Error(
+        `Application with id ${appId} not returned from backend. Available : ${applications.map(
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+          (a) => a._id
+        )}`
+      );
+    }
+
+    return builds.map((b) => this.mapToBuildDetails(b));
+  }
+
+  private mapToBuildDetails(build: any): CodeMagicBuildDetails {
+    let result: CodeMagicBuildDetails = {
+      id: build._id,
+      branch: build.branch,
+      createdAt: build.createdAt,
+      status: build.status,
+      finishedAt: build.finishedAt,
+      startedAt: build.startedAt,
+    };
+
+    if (build.pullRequest) {
+      result = { ...result, pullRequestInfo: build.pullRequest };
+    }
+    return result;
   }
 }

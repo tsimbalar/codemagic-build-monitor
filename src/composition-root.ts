@@ -10,11 +10,11 @@ import { ExampleController } from './api/controllers/ExampleController';
 import { IAppRepository } from './domain/IAppRepository';
 import { IAuthentication } from './api/auth/IAuthentication';
 import { IWorkflowRunRepository } from './domain/IWorkflowRunRepository';
-import { InMemoryWorkflowRunRepository } from './infra/memory/InMemoryWorkflowRunRepository';
 import { IndexController } from './api/controllers/IndexController';
 import LRUCache from 'lru-cache';
 import { Settings } from './settings-types';
 import { TsoaAuthentication } from './api/auth/TsoaAuthentication';
+import { WorkflowRunRepository } from './infra/codemagic/WorkflowRunRepository';
 import { getCodeMagicClientFactory } from './infra/codemagic/CodeMagicClientFactory';
 
 export interface ApiDependencies {
@@ -43,7 +43,7 @@ export class CompositionRoot implements IControllerFactory {
     const clientFactory = getCodeMagicClientFactory(metaFromPackageJson);
     return new CompositionRoot(settings, metaFromPackageJson, {
       appRepo: new AppRepository(clientFactory),
-      workflowRunRepo: new InMemoryWorkflowRunRepository(),
+      workflowRunRepo: new WorkflowRunRepository(clientFactory),
     });
   }
 

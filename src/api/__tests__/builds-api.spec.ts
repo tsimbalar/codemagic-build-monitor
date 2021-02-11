@@ -212,7 +212,6 @@ describe('/builds', () => {
             startTime: new Date(),
             status: 'Queued',
             webUrl: 'http://....',
-            event: 'push',
           },
         ];
 
@@ -223,7 +222,6 @@ describe('/builds', () => {
             startTime: new Date(),
             status: 'Queued',
             webUrl: 'http://....',
-            event: 'push',
           },
         ];
 

@@ -97,8 +97,8 @@ export class BuildInfoController extends Controller {
         const buildDefinitions = space.buildDefinitions;
         return buildDefinitions.map(async (buildDef) => {
           const runs = await this.workflowRuns.getLatestRunsForWorkflow(token, appId, buildDef.id, {
-            maxAgeInDays: 3,
-            maxRunsPerBranch: 5,
+            maxAgeInDays: 25,
+            maxRunsPerBranch: 8,
           });
           return {
             spaceId: appId,
@@ -147,7 +147,6 @@ export class BuildInfoController extends Controller {
       startTime: run.startTime,
       status: run.status,
       finishTime: run.finishTime,
-      name: run.name,
       webUrl: run.webUrl,
 
       // TODO: contributors, triggeredByUser
