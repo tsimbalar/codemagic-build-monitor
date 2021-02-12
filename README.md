@@ -18,9 +18,12 @@ docker run --name codemagic-build-monitor -d -p 9902:9902 ghcr.io/tsimbalar/code
 
 Open `http://localhost:9902/` in a browser to check that the server is up and running.
 
-### 2. Get your Access Tokem - TODO
+### 2. Get your Access Token
+- Go to your CodeMagic user settings at https://codemagic.io/settings
+- Look for your CodeMagic API token
 
-`TODO`
+<img src="./assets/00-codemagic-token.png" title="connect" width="60%">
+
 
 ### 3. Connecting Catlight to `codemagic-build-monitor`
 
@@ -55,4 +58,4 @@ Get notified about new builds, failing builds etc
 
 ## Roadmap
 
-`TODO`
+- properly display authors of each build
