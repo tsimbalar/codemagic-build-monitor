@@ -99,6 +99,8 @@ export class WorkflowRunRepository implements IWorkflowRunRepository {
     switch (run.status) {
       case 'finished':
         return 'Succeeded';
+      case 'preparing':
+        return 'Queued';
       case 'building':
         return 'Running';
       case 'canceled':
