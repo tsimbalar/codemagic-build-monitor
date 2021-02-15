@@ -291,7 +291,7 @@ components:
             bearerFormat: JWT
 info:
     title: codemagic-build-monitor
-    version: 0.2.3
+    version: 0.2.4
     description: 'Adapter to give access to CodeMagic build status via the CatLight Protocol'
     license:
         name: MIT
