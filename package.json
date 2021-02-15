@@ -59,7 +59,7 @@
     "typescript": "4.1.3"
   },
   "dependencies": {
-    "@octokit/rest": "18.1.0",
+    "@octokit/rest": "18.1.1",
     "@tsoa/runtime": "3.5.2",
     "axios": "0.21.1",
     "date-fns": "2.17.0",
