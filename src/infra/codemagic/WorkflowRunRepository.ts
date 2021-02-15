@@ -101,6 +101,8 @@ export class WorkflowRunRepository implements IWorkflowRunRepository {
         return 'Succeeded';
       case 'preparing':
         return 'Queued';
+      case 'fetching':
+        return 'Queued';
       case 'building':
         return 'Running';
       case 'publishing':
