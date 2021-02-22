@@ -13,7 +13,7 @@ To use `codemagic-build-monitor` to monitor your CodeMagic workflows, follow the
 ### 1. Start the "proxy" locally
 
 ```
-docker run --name codemagic-build-monitor -d -p 9902:9902 ghcr.io/tsimbalar/codemagic-build-monitor
+docker run --name codemagic-build-monitor -d -p 9902:9902 --restart unless-stopped ghcr.io/tsimbalar/codemagic-build-monitor
 ```
 
 Open `http://localhost:9902/` in a browser to check that the server is up and running.
