@@ -39,7 +39,7 @@ describe('AppRepository', () => {
       // it should find yaml one
       expect(workflows).toContainEqual<Workflow>({
         id: 'pull-request',
-        name: 'Pull request validation',
+        name: 'PR Checks',
       });
     }, 20000 /* this may take a while */);
   });
