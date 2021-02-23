@@ -19,12 +19,12 @@ describe('AppRepository', () => {
       expect(actual).not.toHaveLength(0);
 
       // check one that we know will exist
-      const specificApp = actual.find((s) => s.name === 'koa-flutter');
+      const specificApp = actual.find((s) => s.name === 'Perspectives');
       expect(specificApp).toBeDefined();
       expect(specificApp).toEqual<App>({
-        id: '60101f30cb2f384082f476a4',
-        name: 'koa-flutter',
-        webUrl: 'https://codemagic.io/app/60101f30cb2f384082f476a4',
+        id: '5fc6539af7698e06abe1bed1',
+        name: 'Perspectives',
+        webUrl: 'https://codemagic.io/app/5fc6539af7698e06abe1bed1',
         workflows: expect.anything(),
       });
 
@@ -32,15 +32,12 @@ describe('AppRepository', () => {
 
       // it should find "the default one"
       expect(workflows).toContainEqual<Workflow>({
-        id: '60101f30cb2f384082f476a3',
+        id: '5fc6539af7698e06abe1bed0',
         name: 'Default Workflow',
       });
 
       // it should find yaml one
-      expect(workflows).toContainEqual<Workflow>({
-        id: 'pull-request',
-        name: 'PR Checks',
-      });
+      expect(workflows).toContainEqual<Workflow>({ id: 'pull-request', name: 'PR checks' });
     }, 20000 /* this may take a while */);
   });
 });
