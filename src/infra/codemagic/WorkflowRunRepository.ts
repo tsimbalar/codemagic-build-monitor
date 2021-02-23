@@ -102,7 +102,7 @@ export class WorkflowRunRepository implements IWorkflowRunRepository {
       case 'failed':
         return 'Failed';
       case 'timeout':
-        return 'Canceled';
+        return 'Failed';
     }
     throw new Error(`Unsupported workflow run status "${run.status}"`);
   }
