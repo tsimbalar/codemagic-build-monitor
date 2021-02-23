@@ -155,7 +155,7 @@ export class BuildInfoController extends Controller {
       result = {
         ...result,
         triggeredByUser: {
-          id: run.mainAuthor.login,
+          id: run.mainAuthor.email,
           name: run.mainAuthor.name,
         },
       };

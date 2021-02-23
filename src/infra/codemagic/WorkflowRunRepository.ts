@@ -3,6 +3,7 @@ import {
   IWorkflowRunRepository,
   WorflowRunFilter,
   WorkflowRun,
+  WorkflowRunAuthor,
   WorkflowRunStatus,
   WorkflowRunsPerBranch,
 } from '../../domain/IWorkflowRunRepository';
@@ -40,8 +41,6 @@ export class WorkflowRunRepository implements IWorkflowRunRepository {
 
       const currentForBranch = result.get(branchKey) || [];
 
-      const isLatestRunInThisBranch = currentForBranch.length === 0;
-
       if (currentForBranch.length >= filter.maxRunsPerBranch) {
         // skipping this run because we already have enough builds for this branch
         // eslint-disable-next-line no-continue
@@ -49,35 +48,26 @@ export class WorkflowRunRepository implements IWorkflowRunRepository {
       }
 
       const status = this.parseWorkflowRunStatus(run);
-      //   let author: WorkflowRunAuthor | undefined;
-      //   if (isLatestRunInThisBranch) {
-      //     // eslint-disable-next-line no-await-in-loop
-      //     const commitAuthor = await this.commitAuthorRepo.getAuthorForCommit(
-      //       token,
-      //       repoName,
-      //       run.head_commit.id
-      //     );
+      let author: WorkflowRunAuthor | undefined;
 
-      //     if (commitAuthor) {
-      //       author = {
-      //         login: commitAuthor.login,
-      //         name: commitAuthor.name ?? commitAuthor.login,
-      //       };
-      //     }
-      //   }
+      if (run.author) {
+        author = {
+          email: run.author.email,
+          name: run.author.name ?? run.author.email,
+        };
+      }
+
       const workflowRun: WorkflowRun = {
         id: run.id,
         webUrl: `https://codemagic.io/app/${appId}/build/${run.id}`,
         startTime: parseISO(run.createdAt),
         status,
         finishTime: run.finishedAt ? parseISO(run.finishedAt) : undefined,
-        // mainAuthor: author, TODO
+        mainAuthor: author,
       };
 
       result.set(branchKey, [workflowRun, ...currentForBranch]);
     }
-
-    // }
 
     return result;
   }

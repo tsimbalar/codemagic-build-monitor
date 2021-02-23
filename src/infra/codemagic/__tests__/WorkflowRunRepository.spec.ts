@@ -37,6 +37,10 @@ describe('WorkflowRunRepository', () => {
         status: expect.stringContaining(''),
         webUrl: expect.stringContaining(`https://codemagic.io/app/${appId}/build/`),
         finishTime: expect.anything(),
+        mainAuthor: {
+          email: expect.stringContaining('@'),
+          name: expect.stringContaining(''),
+        },
       });
     });
 
@@ -70,6 +74,10 @@ describe('WorkflowRunRepository', () => {
         status: expect.stringContaining(''),
         webUrl: expect.stringContaining(`https://codemagic.io/app/${appId}/build/`),
         finishTime: expect.anything(),
+        mainAuthor: {
+          email: expect.stringContaining('@'),
+          name: expect.stringContaining(''),
+        },
       });
     });
 

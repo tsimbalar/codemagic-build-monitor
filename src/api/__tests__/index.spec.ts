@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { ApiTestTools, TEST_SETTINGS, TestAgent } from '../__testTools__/ApiTestTools';
+import { ApiTestTools } from '../__testTools__/ApiTestTools';
 
 describe('/', () => {
   describe('GET /', () => {

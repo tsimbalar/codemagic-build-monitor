@@ -7,7 +7,7 @@ export type WorkflowRunStatus =
   | 'Canceled';
 
 export interface WorkflowRunAuthor {
-  readonly login: string;
+  readonly email: string;
   readonly name: string;
 }
 export interface WorkflowRun {

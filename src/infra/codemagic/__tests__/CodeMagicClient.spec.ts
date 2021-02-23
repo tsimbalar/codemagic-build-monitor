@@ -8,6 +8,7 @@ import * as sampleBuildListByYamlWorkflowForPRResponse from './build-list-per-ap
 import * as sampleBuildListByYamlWorkflowResponse from './build-list-per-app-and-workflow-yaml.json';
 
 import {
+  BuildUserInfo,
   CodeMagicApp,
   CodeMagicBuild,
   CodeMagicBuildDetails,
@@ -216,6 +217,22 @@ describe('CodeMagicClient', () => {
         status: sampleBuild.status,
         finishedAt: sampleBuild.finishedAt,
         startedAt: sampleBuild.startedAt,
+        author: expect.anything(),
+      });
+    });
+
+    test('should return build commit author', async () => {
+      nock(backendUrl).get(/.*/u).reply(200, sampleBuildListByFormalWorkflowResponse);
+
+      const sut = new CodeMagicClient('some token');
+
+      const actual = await sut.listBuilds(appId, workflowId);
+
+      expect(actual).toHaveLength(sampleBuildListByFormalWorkflowResponse.builds.length);
+      const sampleBuild = sampleBuildListByFormalWorkflowResponse.builds[0];
+      expect(actual[0].author).toEqual<BuildUserInfo>({
+        name: sampleBuild.commit.authorName,
+        email: sampleBuild.commit.authorEmail,
       });
     });
   });
@@ -269,6 +286,22 @@ describe('CodeMagicClient', () => {
         status: sampleBuild.status,
         finishedAt: sampleBuild.finishedAt,
         startedAt: sampleBuild.startedAt,
+        author: expect.anything(),
+      });
+    });
+
+    test('should return build commit author', async () => {
+      nock(backendUrl).get(/.*/u).reply(200, sampleBuildListByYamlWorkflowForBuildResponse);
+
+      const sut = new CodeMagicClient('some token');
+
+      const actual = await sut.listBuilds(appId, workflowIdYaml);
+
+      expect(actual).toHaveLength(sampleBuildListByYamlWorkflowForBuildResponse.builds.length);
+      const sampleBuild = sampleBuildListByYamlWorkflowForBuildResponse.builds[0];
+      expect(actual[0].author).toEqual<BuildUserInfo>({
+        name: sampleBuild.commit.authorName,
+        email: sampleBuild.commit.authorEmail,
       });
     });
 
