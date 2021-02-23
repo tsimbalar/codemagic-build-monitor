@@ -58,4 +58,3 @@ Get notified about new builds, failing builds etc
 
 ## Roadmap
 
-- properly display authors of each build
