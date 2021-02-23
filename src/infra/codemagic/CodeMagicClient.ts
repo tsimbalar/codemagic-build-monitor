@@ -39,6 +39,11 @@ export interface PullRequestInfo {
   readonly url: string;
 }
 
+export interface BuildUserInfo {
+  readonly name: string;
+  readonly email: string;
+}
+
 export interface CodeMagicBuildDetails {
   readonly id: string;
   readonly branch: string;
@@ -47,6 +52,7 @@ export interface CodeMagicBuildDetails {
   readonly startedAt?: string;
   readonly status: string;
   readonly pullRequestInfo?: PullRequestInfo;
+  readonly author?: BuildUserInfo;
 }
 
 export class CodeMagicClient {
@@ -182,6 +188,13 @@ export class CodeMagicClient {
 
     if (build.pullRequest) {
       result = { ...result, pullRequestInfo: build.pullRequest };
+    }
+    if (build.commit) {
+      const authorInfo: BuildUserInfo = {
+        name: build.commit.authorName,
+        email: build.commit.authorEmail,
+      };
+      result = { ...result, author: authorInfo };
     }
     return result;
   }
