@@ -106,8 +106,8 @@ describe('WorkflowRunRepository', () => {
     });
 
     test('should apply maxAgeInDays', async () => {
-      const appId = '5fc6539af7698e06abe1becd';
-      const workflowId = 'foundations-build';
+      const appId = '5fc6539af7698e06abe1becf';
+      const workflowId = 'mindset-build';
       const sut = new WorkflowRunRepository(clientFactory);
 
       const maxAgeInDays = 8;
@@ -119,10 +119,10 @@ describe('WorkflowRunRepository', () => {
       );
 
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      const runsOfBranchDevelop = actual.get('develop')!;
-      expect(runsOfBranchDevelop).toBeDefined();
-      expect(runsOfBranchDevelop).not.toHaveLength(0);
-      const oldestRun = runsOfBranchDevelop[0];
+      const runsOfBranchMaster = actual.get('master')!;
+      expect(runsOfBranchMaster).toBeDefined();
+      expect(runsOfBranchMaster).not.toHaveLength(0);
+      const oldestRun = runsOfBranchMaster[0];
       const nDaysAgo = new Date();
       nDaysAgo.setDate(nDaysAgo.getDate() - maxAgeInDays);
 
