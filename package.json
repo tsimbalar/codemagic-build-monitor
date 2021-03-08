@@ -64,7 +64,7 @@
     "date-fns": "2.17.0",
     "express": "4.17.1",
     "lru-cache": "6.0.0",
-    "nock": "13.0.9",
+    "nock": "13.0.11",
     "node-fetch": "2.6.1",
     "swagger-ui-express": "4.1.6"
   }
