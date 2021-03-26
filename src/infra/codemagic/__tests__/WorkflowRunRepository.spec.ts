@@ -9,7 +9,7 @@ describe('WorkflowRunRepository', () => {
     buildInfo: {},
   });
   describe('getLatestRunsForWorkflow', () => {
-    test('should retrieve runs of known workflow (yaml / app build)', async () => {
+    test('should retrieve runs of known workflow (yaml / app build) #needs-secrets', async () => {
       const appId = '5fc6539af7698e06abe1becf';
       const workflowId = 'mindset-build';
       const sut = new WorkflowRunRepository(clientFactory);
@@ -44,7 +44,7 @@ describe('WorkflowRunRepository', () => {
       });
     });
 
-    test('should retrieve runs of known workflow (yaml / pull request)', async () => {
+    test('should retrieve runs of known workflow (yaml / pull request) #needs-secrets', async () => {
       const appId = '5fc6539af7698e06abe1becd';
       const workflowId = 'pull-request';
       const sut = new WorkflowRunRepository(clientFactory);
@@ -81,7 +81,7 @@ describe('WorkflowRunRepository', () => {
       });
     });
 
-    test('should sort builds from older to newer', async () => {
+    test('should sort builds from older to newer #needs-secrets', async () => {
       const appId = '5fc6539af7698e06abe1becf';
       const workflowId = 'mindset-build';
       const sut = new WorkflowRunRepository(clientFactory);
@@ -105,7 +105,7 @@ describe('WorkflowRunRepository', () => {
       expect(oldestRun.startTime.getTime()).toBeLessThan(secondOldestRun.startTime.getTime());
     });
 
-    test('should apply maxAgeInDays', async () => {
+    test('should apply maxAgeInDays #needs-secrets', async () => {
       const appId = '5fc6539af7698e06abe1becf';
       const workflowId = 'mindset-build';
       const sut = new WorkflowRunRepository(clientFactory);
@@ -129,7 +129,7 @@ describe('WorkflowRunRepository', () => {
       expect(oldestRun.startTime.getTime()).toBeGreaterThan(nDaysAgo.getTime());
     });
 
-    test('should apply maxRunsPerBranch in repo with lots of activity', async () => {
+    test('should apply maxRunsPerBranch in repo with lots of activity #needs-secrets', async () => {
       const appId = '5fc6539af7698e06abe1becd';
       const workflowId = 'foundations-build';
       const sut = new WorkflowRunRepository(clientFactory);

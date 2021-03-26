@@ -11,7 +11,7 @@ describe('AppRepository', () => {
   });
 
   describe('listForToken', () => {
-    test('should return all apps when using token', async () => {
+    test('should return all apps when using token #needs-secrets', async () => {
       const sut = new AppRepository(clientFactory);
 
       const actual = await sut.listForToken(testCredentials.PRIVATE_API_KEY);
