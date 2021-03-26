@@ -52,7 +52,8 @@ jobs:
         run: npm run test:no-secrets
 
       - name: Unit tests (need secrets)
-        if: ${{ env.TEST_CREDENTIALS }} != ""
+        # we expect this to be a json
+        if: ${{ contains(env.TEST_CREDENTIALS, '{') }}
         run: npm run test:need-secrets
         env:
           # some tests need credentials when hitting github endpoints - see src/infra/github/__testTools__/secrets.ts.sample
