@@ -40,7 +40,7 @@
     "@types/jest": "26.0.21",
     "@types/lru-cache": "5.1.0",
     "@types/mockdate": "2.0.0",
-    "@types/node": "14.14.34",
+    "@types/node": "14.14.36",
     "@types/node-fetch": "2.5.8",
     "@types/supertest": "2.0.10",
     "@types/swagger-ui-express": "4.1.2",
