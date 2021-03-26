@@ -10,8 +10,8 @@ describe('WorkflowRunRepository', () => {
   });
   describe('getLatestRunsForWorkflow', () => {
     test('should retrieve runs of known workflow (yaml / app build)', async () => {
-      const appId = '5fc6539af7698e06abe1becd';
-      const workflowId = 'foundations-build';
+      const appId = '5fc6539af7698e06abe1becf';
+      const workflowId = 'mindset-build';
       const sut = new WorkflowRunRepository(clientFactory);
 
       const actual = await sut.getLatestRunsForWorkflow(
@@ -26,11 +26,11 @@ describe('WorkflowRunRepository', () => {
 
       expect([...actual.entries()]).not.toHaveLength(0);
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      const runsOfBranchDevelop = actual.get('develop')!;
-      expect(runsOfBranchDevelop).toBeDefined();
-      expect(runsOfBranchDevelop).not.toHaveLength(0);
+      const runsOfBranchMaster = actual.get('master')!;
+      expect(runsOfBranchMaster).toBeDefined();
+      expect(runsOfBranchMaster).not.toHaveLength(0);
 
-      const actualRun = runsOfBranchDevelop[0];
+      const actualRun = runsOfBranchMaster[0];
       expect(actualRun).toEqual<WorkflowRun>({
         id: expect.stringContaining(''),
         startTime: expect.any(Date),
@@ -82,8 +82,8 @@ describe('WorkflowRunRepository', () => {
     });
 
     test('should sort builds from older to newer', async () => {
-      const appId = '5fc6539af7698e06abe1becd';
-      const workflowId = 'foundations-build';
+      const appId = '5fc6539af7698e06abe1becf';
+      const workflowId = 'mindset-build';
       const sut = new WorkflowRunRepository(clientFactory);
 
       const actual = await sut.getLatestRunsForWorkflow(
@@ -98,9 +98,9 @@ describe('WorkflowRunRepository', () => {
 
       expect([...actual.entries()]).not.toHaveLength(0);
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      const runsOfBranchDevelop = actual.get('develop')!;
-      const oldestRun = runsOfBranchDevelop[0];
-      const secondOldestRun = runsOfBranchDevelop[1];
+      const runsOfBranchMaster = actual.get('master')!;
+      const oldestRun = runsOfBranchMaster[0];
+      const secondOldestRun = runsOfBranchMaster[1];
       // oldest first
       expect(oldestRun.startTime.getTime()).toBeLessThan(secondOldestRun.startTime.getTime());
     });
