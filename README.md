@@ -54,6 +54,18 @@ Get notified about new builds, failing builds etc
 
 <img src="./assets/03-monitor-builds.png" title="builds" width="60%">
 
+## FAQ
+### How to upgrade
+
+If you followed the previous instructions, you should be able to run those commands : 
+
+```bash
+docker stop codemagic-build-monitor
+docker rm codemagic-build-monitor
+docker pull ghcr.io/tsimbalar/codemagic-build-monitor:latest
+docker run --name codemagic-build-monitor -d -p 9901:9901 --restart unless-stopped ghcr.io/tsimbalar/codemagic-build-monitor
+```
+
 ---
 
 ## Roadmap
