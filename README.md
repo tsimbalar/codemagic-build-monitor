@@ -60,10 +60,10 @@ Get notified about new builds, failing builds etc
 If you followed the previous instructions, you should be able to run those commands : 
 
 ```bash
-docker stop gha-build-monitor
-docker rm gha-build-monitor
-docker pull ghcr.io/tsimbalar/gha-build-monitor:latest
-docker run --name gha-build-monitor -d -p 9902:9902 --restart unless-stopped ghcr.io/tsimbalar/gha-build-monitor
+docker stop codemagic-build-monitor
+docker rm codemagic-build-monitor
+docker pull ghcr.io/tsimbalar/codemagic-build-monitor:latest
+docker run --name codemagic-build-monitor -d -p 9902:9902 --restart unless-stopped ghcr.io/tsimbalar/codemagic-build-monitor
 ```
 
 ---
