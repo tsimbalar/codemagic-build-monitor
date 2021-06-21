@@ -11,7 +11,7 @@ describe('WorkflowRunRepository', () => {
   describe('getLatestRunsForWorkflow', () => {
     test('should retrieve runs of known workflow (yaml / app build) #needs-secrets', async () => {
       const appId = '5fc6539af7698e06abe1becf';
-      const workflowId = 'mindset-build';
+      const workflowId = 'mindset-testing-build';
       const sut = new WorkflowRunRepository(clientFactory);
 
       const actual = await sut.getLatestRunsForWorkflow(
@@ -83,7 +83,7 @@ describe('WorkflowRunRepository', () => {
 
     test('should sort builds from older to newer #needs-secrets', async () => {
       const appId = '5fc6539af7698e06abe1becf';
-      const workflowId = 'mindset-build';
+      const workflowId = 'mindset-testing-build';
       const sut = new WorkflowRunRepository(clientFactory);
 
       const actual = await sut.getLatestRunsForWorkflow(
@@ -107,7 +107,7 @@ describe('WorkflowRunRepository', () => {
 
     test('should apply maxAgeInDays #needs-secrets', async () => {
       const appId = '5fc6539af7698e06abe1becf';
-      const workflowId = 'mindset-build';
+      const workflowId = 'mindset-testing-build';
       const sut = new WorkflowRunRepository(clientFactory);
 
       const maxAgeInDays = 8;
