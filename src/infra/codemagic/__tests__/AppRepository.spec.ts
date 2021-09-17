@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { App, Workflow } from '../../../domain/IAppRepository';
 import { AppRepository } from '../AppRepository';
-import { getCodeMagicClientFactory } from '../CodeMagicClientFactory';
+import { getCodemagicClientFactory } from '../CodemagicClientFactory';
 import { testCredentials } from '../__testTools__/TestCredentials';
 
 describe('AppRepository', () => {
-  const clientFactory = getCodeMagicClientFactory({
+  const clientFactory = getCodemagicClientFactory({
     version: 'v0-tests',
     buildInfo: {},
   });

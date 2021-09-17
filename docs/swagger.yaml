@@ -292,7 +292,7 @@ components:
 info:
     title: codemagic-build-monitor
     version: 0.7.0
-    description: 'Adapter to give access to CodeMagic build status via the CatLight Protocol'
+    description: 'Adapter to give access to Codemagic build status via the CatLight Protocol'
     license:
         name: MIT
     contact:

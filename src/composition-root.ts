@@ -15,7 +15,7 @@ import LRUCache from 'lru-cache';
 import { Settings } from './settings-types';
 import { TsoaAuthentication } from './api/auth/TsoaAuthentication';
 import { WorkflowRunRepository } from './infra/codemagic/WorkflowRunRepository';
-import { getCodeMagicClientFactory } from './infra/codemagic/CodeMagicClientFactory';
+import { getCodemagicClientFactory } from './infra/codemagic/CodemagicClientFactory';
 
 export interface ApiDependencies {
   readonly appRepo: IAppRepository;
@@ -40,7 +40,7 @@ export class CompositionRoot implements IControllerFactory {
   }
 
   public static forProd(settings: Settings): CompositionRoot {
-    const clientFactory = getCodeMagicClientFactory(metaFromPackageJson);
+    const clientFactory = getCodemagicClientFactory(metaFromPackageJson);
     return new CompositionRoot(settings, metaFromPackageJson, {
       appRepo: new AppRepository(clientFactory),
       workflowRunRepo: new WorkflowRunRepository(clientFactory),

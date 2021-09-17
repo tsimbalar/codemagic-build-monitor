@@ -7,12 +7,12 @@ import {
   WorkflowRunStatus,
   WorkflowRunsPerBranch,
 } from '../../domain/IWorkflowRunRepository';
-import { CodeMagicBuildDetails } from './CodeMagicClient';
-import { CodeMagicClientFactory } from './CodeMagicClientFactory';
+import { CodemagicBuildDetails } from './CodemagicClient';
+import { CodemagicClientFactory } from './CodemagicClientFactory';
 import { parseISO } from 'date-fns';
 
 export class WorkflowRunRepository implements IWorkflowRunRepository {
-  public constructor(private readonly clientFactory: CodeMagicClientFactory) {}
+  public constructor(private readonly clientFactory: CodemagicClientFactory) {}
 
   public async getLatestRunsForWorkflow(
     token: string,
@@ -72,7 +72,7 @@ export class WorkflowRunRepository implements IWorkflowRunRepository {
     return result;
   }
 
-  private getBranchKey(run: CodeMagicBuildDetails): string {
+  private getBranchKey(run: CodemagicBuildDetails): string {
     if (run.pullRequestInfo) {
       return `PR#${run.pullRequestInfo.sourceBranch}`;
     }
@@ -80,7 +80,7 @@ export class WorkflowRunRepository implements IWorkflowRunRepository {
     return `${run.branch}`;
   }
 
-  private parseWorkflowRunStatus(run: CodeMagicBuildDetails): WorkflowRunStatus {
+  private parseWorkflowRunStatus(run: CodemagicBuildDetails): WorkflowRunStatus {
     if (!run.startedAt) {
       return 'Queued';
     }

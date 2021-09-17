@@ -46,7 +46,7 @@ export class BuildInfoController extends Controller {
     return {
       protocol: 'https://catlight.io/protocol/v1.0/dynamic',
       id: SERVER_ID,
-      name: 'CodeMagic (via codemagic-build-monitor)',
+      name: 'Codemagic (via codemagic-build-monitor)',
       serverVersion: this.metaInfo.version,
       webUrl: 'https://github.com/tsimbalar/codemagic-build-monitor',
       // TODO : how to get current user info ?
