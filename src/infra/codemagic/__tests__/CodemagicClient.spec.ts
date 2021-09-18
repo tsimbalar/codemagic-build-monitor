@@ -9,18 +9,18 @@ import * as sampleBuildListByYamlWorkflowResponse from './build-list-per-app-and
 
 import {
   BuildUserInfo,
-  CodeMagicApp,
-  CodeMagicBuild,
-  CodeMagicBuildDetails,
-  CodeMagicClient,
-  CodeMagicWorkflow,
+  CodemagicApp,
+  CodemagicBuild,
+  CodemagicBuildDetails,
+  CodemagicClient,
+  CodemagicWorkflow,
   PullRequestInfo,
-} from '../CodeMagicClient';
+} from '../CodemagicClient';
 import nock from 'nock';
 
 const backendUrl = 'https://api.codemagic.io';
 
-describe('CodeMagicClient', () => {
+describe('CodemagicClient', () => {
   beforeEach(() => {
     // prevent any call that would try to reach to outside
     nock.disableNetConnect();
@@ -43,7 +43,7 @@ describe('CodeMagicClient', () => {
         .get(/.*/u)
         .reply(200, sampleAppListResponse);
 
-      const sut = new CodeMagicClient(myToken);
+      const sut = new CodemagicClient(myToken);
 
       await sut.listApplications();
 
@@ -53,7 +53,7 @@ describe('CodeMagicClient', () => {
     test('should GET /apps', async () => {
       const nockScope = nock(backendUrl).get('/apps').reply(200, sampleAppListResponse);
 
-      const sut = new CodeMagicClient('some token');
+      const sut = new CodemagicClient('some token');
 
       await sut.listApplications();
 
@@ -63,13 +63,13 @@ describe('CodeMagicClient', () => {
     test('should return apps', async () => {
       nock(backendUrl).get('/apps').reply(200, sampleAppListResponse);
 
-      const sut = new CodeMagicClient('some token');
+      const sut = new CodemagicClient('some token');
 
       const actual = await sut.listApplications();
 
       expect(actual).toHaveLength(sampleAppListResponse.applications.length);
       const sampleApp = sampleAppListResponse.applications[0];
-      expect(actual[0]).toEqual<CodeMagicApp>({
+      expect(actual[0]).toEqual<CodemagicApp>({
         id: sampleApp._id,
         name: sampleApp.appName,
         owner: sampleApp.repository.owner.name,
@@ -90,7 +90,7 @@ describe('CodeMagicClient', () => {
         .get(/.*/u)
         .reply(200, sampleAppListResponse);
 
-      const sut = new CodeMagicClient(myToken);
+      const sut = new CodemagicClient(myToken);
 
       await sut.listWorkflowsAndBuilds(appId);
 
@@ -102,7 +102,7 @@ describe('CodeMagicClient', () => {
         .get(`/builds?appId=${appId}`)
         .reply(200, sampleAppListResponse);
 
-      const sut = new CodeMagicClient('some token');
+      const sut = new CodemagicClient('some token');
 
       await sut.listWorkflowsAndBuilds(appId);
 
@@ -112,14 +112,14 @@ describe('CodeMagicClient', () => {
     test('should return yaml builds', async () => {
       nock(backendUrl).get(/.*/u).reply(200, sampleAppBuildListResponse);
 
-      const sut = new CodeMagicClient('some token');
+      const sut = new CodemagicClient('some token');
 
       const actual = await sut.listWorkflowsAndBuilds(appId);
       const actualBuilds = actual.builds;
 
       expect(actualBuilds).toHaveLength(sampleAppBuildListResponse.builds.length);
       const sampleBuild = sampleAppBuildListResponse.builds[0];
-      expect(actualBuilds[0]).toEqual<CodeMagicBuild>({
+      expect(actualBuilds[0]).toEqual<CodemagicBuild>({
         id: sampleBuild._id,
         type: 'yaml',
         name: sampleBuild.config.name ?? sampleBuild.fileWorkflowId,
@@ -131,7 +131,7 @@ describe('CodeMagicClient', () => {
     test('should return workflow builds', async () => {
       nock(backendUrl).get(/.*/u).reply(200, sampleAppBuildListResponse);
 
-      const sut = new CodeMagicClient('some token');
+      const sut = new CodemagicClient('some token');
 
       const actual = await sut.listWorkflowsAndBuilds(appId);
       const actualBuilds = actual.builds;
@@ -140,7 +140,7 @@ describe('CodeMagicClient', () => {
       const sampleBuild = sampleAppBuildListResponse.builds.find(
         (b) => b.workflowId === '6005b3cec3030b252c53d74f'
       )!;
-      expect(actualBuilds).toContainEqual<CodeMagicBuild>({
+      expect(actualBuilds).toContainEqual<CodemagicBuild>({
         type: 'workflow',
         id: sampleBuild._id,
         name: sampleBuild.config.name ?? sampleBuild.workflowId,
@@ -152,7 +152,7 @@ describe('CodeMagicClient', () => {
     test('should return workflows', async () => {
       nock(backendUrl).get(/.*/u).reply(200, sampleAppBuildListResponse);
 
-      const sut = new CodeMagicClient('some token');
+      const sut = new CodemagicClient('some token');
 
       const actual = await sut.listWorkflowsAndBuilds(appId);
       const actualWorkflows = actual.workflows;
@@ -161,7 +161,7 @@ describe('CodeMagicClient', () => {
 
       expect(actualWorkflows).toHaveLength(appFromSample.workflowIds.length);
       const sampleWorkflow = appFromSample.workflows['6005b3cec3030b252c53d74f']!;
-      expect(actualWorkflows[0]).toEqual<CodeMagicWorkflow>({
+      expect(actualWorkflows[0]).toEqual<CodemagicWorkflow>({
         id: sampleWorkflow._id,
         name: sampleWorkflow.name,
       });
@@ -182,7 +182,7 @@ describe('CodeMagicClient', () => {
         .get(/.*/u)
         .reply(200, sampleBuildListByFormalWorkflowResponse);
 
-      const sut = new CodeMagicClient(myToken);
+      const sut = new CodemagicClient(myToken);
 
       await sut.listBuilds(appId, workflowId);
 
@@ -194,7 +194,7 @@ describe('CodeMagicClient', () => {
         .get(`/builds?appId=${appId}&workflowId=${workflowId}`)
         .reply(200, sampleBuildListByFormalWorkflowResponse);
 
-      const sut = new CodeMagicClient('some token');
+      const sut = new CodemagicClient('some token');
 
       await sut.listBuilds(appId, workflowId);
 
@@ -204,13 +204,13 @@ describe('CodeMagicClient', () => {
     test('should return build details', async () => {
       nock(backendUrl).get(/.*/u).reply(200, sampleBuildListByFormalWorkflowResponse);
 
-      const sut = new CodeMagicClient('some token');
+      const sut = new CodemagicClient('some token');
 
       const actual = await sut.listBuilds(appId, workflowId);
 
       expect(actual).toHaveLength(sampleBuildListByFormalWorkflowResponse.builds.length);
       const sampleBuild = sampleBuildListByFormalWorkflowResponse.builds[0];
-      expect(actual[0]).toEqual<CodeMagicBuildDetails>({
+      expect(actual[0]).toEqual<CodemagicBuildDetails>({
         id: sampleBuild._id,
         branch: sampleBuild.branch,
         createdAt: sampleBuild.createdAt,
@@ -224,7 +224,7 @@ describe('CodeMagicClient', () => {
     test('should return build commit author', async () => {
       nock(backendUrl).get(/.*/u).reply(200, sampleBuildListByFormalWorkflowResponse);
 
-      const sut = new CodeMagicClient('some token');
+      const sut = new CodemagicClient('some token');
 
       const actual = await sut.listBuilds(appId, workflowId);
 
@@ -251,7 +251,7 @@ describe('CodeMagicClient', () => {
         .get(/.*/u)
         .reply(200, sampleBuildListByYamlWorkflowResponse);
 
-      const sut = new CodeMagicClient(myToken);
+      const sut = new CodemagicClient(myToken);
 
       await sut.listBuilds(appId, workflowIdYaml);
 
@@ -263,7 +263,7 @@ describe('CodeMagicClient', () => {
         .get(`/builds?appId=${appId}&workflowId=${workflowIdYaml}`)
         .reply(200, sampleBuildListByYamlWorkflowResponse);
 
-      const sut = new CodeMagicClient('some token');
+      const sut = new CodemagicClient('some token');
 
       await sut.listBuilds(appId, workflowIdYaml);
 
@@ -273,13 +273,13 @@ describe('CodeMagicClient', () => {
     test('should return build details', async () => {
       nock(backendUrl).get(/.*/u).reply(200, sampleBuildListByYamlWorkflowForBuildResponse);
 
-      const sut = new CodeMagicClient('some token');
+      const sut = new CodemagicClient('some token');
 
       const actual = await sut.listBuilds(appId, workflowIdYaml);
 
       expect(actual).toHaveLength(sampleBuildListByYamlWorkflowForBuildResponse.builds.length);
       const sampleBuild = sampleBuildListByYamlWorkflowForBuildResponse.builds[0];
-      expect(actual[0]).toEqual<CodeMagicBuildDetails>({
+      expect(actual[0]).toEqual<CodemagicBuildDetails>({
         id: sampleBuild._id,
         branch: sampleBuild.branch,
         createdAt: sampleBuild.createdAt,
@@ -293,7 +293,7 @@ describe('CodeMagicClient', () => {
     test('should return build commit author', async () => {
       nock(backendUrl).get(/.*/u).reply(200, sampleBuildListByYamlWorkflowForBuildResponse);
 
-      const sut = new CodeMagicClient('some token');
+      const sut = new CodemagicClient('some token');
 
       const actual = await sut.listBuilds(appId, workflowIdYaml);
 
@@ -308,7 +308,7 @@ describe('CodeMagicClient', () => {
     test('should return PR info when available', async () => {
       nock(backendUrl).get(/.*/u).reply(200, sampleBuildListByYamlWorkflowForPRResponse);
 
-      const sut = new CodeMagicClient('some token');
+      const sut = new CodemagicClient('some token');
 
       const actual = await sut.listBuilds(appId, workflowIdYaml);
 

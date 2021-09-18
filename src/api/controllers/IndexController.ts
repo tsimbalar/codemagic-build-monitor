@@ -22,10 +22,10 @@ export class IndexController extends Controller {
     </head>
     <body>
       <h1>Welcome to codemagic-build-monitor !</h1>
-      <code>codemagic-build-monitor</code> gives access to the current state of your workflows running in CodeMagic in a format understood by the Catlight app.
+      <code>codemagic-build-monitor</code> gives access to the current state of your workflows running in Codemagic in a format understood by the Catlight app.
 
-      <h2>Monitoring your CodeMagic builds</h2>
-      <p>If you want to start monitoring your CodeMagic builds in Catlight, follow the instructions here : <a href="https://github.com/tsimbalar/codemagic-build-monitor#readme">https://github.com/tsimbalar/codemagic-build-monitor#readme</a></p>
+      <h2>Monitoring your Codemagic builds</h2>
+      <p>If you want to start monitoring your Codemagic builds in Catlight, follow the instructions here : <a href="https://github.com/tsimbalar/codemagic-build-monitor#readme">https://github.com/tsimbalar/codemagic-build-monitor#readme</a></p>
 
       <h2>Playing around with <code>codemagic-build-monitor</code></h2>
       <ul>

@@ -1,9 +1,9 @@
 import { App, IAppRepository, Workflow } from '../../domain/IAppRepository';
-import { CodeMagicApp, CodeMagicBuild, CodeMagicClient } from './CodeMagicClient';
-import { CodeMagicClientFactory } from './CodeMagicClientFactory';
+import { CodemagicApp, CodemagicBuild, CodemagicClient } from './CodemagicClient';
+import { CodemagicClientFactory } from './CodemagicClientFactory';
 
 export class AppRepository implements IAppRepository {
-  public constructor(private readonly codeMagicClientFactory: CodeMagicClientFactory) {}
+  public constructor(private readonly codeMagicClientFactory: CodemagicClientFactory) {}
 
   public async listForToken(token: string): Promise<readonly App[]> {
     const client = this.codeMagicClientFactory(token);
@@ -21,8 +21,8 @@ export class AppRepository implements IAppRepository {
   }
 
   private async getWorkflowsPerApp(
-    client: CodeMagicClient,
-    apps: ReadonlyArray<CodeMagicApp>
+    client: CodemagicClient,
+    apps: ReadonlyArray<CodemagicApp>
   ): Promise<Map<string, Workflow[]>> {
     const allWorkFlows = await Promise.all(
       apps.map(async (app) => {
@@ -42,8 +42,8 @@ export class AppRepository implements IAppRepository {
     return new Map(allWorkFlows);
   }
 
-  private inferYamlWorkflowsFromBuilds(builds: CodeMagicBuild[]): Workflow[] {
-    const yamlBuildsPerFileId = new Map<string, CodeMagicBuild[]>();
+  private inferYamlWorkflowsFromBuilds(builds: CodemagicBuild[]): Workflow[] {
+    const yamlBuildsPerFileId = new Map<string, CodemagicBuild[]>();
 
     for (const build of builds) {
       if (build.type === 'workflow') {

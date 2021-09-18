@@ -1,35 +1,35 @@
 /* eslint-disable no-underscore-dangle */
 import fetch from 'node-fetch';
 
-export interface CodeMagicApp {
+export interface CodemagicApp {
   readonly id: string;
   readonly name: string;
   readonly owner: string;
 }
 
-export type CodeMagicBuild = CodeMagicWorkflowBuild | CodeMagicYamlBuild;
+export type CodemagicBuild = CodemagicWorkflowBuild | CodemagicYamlBuild;
 
-export interface CodeMagicYamlBuild {
+export interface CodemagicYamlBuild {
   readonly type: 'yaml';
   readonly id: string;
   readonly yamlWorkflowId: string;
   readonly name: string;
 }
 
-export interface CodeMagicWorkflowBuild {
+export interface CodemagicWorkflowBuild {
   readonly type: 'workflow';
   readonly id: string;
   readonly workflowId: string;
   readonly name: string;
 }
-export interface CodeMagicWorkflow {
+export interface CodemagicWorkflow {
   readonly id: string;
   readonly name: string;
 }
 
-export interface CodeMagicWorkflowsAndBuilds {
-  readonly builds: CodeMagicBuild[];
-  readonly workflows: CodeMagicWorkflow[];
+export interface CodemagicWorkflowsAndBuilds {
+  readonly builds: CodemagicBuild[];
+  readonly workflows: CodemagicWorkflow[];
 }
 
 export interface PullRequestInfo {
@@ -44,7 +44,7 @@ export interface BuildUserInfo {
   readonly email: string;
 }
 
-export interface CodeMagicBuildDetails {
+export interface CodemagicBuildDetails {
   readonly id: string;
   readonly branch: string;
   readonly createdAt: string;
@@ -55,10 +55,10 @@ export interface CodeMagicBuildDetails {
   readonly author?: BuildUserInfo;
 }
 
-export class CodeMagicClient {
+export class CodemagicClient {
   public constructor(private readonly apiToken: string) {}
 
-  public async listApplications(): Promise<ReadonlyArray<CodeMagicApp>> {
+  public async listApplications(): Promise<ReadonlyArray<CodemagicApp>> {
     const response = await fetch('https://api.codemagic.io/apps', {
       headers: {
         'x-auth-token': this.apiToken,
@@ -72,14 +72,14 @@ export class CodeMagicClient {
     if (!Array.isArray(applications)) {
       throw new Error('body.applications is not an array');
     }
-    return applications.map<CodeMagicApp>((a) => ({
+    return applications.map<CodemagicApp>((a) => ({
       id: a._id,
       name: a.appName,
       owner: a.repository.owner.name,
     }));
   }
 
-  public async listWorkflowsAndBuilds(appId: string): Promise<CodeMagicWorkflowsAndBuilds> {
+  public async listWorkflowsAndBuilds(appId: string): Promise<CodemagicWorkflowsAndBuilds> {
     const response = await fetch(`https://api.codemagic.io/builds?appId=${appId}`, {
       headers: {
         'x-auth-token': this.apiToken,
@@ -117,7 +117,7 @@ export class CodeMagicClient {
         id: wf._id,
         name: wf.name,
       })),
-      builds: builds.map<CodeMagicBuild>((b) => {
+      builds: builds.map<CodemagicBuild>((b) => {
         if (b.fileWorkflowId) {
           return {
             type: 'yaml',
@@ -139,7 +139,7 @@ export class CodeMagicClient {
   public async listBuilds(
     appId: string,
     workflowId: string
-  ): Promise<ReadonlyArray<CodeMagicBuildDetails>> {
+  ): Promise<ReadonlyArray<CodemagicBuildDetails>> {
     const response = await fetch(
       `https://api.codemagic.io/builds?appId=${appId}&workflowId=${workflowId}`,
       {
@@ -176,8 +176,8 @@ export class CodeMagicClient {
     return builds.map((b) => this.mapToBuildDetails(b));
   }
 
-  private mapToBuildDetails(build: any): CodeMagicBuildDetails {
-    let result: CodeMagicBuildDetails = {
+  private mapToBuildDetails(build: any): CodemagicBuildDetails {
+    let result: CodemagicBuildDetails = {
       id: build._id,
       branch: build.branch,
       createdAt: build.createdAt,

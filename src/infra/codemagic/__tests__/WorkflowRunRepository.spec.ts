@@ -1,10 +1,10 @@
 import { WorkflowRun, WorkflowRunAuthor } from '../../../domain/IWorkflowRunRepository';
 import { WorkflowRunRepository } from '../WorkflowRunRepository';
-import { getCodeMagicClientFactory } from '../CodeMagicClientFactory';
+import { getCodemagicClientFactory } from '../CodemagicClientFactory';
 import { testCredentials } from '../__testTools__/TestCredentials';
 
 describe('WorkflowRunRepository', () => {
-  const clientFactory = getCodeMagicClientFactory({
+  const clientFactory = getCodemagicClientFactory({
     version: 'v0-tests',
     buildInfo: {},
   });

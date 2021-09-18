@@ -3210,7 +3210,7 @@
                 "authorEmail": "37109929+joseignacioojeda@users.noreply.github.com",
                 "authorName": "John Smith",
                 "branch": "master",
-                "commitMessage": "ci(codemagic): Migration from Travis to CodeMagic (#1)",
+                "commitMessage": "ci(codemagic): Migration from Travis to Codemagic (#1)",
                 "committerEmail": "noreply@github.com",
                 "committerName": "GitHub",
                 "hash": "0195a97c9e5f971e34035ad59ad5a7a580ae193d",
